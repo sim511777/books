@@ -1,0 +1,52 @@
+<svg width="720" height="420" viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="720" height="420" fill="#ffffff"/>
+
+  <!-- 클래스(설계도) 박스 -->
+  <rect x="40" y="30" width="220" height="150" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="150" y="55" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">클래스 BankAccount</text>
+  <line x1="40" y1="65" x2="260" y2="65" stroke="#000000" stroke-width="1"/>
+  <text x="55" y="85" font-family="Malgun Gothic, sans-serif" font-size="13">- _owner : string</text>
+  <text x="55" y="105" font-family="Malgun Gothic, sans-serif" font-size="13">- _balance : decimal</text>
+  <line x1="40" y1="115" x2="260" y2="115" stroke="#000000" stroke-width="1"/>
+  <text x="55" y="135" font-family="Malgun Gothic, sans-serif" font-size="13">+ Deposit(amount)</text>
+  <text x="55" y="155" font-family="Malgun Gothic, sans-serif" font-size="13">+ Withdraw(amount)</text>
+  <text x="150" y="205" font-family="Malgun Gothic, sans-serif" font-size="13" text-anchor="middle" font-style="italic">(설계도 : 실제 메모리를 차지하지 않음)</text>
+
+  <!-- 화살표: new 로 생성 -->
+  <line x1="260" y1="105" x2="360" y2="105" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="310" y="95" font-family="Malgun Gothic, sans-serif" font-size="12" text-anchor="middle">new</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- 인스턴스 1 -->
+  <rect x="400" y="30" width="280" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="540" y="52" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">account1 : BankAccount</text>
+  <line x1="400" y1="60" x2="680" y2="60" stroke="#000000" stroke-width="1"/>
+  <text x="415" y="80" font-family="Malgun Gothic, sans-serif" font-size="12">_owner = "김철수"</text>
+  <text x="415" y="100" font-family="Malgun Gothic, sans-serif" font-size="12">_balance = 50000</text>
+
+  <!-- 인스턴스 2 -->
+  <rect x="400" y="140" width="280" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="540" y="162" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">account2 : BankAccount</text>
+  <line x1="400" y1="170" x2="680" y2="170" stroke="#000000" stroke-width="1"/>
+  <text x="415" y="190" font-family="Malgun Gothic, sans-serif" font-size="12">_owner = "이영희"</text>
+  <text x="415" y="210" font-family="Malgun Gothic, sans-serif" font-size="12">_balance = 120000</text>
+
+  <!-- 인스턴스 3 -->
+  <rect x="400" y="250" width="280" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="540" y="272" font-family="Malgun Gothic, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">account3 : BankAccount</text>
+  <line x1="400" y1="280" x2="680" y2="280" stroke="#000000" stroke-width="1"/>
+  <text x="415" y="300" font-family="Malgun Gothic, sans-serif" font-size="12">_owner = "박민수"</text>
+  <text x="415" y="320" font-family="Malgun Gothic, sans-serif" font-size="12">_balance = 0</text>
+
+  <!-- 화살표 여러 개 -->
+  <line x1="360" y1="105" x2="400" y2="75" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="360" y1="105" x2="400" y2="185" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="360" y1="105" x2="400" y2="295" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="360" y="380" font-family="Malgun Gothic, sans-serif" font-size="13" text-anchor="middle">하나의 클래스로부터 서로 독립된 여러 개의 객체(인스턴스)를 만들 수 있다</text>
+</svg>

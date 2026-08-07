@@ -1,0 +1,53 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="800" height="480" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="400" y="30" font-size="18" text-anchor="middle" fill="black" font-weight="bold">델리게이트 변수가 메서드를 가리키는 구조</text>
+
+  <!-- 상단: 단일 델리게이트 -->
+  <text x="60" y="70" font-size="14" fill="black" font-weight="bold">1. 델리게이트 변수는 메서드를 가리킨다</text>
+
+  <rect x="60" y="90" width="230" height="70" fill="none" stroke="black" stroke-width="2"/>
+  <text x="175" y="115" font-size="14" text-anchor="middle" fill="black">Action&lt;string&gt; greet</text>
+  <text x="175" y="140" font-size="12" text-anchor="middle" fill="black">(델리게이트 변수)</text>
+
+  <line x1="290" y1="125" x2="420" y2="125" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="420" y="90" width="260" height="70" fill="none" stroke="black" stroke-width="2"/>
+  <text x="550" y="115" font-size="14" text-anchor="middle" fill="black">void PrintGreeting(string name)</text>
+  <text x="550" y="140" font-size="12" text-anchor="middle" fill="black">(실제 메서드 본문)</text>
+
+  <!-- 재할당 설명 -->
+  <text x="60" y="205" font-size="13" fill="black">greet = PrintGreeting;  // 변수에 메서드를 대입</text>
+  <text x="60" y="228" font-size="13" fill="black">greet("철수");          // 변수를 호출하면 PrintGreeting("철수")가 실행됨</text>
+
+  <line x1="60" y1="245" x2="740" y2="245" stroke="black" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- 하단: 멀티캐스트 / 이벤트 -->
+  <text x="60" y="280" font-size="14" fill="black" font-weight="bold">2. event 델리게이트는 여러 구독자를 동시에 가리킬 수 있다</text>
+
+  <rect x="60" y="300" width="230" height="70" fill="none" stroke="black" stroke-width="2"/>
+  <text x="175" y="325" font-size="14" text-anchor="middle" fill="black">event ButtonClicked</text>
+  <text x="175" y="350" font-size="12" text-anchor="middle" fill="black">(발행자가 소유한 이벤트)</text>
+
+  <line x1="290" y1="320" x2="420" y2="300" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="290" y1="335" x2="420" y2="335" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="290" y1="350" x2="420" y2="370" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="420" y="280" width="260" height="40" fill="none" stroke="black" stroke-width="2"/>
+  <text x="550" y="305" font-size="13" text-anchor="middle" fill="black">LogClick(object, EventArgs)</text>
+
+  <rect x="420" y="330" width="260" height="40" fill="none" stroke="black" stroke-width="2"/>
+  <text x="550" y="355" font-size="13" text-anchor="middle" fill="black">ShowMessage(object, EventArgs)</text>
+
+  <rect x="420" y="380" width="260" height="40" fill="none" stroke="black" stroke-width="2"/>
+  <text x="550" y="405" font-size="13" text-anchor="middle" fill="black">UpdateCounter(object, EventArgs)</text>
+
+  <text x="60" y="440" font-size="12" fill="black">구독자(subscriber) 메서드들: 이벤트가 발생하면 등록된 메서드가 차례로 모두 호출된다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="black"/>
+    </marker>
+  </defs>
+</svg>
