@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" font-family="'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="760" height="520" fill="#ffffff"/>
+
+  <!-- Client -->
+  <rect x="40" y="220" width="140" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="110" y="250" text-anchor="middle" font-size="16" font-weight="bold">Client</text>
+  <text x="110" y="272" text-anchor="middle" font-size="12">(클라이언트 코드)</text>
+
+  <!-- ISubject interface -->
+  <rect x="300" y="40" width="200" height="80" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="400" y="65" text-anchor="middle" font-size="12" font-style="italic">&lt;&lt;interface&gt;&gt;</text>
+  <text x="400" y="88" text-anchor="middle" font-size="16" font-weight="bold">IDocumentLoader</text>
+  <text x="400" y="108" text-anchor="middle" font-size="12">+ Render()</text>
+
+  <!-- Proxy -->
+  <rect x="260" y="230" width="200" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="360" y="256" text-anchor="middle" font-size="16" font-weight="bold">DocumentProxy</text>
+  <text x="360" y="278" text-anchor="middle" font-size="12">- _realLoader</text>
+  <text x="360" y="296" text-anchor="middle" font-size="12">+ Render()</text>
+  <text x="360" y="314" text-anchor="middle" font-size="11">(접근 제어 · 지연 생성)</text>
+
+  <!-- RealSubject -->
+  <rect x="530" y="230" width="200" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="630" y="256" text-anchor="middle" font-size="16" font-weight="bold">RealDocumentLoader</text>
+  <text x="630" y="278" text-anchor="middle" font-size="12">+ Render()</text>
+  <text x="630" y="296" text-anchor="middle" font-size="11">(실제 대용량 로딩 수행)</text>
+  <text x="630" y="314" text-anchor="middle" font-size="11">생성 비용이 큼</text>
+
+  <!-- Client -> Proxy solid arrow -->
+  <line x1="180" y1="270" x2="255" y2="270" stroke="#000000" stroke-width="2" marker-end="url(#arrowSolid)"/>
+  <text x="215" y="255" text-anchor="middle" font-size="12">참조 · 호출</text>
+
+  <!-- Proxy -> RealSubject solid arrow (delegation) -->
+  <line x1="460" y1="275" x2="525" y2="275" stroke="#000000" stroke-width="2" marker-end="url(#arrowSolid)"/>
+  <text x="492" y="260" text-anchor="middle" font-size="12">위임</text>
+
+  <!-- Proxy ..> ISubject realization (dashed, hollow triangle) -->
+  <line x1="380" y1="230" x2="395" y2="125" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowHollow)"/>
+
+  <!-- RealSubject ..> ISubject realization -->
+  <line x1="610" y1="230" x2="450" y2="122" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowHollow)"/>
+
+  <text x="400" y="170" text-anchor="middle" font-size="11" fill="#000000">둘 다 같은 인터페이스를 구현</text>
+
+  <!-- Legend -->
+  <rect x="40" y="400" width="680" height="100" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="55" y="425" font-size="13" font-weight="bold">그림 설명</text>
+  <text x="55" y="448" font-size="12">Client는 IDocumentLoader 타입으로 변수를 선언하지만, 실제로 담기는 것은 RealDocumentLoader가 아니라 DocumentProxy다.</text>
+  <text x="55" y="468" font-size="12">Render() 호출을 받은 프록시는 접근 권한을 검사하거나, 필요한 시점에 비로소 RealDocumentLoader를 생성한 뒤</text>
+  <text x="55" y="488" font-size="12">그 인스턴스에 실제 작업을 위임(delegation)한다. Client는 프록시를 거치고 있다는 사실을 전혀 알 필요가 없다.</text>
+
+  <defs>
+    <marker id="arrowSolid" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000"/>
+    </marker>
+    <marker id="arrowHollow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    </marker>
+  </defs>
+</svg>

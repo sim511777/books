@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">비지터 패턴: shape.Accept(visitor) 한 번의 호출이 거치는 두 단계 디스패치</text>
+
+  <!-- Client -->
+  <rect x="30" y="70" width="150" height="60" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="105" y="105" text-anchor="middle" font-size="14" font-weight="bold">Program.Main</text>
+
+  <!-- Circle instance -->
+  <rect x="280" y="70" width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="370" y="95" text-anchor="middle" font-size="14" font-weight="bold">circle : Circle</text>
+  <text x="370" y="115" text-anchor="middle" font-size="11">Accept(visitor)</text>
+  <text x="370" y="130" text-anchor="middle" font-size="11">=&gt; visitor.VisitCircle(this)</text>
+
+  <!-- AreaVisitor instance -->
+  <rect x="620" y="70" width="220" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="730" y="95" text-anchor="middle" font-size="14" font-weight="bold">areaVisitor : AreaVisitor</text>
+  <text x="730" y="115" text-anchor="middle" font-size="11">VisitCircle(circle)</text>
+  <text x="730" y="130" text-anchor="middle" font-size="11">TotalArea += &#960;r&sup2;</text>
+
+  <!-- IShape interface -->
+  <rect x="300" y="200" width="140" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="370" y="222" text-anchor="middle" font-size="12" font-style="italic">&lt;&lt;interface&gt;&gt;</text>
+  <text x="370" y="242" text-anchor="middle" font-size="13">IShape</text>
+
+  <!-- IShapeVisitor interface -->
+  <rect x="640" y="200" width="180" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="730" y="222" text-anchor="middle" font-size="12" font-style="italic">&lt;&lt;interface&gt;&gt;</text>
+  <text x="730" y="242" text-anchor="middle" font-size="13">IShapeVisitor</text>
+
+  <!-- Client -> Circle : Accept 호출 (첫 번째 디스패치) -->
+  <line x1="180" y1="100" x2="275" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrowSolid)"/>
+  <text x="228" y="85" text-anchor="middle" font-size="11">① shape.Accept(visitor)</text>
+
+  <!-- Circle -> AreaVisitor : VisitCircle 호출 (두 번째 디스패치) -->
+  <line x1="460" y1="105" x2="615" y2="105" stroke="#000000" stroke-width="2" marker-end="url(#arrowSolid)"/>
+  <text x="537" y="90" text-anchor="middle" font-size="11">② visitor.VisitCircle(this)</text>
+
+  <!-- Circle ..> IShape realization -->
+  <line x1="370" y1="140" x2="370" y2="195" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowHollow)"/>
+
+  <!-- AreaVisitor ..> IShapeVisitor realization -->
+  <line x1="730" y1="140" x2="730" y2="195" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowHollow)"/>
+
+  <!-- Step boxes -->
+  <rect x="30" y="320" width="390" height="130" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="225" y="345" text-anchor="middle" font-size="13" font-weight="bold">① 첫 번째 디스패치 - 런타임에 결정</text>
+  <text x="50" y="370" font-size="12">shape.Accept(visitor)는 가상 메서드 호출이다.</text>
+  <text x="50" y="392" font-size="12">shape에 실제로 담긴 타입(Circle)에 따라</text>
+  <text x="50" y="414" font-size="12">Circle.Accept 구현이 런타임에 선택된다.</text>
+  <text x="50" y="436" font-size="12">이 시점부터 this의 타입은 Circle로 고정된다.</text>
+
+  <rect x="470" y="320" width="400" height="130" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="670" y="345" text-anchor="middle" font-size="13" font-weight="bold">② 두 번째 디스패치 - 오버로드 결정</text>
+  <text x="490" y="370" font-size="12">Circle.Accept 내부의 visitor.VisitCircle(this)는</text>
+  <text x="490" y="392" font-size="12">visitor의 실제 타입(AreaVisitor)에 따라</text>
+  <text x="490" y="414" font-size="12">AreaVisitor.VisitCircle 오버로드로 연결된다.</text>
+  <text x="490" y="436" font-size="12">두 타입의 조합이 최종 실행 코드를 결정한다.</text>
+
+  <rect x="30" y="480" width="840" height="60" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="450" y="505" text-anchor="middle" font-size="12" font-weight="bold">결과: Circle × AreaVisitor 조합에 맞는 코드가 실행된다</text>
+  <text x="450" y="525" text-anchor="middle" font-size="11">visitor를 PrintVisitor로 바꾸면, ②에서 PrintVisitor.VisitCircle이 대신 선택된다 - Circle 코드는 그대로다.</text>
+
+  <defs>
+    <marker id="arrowSolid" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000"/>
+    </marker>
+    <marker id="arrowHollow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    </marker>
+  </defs>
+</svg>

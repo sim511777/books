@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="900" height="460" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#000000">중재자 패턴: 그물 구조에서 스타 구조로</text>
+
+  <!-- Left panel label -->
+  <text x="225" y="60" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">이전: 위젯들이 서로 직접 참조</text>
+
+  <!-- Left nodes -->
+  <rect x="55" y="90" width="140" height="46" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="125" y="118" font-size="12" text-anchor="middle" fill="#000000">UsernameField</text>
+
+  <rect x="255" y="90" width="140" height="46" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="325" y="118" font-size="12" text-anchor="middle" fill="#000000">EmailField</text>
+
+  <rect x="55" y="270" width="140" height="46" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="125" y="298" font-size="12" text-anchor="middle" fill="#000000">AgreementCheckbox</text>
+
+  <rect x="255" y="270" width="140" height="46" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="325" y="298" font-size="12" text-anchor="middle" fill="#000000">SubmitButton</text>
+
+  <!-- Mesh lines: all 6 pairs connected directly -->
+  <line x1="195" y1="113" x2="255" y2="113" stroke="#000000" stroke-width="1.2"/>
+  <line x1="125" y1="136" x2="125" y2="270" stroke="#000000" stroke-width="1.2"/>
+  <line x1="325" y1="136" x2="325" y2="270" stroke="#000000" stroke-width="1.2"/>
+  <line x1="195" y1="293" x2="255" y2="293" stroke="#000000" stroke-width="1.2"/>
+  <line x1="100" y1="130" x2="290" y2="280" stroke="#000000" stroke-width="1.2"/>
+  <line x1="350" y1="130" x2="150" y2="280" stroke="#000000" stroke-width="1.2"/>
+
+  <text x="225" y="400" font-size="12" text-anchor="middle" fill="#000000">위젯이 하나 늘어날 때마다 참조 관계가 조합적으로 늘어난다</text>
+
+  <!-- Divider -->
+  <line x1="450" y1="55" x2="450" y2="420" stroke="#000000" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- Right panel label -->
+  <text x="675" y="60" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">이후: 모든 위젯이 중재자만 참조</text>
+
+  <!-- Center Mediator box -->
+  <rect x="600" y="205" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="675" y="228" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">SignUpFormMediator</text>
+  <text x="675" y="246" font-size="10" text-anchor="middle" fill="#000000">(Mediator)</text>
+
+  <!-- Right nodes around mediator -->
+  <rect x="605" y="90" width="140" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="675" y="116" font-size="12" text-anchor="middle" fill="#000000">UsernameField</text>
+
+  <rect x="770" y="212" width="120" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="830" y="238" font-size="12" text-anchor="middle" fill="#000000">EmailField</text>
+
+  <rect x="605" y="330" width="140" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="675" y="356" font-size="12" text-anchor="middle" fill="#000000">AgreementCheckbox</text>
+
+  <rect x="470" y="212" width="120" height="42" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="530" y="238" font-size="12" text-anchor="middle" fill="#000000">SubmitButton</text>
+
+  <!-- Lines from each widget to mediator only -->
+  <line x1="675" y1="132" x2="675" y2="205" stroke="#000000" stroke-width="1.5"/>
+  <line x1="770" y1="233" x2="750" y2="233" stroke="#000000" stroke-width="1.5"/>
+  <line x1="675" y1="330" x2="675" y2="260" stroke="#000000" stroke-width="1.5"/>
+  <line x1="590" y1="233" x2="600" y2="233" stroke="#000000" stroke-width="1.5"/>
+
+  <text x="675" y="400" font-size="12" text-anchor="middle" fill="#000000">위젯끼리는 서로를 전혀 모르고, 상호작용 규칙은 중재자 하나에 모인다</text>
+</svg>

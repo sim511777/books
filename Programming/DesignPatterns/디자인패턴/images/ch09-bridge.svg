@@ -1,0 +1,77 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#000000">브리지 패턴: 추상화(Abstraction)와 구현(Implementation)의 분리</text>
+
+  <!-- Abstraction column label -->
+  <text x="230" y="65" font-size="16" font-weight="bold" text-anchor="middle" fill="#000000">추상화(Abstraction) 축</text>
+  <text x="230" y="83" font-size="12" text-anchor="middle" fill="#000000">"어떤 도형인가"</text>
+
+  <!-- Implementation column label -->
+  <text x="670" y="65" font-size="16" font-weight="bold" text-anchor="middle" fill="#000000">구현(Implementation) 축</text>
+  <text x="670" y="83" font-size="12" text-anchor="middle" fill="#000000">"어떻게 그리는가"</text>
+
+  <!-- Shape abstract box -->
+  <rect x="130" y="100" width="200" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="230" y="122" font-size="14" text-anchor="middle" fill="#000000">Shape (abstract)</text>
+  <text x="230" y="140" font-size="11" text-anchor="middle" fill="#000000">- _renderer : IRenderer</text>
+
+  <!-- IRenderer interface box -->
+  <rect x="570" y="100" width="200" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="670" y="122" font-size="14" text-anchor="middle" fill="#000000">&lt;&lt;interface&gt;&gt;</text>
+  <text x="670" y="140" font-size="14" text-anchor="middle" fill="#000000">IRenderer</text>
+
+  <!-- Bridge arrow: Shape has-a IRenderer -->
+  <line x1="330" y1="127" x2="570" y2="127" stroke="#000000" stroke-width="2"/>
+  <polygon points="565,120 580,127 565,134" fill="#000000"/>
+  <text x="450" y="115" font-size="12" text-anchor="middle" fill="#000000">참조(다리)</text>
+
+  <!-- Abstraction subclasses -->
+  <rect x="50" y="220" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="125" y="248" font-size="13" text-anchor="middle" fill="#000000">Circle</text>
+
+  <rect x="260" y="220" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="335" y="248" font-size="13" text-anchor="middle" fill="#000000">Rectangle</text>
+
+  <!-- dashed extension line hint (future) -->
+  <rect x="150" y="300" width="160" height="40" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="230" y="325" font-size="12" text-anchor="middle" fill="#000000">Triangle (향후 추가)</text>
+
+  <!-- inheritance lines from Shape to subclasses -->
+  <line x1="125" y1="220" x2="200" y2="155" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="196,163 205,150 214,163" fill="#ffffff" stroke="#000000"/>
+  <line x1="335" y1="220" x2="260" y2="155" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="246,163 255,150 264,163" fill="#ffffff" stroke="#000000"/>
+  <line x1="230" y1="300" x2="230" y2="270" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Implementation subclasses -->
+  <rect x="490" y="220" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="565" y="248" font-size="13" text-anchor="middle" fill="#000000">VectorRenderer</text>
+
+  <rect x="700" y="220" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="775" y="248" font-size="13" text-anchor="middle" fill="#000000">RasterRenderer</text>
+
+  <rect x="595" y="300" width="160" height="40" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="675" y="325" font-size="12" text-anchor="middle" fill="#000000">SvgRenderer (향후 추가)</text>
+
+  <!-- implements lines -->
+  <line x1="565" y1="220" x2="640" y2="155" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="636,163 645,150 654,163" fill="#ffffff" stroke="#000000"/>
+  <line x1="775" y1="220" x2="700" y2="155" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="686,163 695,150 704,163" fill="#ffffff" stroke="#000000"/>
+  <line x1="675" y1="300" x2="675" y2="270" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Explanation boxes -->
+  <rect x="40" y="400" width="380" height="120" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="230" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">추상화 쪽 확장</text>
+  <text x="60" y="450" font-size="12" fill="#000000">도형 종류가 늘어나도</text>
+  <text x="60" y="470" font-size="12" fill="#000000">IRenderer 쪽 클래스는</text>
+  <text x="60" y="490" font-size="12" fill="#000000">전혀 바뀌지 않는다.</text>
+
+  <rect x="480" y="400" width="380" height="120" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="670" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">구현 쪽 확장</text>
+  <text x="500" y="450" font-size="12" fill="#000000">렌더링 방식이 늘어나도</text>
+  <text x="500" y="470" font-size="12" fill="#000000">Shape 쪽 클래스는</text>
+  <text x="500" y="490" font-size="12" fill="#000000">전혀 바뀌지 않는다.</text>
+</svg>
