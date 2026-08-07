@@ -1,0 +1,84 @@
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+
+  <!-- 제목 -->
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#000000">값 리시버 vs 포인터 리시버</text>
+
+  <!-- 구분선 -->
+  <line x1="480" y1="55" x2="480" y2="540" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ===================== 왼쪽: 값 리시버 ===================== -->
+  <text x="240" y="70" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">값 리시버 (func (p Point) Move())</text>
+
+  <!-- 원본 변수 박스 -->
+  <rect x="90" y="95" width="300" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="240" y="120" text-anchor="middle" font-size="15" fill="#000000">원본 변수 p</text>
+  <text x="240" y="142" text-anchor="middle" font-size="14" fill="#000000">Point{X: 1, Y: 2}</text>
+
+  <!-- 화살표: 복사 -->
+  <line x1="240" y1="165" x2="240" y2="205" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="330" y="190" text-anchor="middle" font-size="13" fill="#000000">메서드 호출 시</text>
+  <text x="330" y="206" text-anchor="middle" font-size="13" fill="#000000">값 전체를 복사</text>
+
+  <!-- 메서드 내부 박스 (복사본) -->
+  <rect x="90" y="215" width="300" height="90" fill="#f2f2f2" stroke="#000000" stroke-width="2"/>
+  <text x="240" y="238" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">메서드 내부</text>
+  <text x="240" y="260" text-anchor="middle" font-size="14" fill="#000000">복사본 p'</text>
+  <text x="240" y="280" text-anchor="middle" font-size="13" fill="#000000">p'.X = 100 (복사본만 변경)</text>
+  <text x="240" y="298" text-anchor="middle" font-size="12" fill="#555555">함수가 끝나면 사라짐</text>
+
+  <!-- 화살표: 종료 후 -->
+  <line x1="240" y1="305" x2="240" y2="345" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="330" y="330" text-anchor="middle" font-size="13" fill="#000000">메서드 종료</text>
+
+  <!-- 결과 박스 -->
+  <rect x="90" y="355" width="300" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="240" y="380" text-anchor="middle" font-size="15" fill="#000000">원본 변수 p (변경 없음)</text>
+  <text x="240" y="402" text-anchor="middle" font-size="14" fill="#000000">Point{X: 1, Y: 2}</text>
+
+  <text x="240" y="460" text-anchor="middle" font-size="13" fill="#000000">→ 원본은 그대로 유지된다</text>
+  <text x="240" y="482" text-anchor="middle" font-size="13" fill="#000000">(복사본만 수정했기 때문)</text>
+
+  <!-- ===================== 오른쪽: 포인터 리시버 ===================== -->
+  <text x="720" y="70" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">포인터 리시버 (func (p *Point) Move())</text>
+
+  <!-- 원본 변수 박스 -->
+  <rect x="570" y="95" width="300" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="720" y="120" text-anchor="middle" font-size="15" fill="#000000">원본 변수 p</text>
+  <text x="720" y="142" text-anchor="middle" font-size="14" fill="#000000">Point{X: 1, Y: 2}</text>
+
+  <!-- 화살표: 주소 전달 -->
+  <line x1="720" y1="165" x2="720" y2="205" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="820" y="190" text-anchor="middle" font-size="13" fill="#000000">메서드 호출 시</text>
+  <text x="820" y="206" text-anchor="middle" font-size="13" fill="#000000">주소(&amp;p)를 전달</text>
+
+  <!-- 메서드 내부 박스 (포인터) -->
+  <rect x="570" y="215" width="300" height="90" fill="#f2f2f2" stroke="#000000" stroke-width="2"/>
+  <text x="720" y="238" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">메서드 내부</text>
+  <text x="720" y="260" text-anchor="middle" font-size="14" fill="#000000">포인터 p (원본을 가리킴)</text>
+  <text x="720" y="280" text-anchor="middle" font-size="13" fill="#000000">p.X = 100 (원본을 직접 변경)</text>
+  <text x="720" y="298" text-anchor="middle" font-size="12" fill="#555555">역참조를 통해 원본에 접근</text>
+
+  <!-- 화살표: 종료 후 -->
+  <line x1="720" y1="305" x2="720" y2="345" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="820" y="330" text-anchor="middle" font-size="13" fill="#000000">메서드 종료</text>
+
+  <!-- 결과 박스 -->
+  <rect x="570" y="355" width="300" height="70" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+  <text x="720" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">원본 변수 p (변경됨)</text>
+  <text x="720" y="402" text-anchor="middle" font-size="14" fill="#000000">Point{X: 100, Y: 2}</text>
+
+  <text x="720" y="460" text-anchor="middle" font-size="13" fill="#000000">→ 원본이 실제로 수정된다</text>
+  <text x="720" y="482" text-anchor="middle" font-size="13" fill="#000000">(포인터로 원본에 접근했기 때문)</text>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- 하단 요약 -->
+  <rect x="90" y="510" width="780" height="35" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="480" y="533" text-anchor="middle" font-size="13" fill="#000000">원본을 바꾸고 싶다면 포인터 리시버, 읽기만 한다면 값 리시버를 사용한다</text>
+</svg>

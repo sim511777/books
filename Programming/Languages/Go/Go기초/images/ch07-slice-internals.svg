@@ -1,0 +1,64 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="760" height="460" fill="#ffffff"/>
+
+  <!-- 제목 -->
+  <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">슬라이스의 내부 구조</text>
+
+  <!-- 슬라이스 헤더 박스 -->
+  <text x="60" y="70" font-size="14" fill="#000000">슬라이스 헤더 (s)</text>
+  <g stroke="#000000" stroke-width="2" fill="none">
+    <rect x="60" y="80" width="140" height="40"/>
+    <rect x="60" y="120" width="140" height="40"/>
+    <rect x="60" y="160" width="140" height="40"/>
+  </g>
+  <text x="130" y="105" font-size="13" text-anchor="middle" fill="#000000">포인터 (ptr)</text>
+  <text x="130" y="145" font-size="13" text-anchor="middle" fill="#000000">길이 (len) = 3</text>
+  <text x="130" y="185" font-size="13" text-anchor="middle" fill="#000000">용량 (cap) = 5</text>
+
+  <!-- 화살표: 포인터 -> 배열의 특정 인덱스 -->
+  <line x1="200" y1="100" x2="330" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 실제 배열 -->
+  <text x="330" y="240" font-size="14" fill="#000000">기저 배열 (underlying array)</text>
+  <g stroke="#000000" stroke-width="2" fill="none">
+    <rect x="330" y="80" width="70" height="50"/>
+    <rect x="400" y="80" width="70" height="50"/>
+    <rect x="470" y="80" width="70" height="50"/>
+    <rect x="540" y="80" width="70" height="50"/>
+    <rect x="610" y="80" width="70" height="50"/>
+  </g>
+  <text x="365" y="110" font-size="14" text-anchor="middle" fill="#000000">10</text>
+  <text x="435" y="110" font-size="14" text-anchor="middle" fill="#000000">20</text>
+  <text x="505" y="110" font-size="14" text-anchor="middle" fill="#000000">30</text>
+  <text x="575" y="110" font-size="14" text-anchor="middle" fill="#000000">40</text>
+  <text x="645" y="110" font-size="14" text-anchor="middle" fill="#000000">50</text>
+
+  <text x="365" y="150" font-size="12" text-anchor="middle" fill="#555555">[0]</text>
+  <text x="435" y="150" font-size="12" text-anchor="middle" fill="#555555">[1]</text>
+  <text x="505" y="150" font-size="12" text-anchor="middle" fill="#555555">[2]</text>
+  <text x="575" y="150" font-size="12" text-anchor="middle" fill="#555555">[3]</text>
+  <text x="645" y="150" font-size="12" text-anchor="middle" fill="#555555">[4]</text>
+
+  <!-- 슬라이스가 덮는 범위 표시 (len=3) -->
+  <rect x="330" y="80" width="210" height="50" fill="none" stroke="#000000" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="435" y="200" font-size="13" text-anchor="middle" fill="#000000">len 범위 (인덱스 0~2까지 사용 중)</text>
+
+  <!-- cap 범위 표시 -->
+  <rect x="330" y="80" width="350" height="50" fill="none" stroke="#888888" stroke-width="2" stroke-dasharray="2,4"/>
+  <text x="505" y="220" font-size="12" text-anchor="middle" fill="#888888">cap 범위 (인덱스 0~4까지 확장 가능)</text>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- 설명 박스 -->
+  <rect x="60" y="280" width="620" height="150" fill="none" stroke="#000000" stroke-width="1"/>
+  <text x="80" y="310" font-size="14" font-weight="bold" fill="#000000">핵심 요약</text>
+  <text x="80" y="340" font-size="13" fill="#000000">1. 슬라이스 변수 자체는 포인터, len, cap 세 값만 담은 작은 구조체이다.</text>
+  <text x="80" y="365" font-size="13" fill="#000000">2. 실제 데이터는 슬라이스가 아니라 포인터가 가리키는 기저 배열에 저장된다.</text>
+  <text x="80" y="390" font-size="13" fill="#000000">3. len은 현재 사용 중인 요소 개수, cap은 재할당 없이 늘릴 수 있는 최대 개수이다.</text>
+  <text x="80" y="415" font-size="13" fill="#000000">4. 슬라이스를 복사하면 헤더만 복사되며, 기저 배열은 원본과 계속 공유된다.</text>
+</svg>

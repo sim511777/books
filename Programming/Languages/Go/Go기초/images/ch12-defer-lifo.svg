@@ -1,0 +1,42 @@
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="340" fill="#ffffff"/>
+
+  <text x="175" y="35" font-size="18" text-anchor="middle" fill="#000000" font-family="sans-serif" font-weight="bold">코드에 등장하는 순서</text>
+  <text x="525" y="35" font-size="18" text-anchor="middle" fill="#000000" font-family="sans-serif" font-weight="bold">함수 종료 시 실행 순서</text>
+
+  <!-- source boxes -->
+  <rect x="100" y="65" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="175" y="96" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">defer A()</text>
+
+  <rect x="100" y="145" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="175" y="176" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">defer B()</text>
+
+  <rect x="100" y="225" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="175" y="256" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">defer C()</text>
+
+  <!-- target boxes -->
+  <rect x="450" y="65" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="525" y="88" font-size="14" text-anchor="middle" fill="#000000" font-family="sans-serif">1번째 실행</text>
+  <text x="525" y="106" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">C()</text>
+
+  <rect x="450" y="145" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="525" y="168" font-size="14" text-anchor="middle" fill="#000000" font-family="sans-serif">2번째 실행</text>
+  <text x="525" y="186" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">B()</text>
+
+  <rect x="450" y="225" width="150" height="50" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="525" y="248" font-size="14" text-anchor="middle" fill="#000000" font-family="sans-serif">3번째 실행</text>
+  <text x="525" y="266" font-size="16" text-anchor="middle" fill="#000000" font-family="sans-serif">A()</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- crossing lines showing LIFO reversal -->
+  <line x1="250" y1="90" x2="450" y2="250" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="170" x2="450" y2="170" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="250" x2="450" y2="90" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="350" y="310" font-size="15" text-anchor="middle" fill="#000000" font-family="sans-serif">defer는 등록한 순서와 반대로(LIFO, 후입선출) 실행된다</text>
+</svg>

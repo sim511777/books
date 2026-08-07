@@ -1,0 +1,49 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="700" height="380" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="18" text-anchor="middle" fill="#000000" font-weight="bold">변수는 객체를 가리키는 이름표다</text>
+
+  <!-- Variable name boxes -->
+  <rect x="60" y="80" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="105" y="105" font-size="16" text-anchor="middle" fill="#000000">a</text>
+
+  <rect x="60" y="150" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="105" y="175" font-size="16" text-anchor="middle" fill="#000000">b</text>
+
+  <rect x="60" y="260" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="105" y="285" font-size="16" text-anchor="middle" fill="#000000">c</text>
+
+  <text x="30" y="330" font-size="13" fill="#000000">(변수 이름표)</text>
+
+  <!-- Object: list -->
+  <rect x="330" y="100" width="200" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="430" y="125" font-size="13" text-anchor="middle" fill="#000000">list 객체</text>
+  <text x="430" y="150" font-size="16" text-anchor="middle" fill="#000000">[1, 2, 3]</text>
+  <text x="430" y="188" font-size="12" text-anchor="middle" fill="#000000">id: 140712838458944</text>
+
+  <!-- Object: int -->
+  <rect x="330" y="250" width="200" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="430" y="275" font-size="13" text-anchor="middle" fill="#000000">int 객체</text>
+  <text x="430" y="300" font-size="16" text-anchor="middle" fill="#000000">10</text>
+  <text x="430" y="338" font-size="12" text-anchor="middle" fill="#000000">id: 140712900112288</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <line x1="150" y1="100" x2="325" y2="130" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="150" y1="170" x2="325" y2="145" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="150" y1="280" x2="325" y2="285" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Explanation -->
+  <text x="105" y="130" font-size="12" fill="#000000">a = [1, 2, 3]</text>
+  <text x="105" y="220" font-size="12" fill="#000000">b = a</text>
+  <text x="105" y="240" font-size="12" fill="#000000">(같은 객체를 가리킴)</text>
+  <text x="105" y="310" font-size="12" fill="#000000">c = 10</text>
+
+  <text x="350" y="360" font-size="13" text-anchor="middle" fill="#000000">a와 b는 같은 리스트 객체를 가리키지만, c는 별개의 정수 객체를 가리킨다</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg viewBox="0 0 780 480" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="780" height="480" fill="#ffffff"/>
+
+  <!-- 제목 -->
+  <text x="390" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">여러 고루틴의 동시 실행</text>
+
+  <!-- 레인 레이블 -->
+  <text x="60" y="95" font-size="14" fill="#000000">main 고루틴</text>
+  <text x="60" y="175" font-size="14" fill="#000000">고루틴 1</text>
+  <text x="60" y="255" font-size="14" fill="#000000">고루틴 2</text>
+  <text x="60" y="335" font-size="14" fill="#000000">고루틴 3</text>
+
+  <!-- 레인 배경 트랙 (연한 회색 점선) -->
+  <g stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="160" y1="90" x2="720" y2="90"/>
+    <line x1="160" y1="170" x2="720" y2="170"/>
+    <line x1="160" y1="250" x2="720" y2="250"/>
+    <line x1="160" y1="330" x2="720" y2="330"/>
+  </g>
+
+  <!-- main 고루틴 실행 구간 (처음부터 끝까지) -->
+  <rect x="160" y="70" width="560" height="40" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="440" y="65" font-size="12" text-anchor="middle" fill="#555555">wg.Wait()로 세 고루틴이 끝날 때까지 대기</text>
+
+  <!-- 고루틴 1, 2, 3 실행 구간 (서로 겹친다) -->
+  <rect x="260" y="150" width="220" height="40" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="370" y="175" font-size="13" text-anchor="middle" fill="#000000">worker(1) 실행 중</text>
+
+  <rect x="320" y="230" width="240" height="40" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="440" y="255" font-size="13" text-anchor="middle" fill="#000000">worker(2) 실행 중</text>
+
+  <rect x="380" y="310" width="200" height="40" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="480" y="335" font-size="13" text-anchor="middle" fill="#000000">worker(3) 실행 중</text>
+
+  <!-- main에서 각 고루틴으로의 생성(go) 화살표 -->
+  <g stroke="#000000" stroke-width="1.5" stroke-dasharray="3,3">
+    <line x1="260" y1="110" x2="260" y2="150" marker-end="url(#arrow)"/>
+    <line x1="320" y1="110" x2="320" y2="230" marker-end="url(#arrow)"/>
+    <line x1="380" y1="110" x2="380" y2="310" marker-end="url(#arrow)"/>
+  </g>
+  <text x="260" y="128" font-size="11" text-anchor="middle" fill="#000000">go worker(1,..)</text>
+  <text x="320" y="128" font-size="11" text-anchor="middle" fill="#000000">go worker(2,..)</text>
+  <text x="380" y="128" font-size="11" text-anchor="middle" fill="#000000">go worker(3,..)</text>
+
+  <!-- 시간 축 -->
+  <line x1="160" y1="400" x2="720" y2="400" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="700" y="418" font-size="13" fill="#000000">시간</text>
+
+  <!-- 설명 박스 -->
+  <rect x="60" y="425" width="660" height="45" fill="none" stroke="#000000" stroke-width="1"/>
+  <text x="80" y="452" font-size="12" fill="#000000">고루틴 1, 2, 3의 실행 구간이 겹쳐 있는 것이 동시성입니다. 실제로 물리적으로 동시에(병렬로) 실행되는지는 CPU 코어 수와 Go 스케줄러의 판단에 따라 달라집니다.</text>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
