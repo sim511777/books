@@ -1,0 +1,107 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#000000">매크로 호출이 코드로 확장된 뒤 실행되는 흐름</text>
+
+  <!-- Phase labels -->
+  <rect x="30" y="60" width="380" height="24" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="220" y="77" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">컴파일 타임 (매크로 확장 단계)</text>
+
+  <rect x="490" y="60" width="380" height="24" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="680" y="77" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">런타임 (실행 단계)</text>
+
+  <!-- Box 1: source code with macro call -->
+  <rect x="40" y="110" width="290" height="110" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6"/>
+  <text x="185" y="132" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">① 원본 소스 코드</text>
+  <text x="185" y="132" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000"></text>
+  <text x="60" y="158" font-size="13" fill="#000000" font-family="monospace">(unless</text>
+  <text x="80" y="176" font-size="13" fill="#000000" font-family="monospace">(empty? xs)</text>
+  <text x="80" y="194" font-size="13" fill="#000000" font-family="monospace">(println xs))</text>
+  <text x="185" y="212" font-size="11" text-anchor="middle" fill="#333333">매크로 호출 형태로 작성됨</text>
+
+  <!-- Arrow 1 -->
+  <line x1="330" y1="165" x2="390" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="360" y="150" font-size="11" text-anchor="middle" fill="#000000">읽기</text>
+
+  <!-- Box 2: reader produces data (code as data) -->
+  <rect x="390" y="110" width="120" height="110" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6" stroke-dasharray="4,3"/>
+  <text x="450" y="132" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">② 리더</text>
+  <text x="450" y="150" font-size="11" text-anchor="middle" fill="#000000">코드를</text>
+  <text x="450" y="166" font-size="11" text-anchor="middle" fill="#000000">중첩 리스트</text>
+  <text x="450" y="182" font-size="11" text-anchor="middle" fill="#000000">데이터로</text>
+  <text x="450" y="198" font-size="11" text-anchor="middle" fill="#000000">변환</text>
+
+  <!-- This box spans phase boundary conceptually but keep simple: put macro expansion box in compile time area -->
+  <!-- Box 3: macro expansion -->
+  <rect x="40" y="250" width="330" height="140" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6"/>
+  <text x="205" y="272" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">③ 매크로 확장 (defmacro unless 실행)</text>
+  <text x="60" y="296" font-size="12" fill="#000000">입력: (empty? xs), (println xs)</text>
+  <text x="60" y="316" font-size="12" fill="#000000">unless 매크로 본문이</text>
+  <text x="60" y="334" font-size="12" fill="#000000">이 데이터를 조립해 새 코드(데이터)를</text>
+  <text x="60" y="352" font-size="12" fill="#000000">만들어낸다 (아직 평가되지 않음)</text>
+  <text x="205" y="376" font-size="11" text-anchor="middle" fill="#333333">코드가 곧 데이터이기에 가능</text>
+
+  <!-- Arrow down from box2 to box3 -->
+  <line x1="450" y1="220" x2="450" y2="235" stroke="#000000" stroke-width="2"/>
+  <line x1="450" y1="235" x2="205" y2="235" stroke="#000000" stroke-width="2"/>
+  <line x1="205" y1="235" x2="205" y2="245" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: expanded code -->
+  <rect x="40" y="410" width="330" height="90" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6"/>
+  <text x="205" y="432" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">④ 확장된 코드</text>
+  <text x="70" y="454" font-size="13" fill="#000000" font-family="monospace">(if (empty? xs)</text>
+  <text x="90" y="472" font-size="13" fill="#000000" font-family="monospace">nil</text>
+  <text x="90" y="488" font-size="13" fill="#000000" font-family="monospace">(println xs))</text>
+
+  <!-- Arrow from box3 to box4 -->
+  <line x1="205" y1="390" x2="205" y2="405" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Vertical dashed boundary line between compile time and runtime -->
+  <line x1="450" y1="90" x2="450" y2="500" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Arrow crossing boundary from box4 to box5 -->
+  <line x1="370" y1="455" x2="500" y2="455" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="435" y="440" font-size="11" text-anchor="middle" fill="#000000">컴파일</text>
+
+  <!-- Box 5: runtime execution -->
+  <rect x="500" y="410" width="180" height="90" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6"/>
+  <text x="590" y="432" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">⑤ 실행</text>
+  <text x="590" y="454" font-size="12" text-anchor="middle" fill="#000000">if 특수형이</text>
+  <text x="590" y="472" font-size="12" text-anchor="middle" fill="#000000">조건을 평가하고</text>
+  <text x="590" y="488" font-size="12" text-anchor="middle" fill="#000000">분기를 실행</text>
+
+  <!-- Arrow to result -->
+  <line x1="680" y1="455" x2="740" y2="455" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Box 6: result -->
+  <rect x="740" y="415" width="130" height="80" fill="#ffffff" stroke="#000000" stroke-width="2" rx="6"/>
+  <text x="805" y="440" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">⑥ 결과</text>
+  <text x="805" y="462" font-size="11" text-anchor="middle" fill="#000000">xs 값이</text>
+  <text x="805" y="478" font-size="11" text-anchor="middle" fill="#000000">출력됨</text>
+
+  <!-- Key note box -->
+  <rect x="500" y="110" width="360" height="270" fill="#ffffff" stroke="#000000" stroke-width="1" stroke-dasharray="3,3" rx="6"/>
+  <text x="680" y="140" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">핵심 포인트</text>
+  <text x="520" y="170" font-size="12" fill="#000000">· 매크로는 값이 아니라</text>
+  <text x="530" y="188" font-size="12" fill="#000000">코드(데이터)를 입력받고</text>
+  <text x="530" y="206" font-size="12" fill="#000000">코드(데이터)를 반환한다.</text>
+
+  <text x="520" y="236" font-size="12" fill="#000000">· 매크로 확장은 프로그램이</text>
+  <text x="530" y="254" font-size="12" fill="#000000">실행되기 전, 컴파일 타임에</text>
+  <text x="530" y="272" font-size="12" fill="#000000">단 한 번만 일어난다.</text>
+
+  <text x="520" y="302" font-size="12" fill="#000000">· (empty? xs), (println xs)는</text>
+  <text x="530" y="320" font-size="12" fill="#000000">이 시점에는 평가되지 않고</text>
+  <text x="530" y="338" font-size="12" fill="#000000">코드 조각(데이터) 그대로 다뤄진다.</text>
+
+  <text x="520" y="368" font-size="12" fill="#000000">· 실제 값 평가는 오른쪽,</text>
+  <text x="530" y="386" font-size="12" fill="#000000">즉 런타임에 가서야 일어난다.</text>
+
+  <!-- Arrow marker def -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

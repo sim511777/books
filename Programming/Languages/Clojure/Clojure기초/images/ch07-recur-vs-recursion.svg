@@ -1,0 +1,68 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff" stroke="none"/>
+
+  <!-- 제목 -->
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#000000">일반 재귀 호출 vs recur를 이용한 반복 — 스택 사용 비교</text>
+
+  <!-- 왼쪽: 일반 재귀 -->
+  <text x="210" y="66" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">일반 재귀 (factorial 5)</text>
+  <text x="210" y="86" text-anchor="middle" font-size="12" fill="#000000">호출할 때마다 새 스택 프레임이 쌓인다</text>
+
+  <!-- 왼쪽 스택 프레임들 (아래에서 위로 쌓이는 모양) -->
+  <g stroke="#000000" stroke-width="1.5" fill="#ffffff">
+    <rect x="90" y="440" width="240" height="40"/>
+    <rect x="100" y="400" width="220" height="40"/>
+    <rect x="110" y="360" width="200" height="40"/>
+    <rect x="120" y="320" width="180" height="40"/>
+    <rect x="130" y="280" width="160" height="40"/>
+  </g>
+  <g font-size="13" fill="#000000" text-anchor="middle">
+    <text x="210" y="465">(factorial 5) 대기 중 — 5 * 결과</text>
+    <text x="210" y="425">(factorial 4) 대기 중 — 4 * 결과</text>
+    <text x="210" y="385">(factorial 3) 대기 중 — 3 * 결과</text>
+    <text x="210" y="345">(factorial 2) 대기 중 — 2 * 결과</text>
+    <text x="210" y="305">(factorial 1) 기저 조건 → 1</text>
+  </g>
+
+  <text x="210" y="500" text-anchor="middle" font-size="12" fill="#000000">인자가 커질수록 프레임 수 증가 → StackOverflowError 위험</text>
+
+  <!-- 화살표: 스택이 자라는 방향 -->
+  <line x1="360" y1="480" x2="360" y2="270" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="360" font-size="12" fill="#000000" transform="rotate(-90 372 360)" text-anchor="middle">스택 증가</text>
+
+  <!-- 구분선 -->
+  <line x1="450" y1="60" x2="450" y2="500" stroke="#000000" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- 오른쪽: recur -->
+  <text x="670" y="66" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">loop/recur (factorial 5)</text>
+  <text x="670" y="86" text-anchor="middle" font-size="12" fill="#000000">같은 스택 프레임을 재사용한다</text>
+
+  <!-- 오른쪽: 하나의 프레임이 값만 바뀌며 재사용됨을 표현 -->
+  <g stroke="#000000" stroke-width="1.5" fill="#ffffff">
+    <rect x="560" y="380" width="220" height="60"/>
+  </g>
+  <text x="670" y="405" text-anchor="middle" font-size="13" fill="#000000">단일 스택 프레임</text>
+  <text x="670" y="425" text-anchor="middle" font-size="12" fill="#000000">(loop [n 5 acc 1] ...)</text>
+
+  <!-- 순환 화살표로 값이 갱신되며 재사용됨을 표현 -->
+  <path d="M 800 380 C 850 340, 850 300, 800 280 L 690 280" stroke="#000000" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="820" y="330" font-size="11" fill="#000000" text-anchor="middle">recur로</text>
+  <text x="820" y="345" font-size="11" fill="#000000" text-anchor="middle">값만 교체</text>
+
+  <g font-size="12" fill="#000000" text-anchor="start">
+    <text x="560" y="255">1회차: n=5, acc=1</text>
+    <text x="560" y="235">2회차: n=4, acc=5</text>
+    <text x="560" y="215">3회차: n=3, acc=20</text>
+    <text x="560" y="195">4회차: n=2, acc=60</text>
+    <text x="560" y="175">5회차: n=1, acc=120</text>
+    <text x="560" y="155">종료: n=0 → acc 반환</text>
+  </g>
+
+  <text x="670" y="470" text-anchor="middle" font-size="12" fill="#000000">프레임이 늘지 않음 → 스택 오버플로우 없이 반복</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
