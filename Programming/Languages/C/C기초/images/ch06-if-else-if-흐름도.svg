@@ -1,0 +1,54 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="420" fill="white"/>
+
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- 시작 -->
+  <rect x="290" y="10" width="120" height="40" rx="20" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="350" y="35" text-anchor="middle" font-size="14" fill="black">시작</text>
+  <line x1="350" y1="50" x2="350" y2="75" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- 조건1 -->
+  <polygon points="350,75 430,115 350,155 270,115" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="350" y="120" text-anchor="middle" font-size="13" fill="black">점수 &gt;= 90 ?</text>
+
+  <!-- 참: A학점 -->
+  <line x1="430" y1="115" x2="560" y2="115" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="470" y="105" font-size="12" fill="black">참</text>
+  <rect x="560" y="95" width="120" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="620" y="120" text-anchor="middle" font-size="13" fill="black">A 학점</text>
+
+  <!-- 거짓: 다음 조건으로 -->
+  <line x1="350" y1="155" x2="350" y2="185" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="360" y="175" font-size="12" fill="black">거짓</text>
+
+  <!-- 조건2 -->
+  <polygon points="350,185 430,225 350,265 270,225" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="350" y="230" text-anchor="middle" font-size="13" fill="black">점수 &gt;= 80 ?</text>
+
+  <line x1="430" y1="225" x2="560" y2="225" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="470" y="215" font-size="12" fill="black">참</text>
+  <rect x="560" y="205" width="120" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="620" y="230" text-anchor="middle" font-size="13" fill="black">B 학점</text>
+
+  <line x1="350" y1="265" x2="350" y2="295" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="360" y="285" font-size="12" fill="black">거짓</text>
+
+  <!-- else: C학점 -->
+  <rect x="290" y="295" width="120" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="350" y="320" text-anchor="middle" font-size="13" fill="black">C 학점 (else)</text>
+
+  <!-- 종료로 합류 -->
+  <line x1="620" y1="135" x2="620" y2="370" stroke="black" stroke-width="1.5"/>
+  <line x1="620" y1="245" x2="620" y2="370" stroke="black" stroke-width="1.5"/>
+  <line x1="350" y1="335" x2="350" y2="370" stroke="black" stroke-width="1.5"/>
+  <line x1="350" y1="370" x2="620" y2="370" stroke="black" stroke-width="1.5"/>
+  <line x1="480" y1="370" x2="480" y2="390" stroke="black" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <rect x="420" y="390" width="120" height="30" rx="15" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="480" y="410" text-anchor="middle" font-size="13" fill="black">종료</text>
+</svg>

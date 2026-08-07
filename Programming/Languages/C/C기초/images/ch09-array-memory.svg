@@ -1,0 +1,53 @@
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="760" height="260" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="380" y="28" font-size="16" text-anchor="middle" fill="black" font-weight="bold">int scores[6] = {85, 92, 78, 90, 88, 95}; 의 메모리 배치</text>
+
+  <!-- 인덱스 라벨 -->
+  <text x="90"  y="70" font-size="13" text-anchor="middle" fill="black">scores[0]</text>
+  <text x="200" y="70" font-size="13" text-anchor="middle" fill="black">scores[1]</text>
+  <text x="310" y="70" font-size="13" text-anchor="middle" fill="black">scores[2]</text>
+  <text x="420" y="70" font-size="13" text-anchor="middle" fill="black">scores[3]</text>
+  <text x="530" y="70" font-size="13" text-anchor="middle" fill="black">scores[4]</text>
+  <text x="640" y="70" font-size="13" text-anchor="middle" fill="black">scores[5]</text>
+
+  <!-- 박스들: 값 -->
+  <g stroke="black" stroke-width="2" fill="none">
+    <rect x="40"  y="80" width="100" height="60"/>
+    <rect x="150" y="80" width="100" height="60"/>
+    <rect x="260" y="80" width="100" height="60"/>
+    <rect x="370" y="80" width="100" height="60"/>
+    <rect x="480" y="80" width="100" height="60"/>
+    <rect x="590" y="80" width="100" height="60"/>
+  </g>
+
+  <!-- 값 텍스트 -->
+  <text x="90"  y="117" font-size="18" text-anchor="middle" fill="black">85</text>
+  <text x="200" y="117" font-size="18" text-anchor="middle" fill="black">92</text>
+  <text x="310" y="117" font-size="18" text-anchor="middle" fill="black">78</text>
+  <text x="420" y="117" font-size="18" text-anchor="middle" fill="black">90</text>
+  <text x="530" y="117" font-size="18" text-anchor="middle" fill="black">88</text>
+  <text x="640" y="117" font-size="18" text-anchor="middle" fill="black">95</text>
+
+  <!-- 주소 텍스트 -->
+  <text x="90"  y="160" font-size="12" text-anchor="middle" fill="black">0x1000</text>
+  <text x="200" y="160" font-size="12" text-anchor="middle" fill="black">0x1004</text>
+  <text x="310" y="160" font-size="12" text-anchor="middle" fill="black">0x1008</text>
+  <text x="420" y="160" font-size="12" text-anchor="middle" fill="black">0x100C</text>
+  <text x="530" y="160" font-size="12" text-anchor="middle" fill="black">0x1010</text>
+  <text x="640" y="160" font-size="12" text-anchor="middle" fill="black">0x1014</text>
+
+  <!-- 4바이트 표시 화살표 -->
+  <g stroke="black" stroke-width="1">
+    <line x1="40" y1="180" x2="150" y2="180"/>
+    <line x1="40" y1="175" x2="40" y2="185"/>
+    <line x1="150" y1="175" x2="150" y2="185"/>
+  </g>
+  <text x="95" y="198" font-size="12" text-anchor="middle" fill="black">int 1개 = 4바이트</text>
+
+  <!-- 하단 설명 -->
+  <text x="380" y="230" font-size="13" text-anchor="middle" fill="black">배열의 원소들은 메모리에 빈틈없이 연속으로 배치되며, 주소는 (시작 주소 + 인덱스 × 원소 크기) 로 계산됩니다.</text>
+  <text x="380" y="250" font-size="12" text-anchor="middle" fill="black">예: scores[3] 의 주소 = 0x1000 + 3 × 4 = 0x100C</text>
+</svg>

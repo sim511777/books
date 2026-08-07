@@ -1,0 +1,72 @@
+<svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#ffffff"/>
+
+  <!-- 화살표 머리 정의 -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- 1. 소스 코드 -->
+  <rect x="20" y="140" width="140" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="90" y="175" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">소스 코드</text>
+  <text x="90" y="198" text-anchor="middle" font-size="13" fill="#000000">hello.c</text>
+
+  <line x1="160" y1="185" x2="196" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 2. 전처리기 -->
+  <rect x="200" y="140" width="140" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="270" y="175" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">전처리기</text>
+  <text x="270" y="198" text-anchor="middle" font-size="12" fill="#000000">#include, #define</text>
+  <text x="270" y="216" text-anchor="middle" font-size="12" fill="#000000">처리 후 확장된 소스</text>
+
+  <line x1="340" y1="185" x2="376" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 3. 컴파일러 -->
+  <rect x="380" y="140" width="140" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="450" y="175" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">컴파일러</text>
+  <text x="450" y="198" text-anchor="middle" font-size="12" fill="#000000">C 코드 → 어셈블리어</text>
+  <text x="450" y="216" text-anchor="middle" font-size="12" fill="#000000">hello.s</text>
+
+  <line x1="520" y1="185" x2="556" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4. 어셈블러 -->
+  <rect x="560" y="140" width="140" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="630" y="175" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">어셈블러</text>
+  <text x="630" y="198" text-anchor="middle" font-size="12" fill="#000000">어셈블리어 → 기계어</text>
+  <text x="630" y="216" text-anchor="middle" font-size="12" fill="#000000">hello.o (목적 파일)</text>
+
+  <line x1="700" y1="185" x2="736" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 5. 링커 -->
+  <rect x="740" y="140" width="130" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="805" y="175" text-anchor="middle" font-size="16" fill="#000000" font-weight="bold">링커</text>
+  <text x="805" y="198" text-anchor="middle" font-size="12" fill="#000000">라이브러리와 결합</text>
+  <text x="805" y="216" text-anchor="middle" font-size="12" fill="#000000">여러 목적 파일 연결</text>
+
+  <line x1="870" y1="185" x2="906" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 6. 실행 파일 -->
+  <rect x="910" y="140" width="70" height="90" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+  <text x="945" y="175" text-anchor="middle" font-size="14" fill="#000000" font-weight="bold">실행</text>
+  <text x="945" y="193" text-anchor="middle" font-size="14" fill="#000000" font-weight="bold">파일</text>
+  <text x="945" y="212" text-anchor="middle" font-size="11" fill="#000000">a.out</text>
+
+  <!-- 하단 라벨: gcc가 이 모든 과정을 한 번에 처리함을 표시 -->
+  <line x1="90" y1="280" x2="945" y2="280" stroke="#000000" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="90" y1="280" x2="90" y2="270" stroke="#000000" stroke-width="1.5"/>
+  <line x1="945" y1="280" x2="945" y2="270" stroke="#000000" stroke-width="1.5"/>
+  <text x="517" y="305" text-anchor="middle" font-size="14" fill="#000000">gcc hello.c -o hello  실행 시 이 다섯 단계가 자동으로 순서대로 수행됨</text>
+
+  <!-- 상단 제목 -->
+  <text x="500" y="60" text-anchor="middle" font-size="22" fill="#000000" font-weight="bold">C 프로그램 빌드 파이프라인</text>
+  <text x="500" y="90" text-anchor="middle" font-size="14" fill="#000000">소스 코드에서 실행 파일이 만들어지기까지</text>
+
+  <!-- 각 단계 아래 옵션 표시 -->
+  <text x="90" y="255" text-anchor="middle" font-size="11" fill="#000000">(원본)</text>
+  <text x="270" y="255" text-anchor="middle" font-size="11" fill="#000000">gcc -E</text>
+  <text x="450" y="255" text-anchor="middle" font-size="11" fill="#000000">gcc -S</text>
+  <text x="630" y="255" text-anchor="middle" font-size="11" fill="#000000">gcc -c</text>
+  <text x="805" y="255" text-anchor="middle" font-size="11" fill="#000000">ld (내부적으로 사용)</text>
+</svg>
