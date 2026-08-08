@@ -1,0 +1,81 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- 배경 -->
+  <rect x="0" y="0" width="900" height="560" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="450" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="black">Dart 소스 코드의 두 가지 실행 경로</text>
+
+  <!-- 상단: 소스 코드 박스 -->
+  <rect x="340" y="44" width="220" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <text x="450" y="65" text-anchor="middle" font-size="15" fill="black">Dart 소스 코드</text>
+  <text x="450" y="83" text-anchor="middle" font-size="13" fill="black">(예: hello.dart)</text>
+
+  <!-- 분기선: 아래로 내려온 뒤 좌우로 갈라짐 -->
+  <line x1="450" y1="94" x2="450" y2="112" stroke="black" stroke-width="2"/>
+  <line x1="220" y1="112" x2="680" y2="112" stroke="black" stroke-width="2"/>
+  <line x1="220" y1="112" x2="220" y2="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="680" y1="112" x2="680" y2="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 좌측 열: JIT / 개발 모드 -->
+  <text x="220" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="black">dart run (개발 모드 · JIT)</text>
+
+  <rect x="120" y="164" width="200" height="52" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="186" text-anchor="middle" font-size="13" fill="black">Dart VM 시작</text>
+  <text x="220" y="204" text-anchor="middle" font-size="12" fill="black">(가상 머신 위에서 실행)</text>
+
+  <line x1="220" y1="216" x2="220" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="240" width="200" height="60" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="262" text-anchor="middle" font-size="13" fill="black">JIT 컴파일러가 필요한</text>
+  <text x="220" y="280" text-anchor="middle" font-size="13" fill="black">부분을 그때그때</text>
+  <text x="220" y="296" text-anchor="middle" font-size="13" fill="black">기계어로 변환</text>
+
+  <line x1="220" y1="300" x2="220" y2="324" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="324" width="200" height="52" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="346" text-anchor="middle" font-size="13" fill="black">코드 수정 시</text>
+  <text x="220" y="364" text-anchor="middle" font-size="13" fill="black">핫 리로드로 즉시 반영</text>
+
+  <line x1="220" y1="376" x2="220" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="400" width="200" height="52" fill="#f5f5f5" stroke="black" stroke-width="2"/>
+  <text x="220" y="422" text-anchor="middle" font-size="13" fill="black">빠른 반복 개발에 적합</text>
+  <text x="220" y="440" text-anchor="middle" font-size="12" fill="black">(느린 시작, 큰 런타임)</text>
+
+  <!-- 우측 열: AOT / 배포 모드 -->
+  <text x="680" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="black">dart compile exe (배포 모드 · AOT)</text>
+
+  <rect x="580" y="164" width="200" height="52" fill="white" stroke="black" stroke-width="2"/>
+  <text x="680" y="186" text-anchor="middle" font-size="13" fill="black">AOT 컴파일러 실행</text>
+  <text x="680" y="204" text-anchor="middle" font-size="12" fill="black">(컴파일 시점에 처리)</text>
+
+  <line x1="680" y1="216" x2="680" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="240" width="200" height="60" fill="white" stroke="black" stroke-width="2"/>
+  <text x="680" y="262" text-anchor="middle" font-size="13" fill="black">소스 전체를 미리</text>
+  <text x="680" y="280" text-anchor="middle" font-size="13" fill="black">네이티브 기계어로</text>
+  <text x="680" y="296" text-anchor="middle" font-size="13" fill="black">전부 변환</text>
+
+  <line x1="680" y1="300" x2="680" y2="324" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="324" width="200" height="52" fill="white" stroke="black" stroke-width="2"/>
+  <text x="680" y="346" text-anchor="middle" font-size="13" fill="black">독립 실행형 파일 생성</text>
+  <text x="680" y="364" text-anchor="middle" font-size="12" fill="black">(예: hello.exe)</text>
+
+  <line x1="680" y1="376" x2="680" y2="400" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="400" width="200" height="52" fill="#f5f5f5" stroke="black" stroke-width="2"/>
+  <text x="680" y="422" text-anchor="middle" font-size="13" fill="black">빠른 시작 · 배포에 적합</text>
+  <text x="680" y="440" text-anchor="middle" font-size="12" fill="black">(런타임 없이 OS가 직접 실행)</text>
+
+  <!-- 하단 설명 -->
+  <text x="450" y="490" text-anchor="middle" font-size="13" fill="black">개발 중에는 JIT로 빠르게 반복하고, 배포할 때는 AOT로 네이티브 성능을 확보한다.</text>
+  <rect x="60" y="510" width="780" height="34" fill="white" stroke="black" stroke-width="1"/>
+  <text x="450" y="531" text-anchor="middle" font-size="12" fill="black">같은 소스 코드(.dart) 한 벌이 상황에 따라 서로 다른 두 경로로 실행된다</text>
+</svg>

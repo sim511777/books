@@ -1,0 +1,70 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- 배경 -->
+  <rect x="0" y="0" width="900" height="560" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="450" y="28" text-anchor="middle" font-size="19" font-weight="bold" fill="black">컴파일러가 구분하는 두 세계</text>
+
+  <!-- 열 헤더 -->
+  <text x="220" y="58" text-anchor="middle" font-size="16" font-weight="bold" fill="black">String (널이 될 수 없는 타입)</text>
+  <text x="680" y="58" text-anchor="middle" font-size="16" font-weight="bold" fill="black">String? (널러블 타입)</text>
+
+  <!-- 좌측 열 -->
+  <rect x="90" y="76" width="260" height="54" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="98" text-anchor="middle" font-size="13" fill="black">String name = '지수';</text>
+  <text x="220" y="118" text-anchor="middle" font-size="12" fill="black">허용</text>
+
+  <line x1="220" y1="130" x2="220" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="90" y="150" width="260" height="54" fill="#f0f0f0" stroke="black" stroke-width="3"/>
+  <text x="220" y="172" text-anchor="middle" font-size="13" fill="black">name = null;</text>
+  <text x="220" y="192" text-anchor="middle" font-size="12" font-weight="bold" fill="black">컴파일 오류!</text>
+
+  <line x1="220" y1="204" x2="220" y2="224" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="90" y="224" width="260" height="54" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="246" text-anchor="middle" font-size="13" fill="black">print(name.length);</text>
+  <text x="220" y="266" text-anchor="middle" font-size="12" fill="black">항상 안전, 검사 없이 접근 가능</text>
+
+  <line x1="220" y1="278" x2="220" y2="298" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="90" y="298" width="260" height="54" fill="white" stroke="black" stroke-width="2"/>
+  <text x="220" y="322" text-anchor="middle" font-size="12" fill="black">규칙: null이 끼어들</text>
+  <text x="220" y="340" text-anchor="middle" font-size="12" fill="black">틈이 전혀 없다</text>
+
+  <!-- 우측 열 -->
+  <rect x="550" y="76" width="260" height="54" fill="white" stroke="black" stroke-width="2"/>
+  <text x="680" y="98" text-anchor="middle" font-size="13" fill="black">String? nickname;</text>
+  <text x="680" y="118" text-anchor="middle" font-size="12" fill="black">허용 (초기값은 null)</text>
+
+  <line x1="680" y1="130" x2="680" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="550" y="150" width="260" height="54" fill="white" stroke="black" stroke-width="2"/>
+  <text x="680" y="172" text-anchor="middle" font-size="13" fill="black">print(nickname.length);</text>
+  <text x="680" y="192" text-anchor="middle" font-size="12" font-weight="bold" fill="black">컴파일 오류! (검사 먼저 필요)</text>
+
+  <line x1="680" y1="204" x2="680" y2="224" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="550" y="224" width="260" height="54" fill="#f0f0f0" stroke="black" stroke-width="2"/>
+  <text x="680" y="246" text-anchor="middle" font-size="13" fill="black">print(nickname?.length);</text>
+  <text x="680" y="266" text-anchor="middle" font-size="12" fill="black">허용, null이면 결과도 null</text>
+
+  <line x1="680" y1="278" x2="680" y2="298" stroke="black" stroke-width="2" marker-end="url(#arrow8)"/>
+
+  <rect x="550" y="298" width="260" height="54" fill="#f0f0f0" stroke="black" stroke-width="2"/>
+  <text x="680" y="320" text-anchor="middle" font-size="13" fill="black">print(nickname ?? '없음');</text>
+  <text x="680" y="340" text-anchor="middle" font-size="12" fill="black">허용, 기본값으로 대체</text>
+
+  <!-- 하단 설명 -->
+  <rect x="60" y="380" width="780" height="60" fill="white" stroke="black" stroke-width="1"/>
+  <text x="450" y="404" text-anchor="middle" font-size="13" fill="black">타입 뒤에 ?가 있는지 없는지를 컴파일러가 대입·접근하는 모든 지점에서 검사한다.</text>
+  <text x="450" y="424" text-anchor="middle" font-size="13" fill="black">null 검사를 빠뜨린 코드는 실행되기 전, 즉 컴파일 시점에 걸러진다.</text>
+
+  <text x="450" y="470" text-anchor="middle" font-size="13" fill="black">?., ??, !, late는 모두 오른쪽의 널러블 타입을 안전하게 다루기 위한 도구다.</text>
+</svg>
