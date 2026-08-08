@@ -1,0 +1,50 @@
+<svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="460" fill="#ffffff"/>
+
+  <text x="350" y="30" font-size="18" text-anchor="middle" fill="#000000" font-weight="bold">클래스(설계도)와 객체(인스턴스)의 관계</text>
+
+  <!-- Class blueprint box -->
+  <rect x="230" y="55" width="240" height="150" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="78" font-size="14" text-anchor="middle" fill="#000000" font-weight="bold">class BankAccount</text>
+  <line x1="230" y1="88" x2="470" y2="88" stroke="#000000" stroke-width="1"/>
+  <text x="245" y="108" font-size="11" fill="#000000">- owner_name_ : string</text>
+  <text x="245" y="126" font-size="11" fill="#000000">- balance_ : double</text>
+  <line x1="230" y1="136" x2="470" y2="136" stroke="#000000" stroke-width="1"/>
+  <text x="245" y="155" font-size="11" fill="#000000">+ deposit(amount)</text>
+  <text x="245" y="173" font-size="11" fill="#000000">+ withdraw(amount)</text>
+  <text x="245" y="191" font-size="11" fill="#000000">+ get_balance()</text>
+
+  <text x="350" y="222" font-size="11" text-anchor="middle" fill="#000000">(설계도 - 메모리를 직접 차지하지 않음)</text>
+
+  <!-- Arrows down to instances -->
+  <line x1="300" y1="205" x2="150" y2="255" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="400" y1="205" x2="550" y2="255" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="200" y="235" font-size="10" fill="#000000">객체 생성</text>
+  <text x="500" y="235" font-size="10" fill="#000000">객체 생성</text>
+
+  <!-- Instance 1 -->
+  <rect x="40" y="260" width="220" height="150" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="150" y="283" font-size="13" text-anchor="middle" fill="#000000" font-weight="bold">account1 : BankAccount</text>
+  <line x1="40" y1="293" x2="260" y2="293" stroke="#000000" stroke-width="1"/>
+  <text x="55" y="315" font-size="11" fill="#000000">owner_name_ = "김민준"</text>
+  <text x="55" y="335" font-size="11" fill="#000000">balance_ = 11000.0</text>
+  <text x="150" y="365" font-size="10" text-anchor="middle" fill="#000000">독립된 메모리 공간</text>
+  <text x="150" y="382" font-size="10" text-anchor="middle" fill="#000000">(자신만의 데이터 보유)</text>
+
+  <!-- Instance 2 -->
+  <rect x="440" y="260" width="220" height="150" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="550" y="283" font-size="13" text-anchor="middle" fill="#000000" font-weight="bold">account2 : BankAccount</text>
+  <line x1="440" y1="293" x2="660" y2="293" stroke="#000000" stroke-width="1"/>
+  <text x="455" y="315" font-size="11" fill="#000000">owner_name_ = "이서연"</text>
+  <text x="455" y="335" font-size="11" fill="#000000">balance_ = 5000.0</text>
+  <text x="550" y="365" font-size="10" text-anchor="middle" fill="#000000">독립된 메모리 공간</text>
+  <text x="550" y="382" font-size="10" text-anchor="middle" fill="#000000">(자신만의 데이터 보유)</text>
+
+  <text x="350" y="435" font-size="11" text-anchor="middle" fill="#000000">같은 클래스에서 만들어졌지만, 각 객체는 서로 다른 값을 독립적으로 저장한다</text>
+
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
