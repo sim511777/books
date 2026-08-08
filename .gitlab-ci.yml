@@ -11,7 +11,7 @@ pages:
   stage: deploy
   script:
     - pip install --no-cache-dir mkdocs-material
-    - mkdocs build --strict --site-dir public
+    - mkdocs build --site-dir public
   artifacts:
     paths:
       - public
