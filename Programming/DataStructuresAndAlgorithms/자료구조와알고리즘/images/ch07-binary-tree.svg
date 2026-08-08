@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" font-family="sans-serif">
+  <rect x="0" y="0" width="780" height="420" fill="white" />
+
+  <!-- 깊이 안내선 -->
+  <g stroke="black" stroke-dasharray="4,4" stroke-width="1">
+    <line x1="20" y1="50" x2="760" y2="50" />
+    <line x1="20" y1="140" x2="760" y2="140" />
+    <line x1="20" y1="230" x2="760" y2="230" />
+    <line x1="20" y1="320" x2="760" y2="320" />
+  </g>
+  <g font-size="14">
+    <text x="20" y="45">깊이 0</text>
+    <text x="20" y="135">깊이 1</text>
+    <text x="20" y="225">깊이 2</text>
+    <text x="20" y="315">깊이 3</text>
+  </g>
+
+  <!-- 간선 -->
+  <g stroke="black" stroke-width="2">
+    <line x1="380" y1="50" x2="220" y2="140" />
+    <line x1="380" y1="50" x2="540" y2="140" />
+    <line x1="220" y1="140" x2="120" y2="230" />
+    <line x1="220" y1="140" x2="300" y2="230" />
+    <line x1="540" y1="140" x2="620" y2="230" />
+    <line x1="300" y1="230" x2="240" y2="320" />
+    <line x1="300" y1="230" x2="360" y2="320" />
+    <line x1="620" y1="230" x2="600" y2="320" />
+  </g>
+
+  <!-- 노드 -->
+  <g stroke="black" stroke-width="2" fill="white">
+    <circle cx="380" cy="50" r="22" />
+    <circle cx="220" cy="140" r="22" />
+    <circle cx="540" cy="140" r="22" />
+    <circle cx="120" cy="230" r="22" />
+    <circle cx="300" cy="230" r="22" />
+    <circle cx="620" cy="230" r="22" />
+    <circle cx="240" cy="320" r="22" />
+    <circle cx="360" cy="320" r="22" />
+    <circle cx="600" cy="320" r="22" />
+  </g>
+
+  <!-- 노드 값 -->
+  <g font-size="16" text-anchor="middle" fill="black">
+    <text x="380" y="56">8</text>
+    <text x="220" y="146">3</text>
+    <text x="540" y="146">10</text>
+    <text x="120" y="236">1</text>
+    <text x="300" y="236">6</text>
+    <text x="620" y="236">14</text>
+    <text x="240" y="326">4</text>
+    <text x="360" y="326">7</text>
+    <text x="600" y="326">13</text>
+  </g>
+
+  <!-- 용어 주석 -->
+  <g font-size="14" fill="black">
+    <text x="410" y="30">← 루트(root)</text>
+    <text x="70" y="200">리프(leaf)</text>
+    <text x="200" y="360">리프(leaf)</text>
+    <text x="330" y="360">리프(leaf)</text>
+    <text x="560" y="360">리프(leaf)</text>
+
+    <text x="140" y="115">부모</text>
+    <text x="255" y="205">자식</text>
+    <line x1="220" y1="140" x2="300" y2="230" stroke="black" stroke-width="1" stroke-dasharray="2,2" />
+
+    <text x="660" y="120">형제(sibling) 없음</text>
+    <text x="560" y="180">(10의 왼쪽 자식 없음)</text>
+
+    <text x="640" y="400" font-weight="bold">트리의 높이 = 3</text>
+  </g>
+</svg>
