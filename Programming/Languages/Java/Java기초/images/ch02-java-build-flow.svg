@@ -1,0 +1,70 @@
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="900" height="360" fill="#ffffff" />
+
+  <!-- Step 1: Source code -->
+  <rect x="20" y="120" width="160" height="100" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="100" y="150" text-anchor="middle" font-size="16" fill="#000000">Hello.java</text>
+  <text x="100" y="175" text-anchor="middle" font-size="13" fill="#000000">(소스 코드)</text>
+  <text x="100" y="195" text-anchor="middle" font-size="12" fill="#000000">사람이 읽는</text>
+  <text x="100" y="210" text-anchor="middle" font-size="12" fill="#000000">Java 텍스트</text>
+
+  <!-- Arrow 1 -->
+  <line x1="180" y1="170" x2="255" y2="170" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="217" y="150" text-anchor="middle" font-size="13" fill="#000000">javac</text>
+  <text x="217" y="195" text-anchor="middle" font-size="11" fill="#000000">(컴파일)</text>
+
+  <!-- Step 2: Bytecode -->
+  <rect x="260" y="120" width="160" height="100" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="340" y="150" text-anchor="middle" font-size="16" fill="#000000">Hello.class</text>
+  <text x="340" y="175" text-anchor="middle" font-size="13" fill="#000000">(바이트코드)</text>
+  <text x="340" y="195" text-anchor="middle" font-size="12" fill="#000000">플랫폼 독립적인</text>
+  <text x="340" y="210" text-anchor="middle" font-size="12" fill="#000000">중간 명령어</text>
+
+  <!-- Arrow 2 -->
+  <line x1="420" y1="170" x2="495" y2="170" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="457" y="150" text-anchor="middle" font-size="13" fill="#000000">java</text>
+  <text x="457" y="195" text-anchor="middle" font-size="11" fill="#000000">(실행 시작)</text>
+
+  <!-- Step 3: JVM box -->
+  <rect x="500" y="60" width="380" height="260" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="690" y="90" text-anchor="middle" font-size="16" fill="#000000">JVM (Java Virtual Machine)</text>
+
+  <!-- JVM internal: class loader -->
+  <rect x="525" y="115" width="150" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="600" y="140" text-anchor="middle" font-size="13" fill="#000000">클래스 로더</text>
+  <text x="600" y="158" text-anchor="middle" font-size="11" fill="#000000">.class 파일 적재</text>
+
+  <line x1="675" y1="145" x2="705" y2="145" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- JVM internal: bytecode verifier / interpreter+JIT -->
+  <rect x="710" y="115" width="150" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="785" y="135" text-anchor="middle" font-size="12" fill="#000000">인터프리터 / JIT</text>
+  <text x="785" y="153" text-anchor="middle" font-size="11" fill="#000000">바이트코드 해석</text>
+
+  <line x1="785" y1="175" x2="785" y2="200" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- JVM internal: runtime execution -->
+  <rect x="710" y="205" width="150" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+  <text x="785" y="228" text-anchor="middle" font-size="12" fill="#000000">실제 기계어로</text>
+  <text x="785" y="246" text-anchor="middle" font-size="12" fill="#000000">변환 후 실행</text>
+
+  <line x1="710" y1="235" x2="685" y2="235" stroke="#000000" stroke-width="1.5" />
+  <line x1="685" y1="235" x2="685" y2="145" stroke="#000000" stroke-width="1.5" />
+  <line x1="685" y1="145" x2="675" y2="145" stroke="#000000" stroke-width="0" />
+
+  <!-- OS / CPU below JVM -->
+  <text x="690" y="295" text-anchor="middle" font-size="12" fill="#000000">↓ 운영체제 &amp; CPU에 맞게 실행</text>
+
+  <!-- Output -->
+  <rect x="660" y="300" width="0" height="0" />
+
+  <text x="450" y="345" text-anchor="middle" font-size="13" fill="#000000">
+    소스 코드 → 바이트코드 → JVM 실행이라는 세 단계로 Java 프로그램이 동작합니다
+  </text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000" />
+    </marker>
+  </defs>
+</svg>

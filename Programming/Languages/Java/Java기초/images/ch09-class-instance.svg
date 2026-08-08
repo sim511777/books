@@ -1,0 +1,67 @@
+<svg width="760" height="480" viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="760" height="480" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="380" y="30" font-family="sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">클래스(설계도)와 객체(인스턴스)의 관계</text>
+
+  <!-- Class box (blueprint) -->
+  <rect x="30" y="70" width="230" height="300" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="145" y="95" font-family="sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">BankAccount 클래스</text>
+  <text x="145" y="112" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">(설계도)</text>
+  <line x1="45" y1="122" x2="245" y2="122" stroke="#000000" stroke-width="1"/>
+
+  <text x="45" y="145" font-family="monospace" font-size="12" fill="#000000">필드</text>
+  <text x="55" y="165" font-family="monospace" font-size="12" fill="#000000">- owner: String</text>
+  <text x="55" y="183" font-family="monospace" font-size="12" fill="#000000">- balance: long</text>
+
+  <line x1="45" y1="200" x2="245" y2="200" stroke="#000000" stroke-width="1"/>
+
+  <text x="45" y="222" font-family="monospace" font-size="12" fill="#000000">생성자</text>
+  <text x="55" y="242" font-family="monospace" font-size="12" fill="#000000">BankAccount(owner)</text>
+
+  <line x1="45" y1="258" x2="245" y2="258" stroke="#000000" stroke-width="1"/>
+
+  <text x="45" y="280" font-family="monospace" font-size="12" fill="#000000">메서드</text>
+  <text x="55" y="300" font-family="monospace" font-size="12" fill="#000000">+ deposit(amount)</text>
+  <text x="55" y="318" font-family="monospace" font-size="12" fill="#000000">+ withdraw(amount)</text>
+  <text x="55" y="336" font-family="monospace" font-size="12" fill="#000000">+ getBalance()</text>
+
+  <text x="145" y="360" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#000000">(필드와 메서드의 구조만 정의)</text>
+
+  <!-- Arrows -->
+  <line x1="260" y1="130" x2="400" y2="90" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="260" y1="220" x2="400" y2="220" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="260" y1="310" x2="400" y2="350" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="300" y="90" font-family="sans-serif" font-size="11" fill="#000000">new</text>
+  <text x="300" y="212" font-family="sans-serif" font-size="11" fill="#000000">new</text>
+  <text x="300" y="335" font-family="sans-serif" font-size="11" fill="#000000">new</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Instance 1 -->
+  <rect x="410" y="55" width="320" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="75" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">myAccount : BankAccount</text>
+  <text x="425" y="95" font-family="monospace" font-size="12" fill="#000000">owner = "민수"</text>
+  <text x="425" y="113" font-family="monospace" font-size="12" fill="#000000">balance = 50000</text>
+
+  <!-- Instance 2 -->
+  <rect x="410" y="185" width="320" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="205" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">yourAccount : BankAccount</text>
+  <text x="425" y="225" font-family="monospace" font-size="12" fill="#000000">owner = "지은"</text>
+  <text x="425" y="243" font-family="monospace" font-size="12" fill="#000000">balance = 120000</text>
+
+  <!-- Instance 3 -->
+  <rect x="410" y="315" width="320" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="335" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">savingsAccount : BankAccount</text>
+  <text x="425" y="355" font-family="monospace" font-size="12" fill="#000000">owner = "민수"</text>
+  <text x="425" y="373" font-family="monospace" font-size="12" fill="#000000">balance = 3000000</text>
+
+  <text x="380" y="430" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">
+  </text>
+  <text x="380" y="450" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#000000">하나의 클래스로부터 서로 독립적인 필드 값을 가진 여러 객체를 만들 수 있다</text>
+</svg>
