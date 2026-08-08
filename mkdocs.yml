@@ -1,0 +1,70 @@
+site_name: 프로그래밍 학습 자료실
+site_description: >-
+  C, C++, C#, Java, Python, Go, Rust, Kotlin, Dart, Clojure, Haskell, Lisp 입문서와
+  디자인 패턴, 자료구조/알고리즘 책 모음
+docs_dir: Programming
+site_dir: public
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로 전환
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search:
+      lang: ko
+
+extra:
+  generator: false
+
+nav:
+  - 홈: index.md
+  - 프로그래밍 언어:
+      - C: Languages/C/C기초/00-목차.md
+      - "C++": Languages/Cpp/Cpp기초/00-목차.md
+      - "C#": Languages/CSharp/CSharp기초/00-목차.md
+      - Java: Languages/Java/Java기초/00-목차.md
+      - Python: Languages/Python/Python기초/00-목차.md
+      - Go: Languages/Go/Go기초/00-목차.md
+      - Rust: Languages/Rust/Rust기초/00-목차.md
+      - Kotlin: Languages/Kotlin/Kotlin기초/00-목차.md
+      - Dart: Languages/Dart/Dart기초/00-목차.md
+      - Clojure: Languages/Clojure/Clojure기초/00-목차.md
+      - Haskell: Languages/Haskell/Haskell기초/00-목차.md
+      - Lisp (Common Lisp): Languages/Lisp/Lisp기초/00-목차.md
+  - 소프트웨어 설계:
+      - "디자인 패턴 (C#)": DesignPatterns/디자인패턴/00-목차.md
+  - 자료구조와 알고리즘:
+      - "자료구조와 알고리즘 (C#)": DataStructuresAndAlgorithms/자료구조와알고리즘/00-목차.md
