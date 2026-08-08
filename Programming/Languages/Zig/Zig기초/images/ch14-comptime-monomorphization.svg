@@ -1,0 +1,58 @@
+<svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="780" height="340" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="390" y="26" font-size="16" text-anchor="middle" fill="black" font-weight="bold">Stack(comptime T: type)의 컴파일 타임 / 런타임 구분</text>
+
+  <!-- 컴파일 타임 영역 -->
+  <rect x="20" y="44" width="740" height="130" stroke="black" stroke-width="1.5" fill="none" stroke-dasharray="5,4"/>
+  <text x="40" y="64" font-size="13" fill="black" font-weight="bold">컴파일 타임</text>
+
+  <rect x="50" y="80" width="150" height="50" stroke="black" stroke-width="2" fill="none"/>
+  <text x="125" y="100" font-size="12" text-anchor="middle" fill="black">Stack(T) 함수</text>
+  <text x="125" y="118" font-size="12" text-anchor="middle" fill="black">(struct를 반환)</text>
+
+  <path d="M 200 105 L 260 105" stroke="black" stroke-width="1.5" marker-end="url(#arrow14a)"/>
+  <text x="230" y="98" font-size="11" text-anchor="middle" fill="black">T=i32</text>
+  <rect x="260" y="80" width="180" height="50" stroke="black" stroke-width="2" fill="none"/>
+  <text x="350" y="100" font-size="12" text-anchor="middle" fill="black">Stack(i32) 타입 생성</text>
+  <text x="350" y="118" font-size="12" text-anchor="middle" fill="black">items: [16]i32</text>
+
+  <path d="M 200 125 L 260 155" stroke="black" stroke-width="1.5" marker-end="url(#arrow14a)"/>
+  <text x="230" y="150" font-size="11" text-anchor="middle" fill="black">T=[]const u8</text>
+  <rect x="260" y="140" width="180" height="50" stroke="black" stroke-width="2" fill="none"/>
+  <text x="350" y="160" font-size="12" text-anchor="middle" fill="black">Stack([]const u8) 타입 생성</text>
+  <text x="350" y="178" font-size="12" text-anchor="middle" fill="black">items: [16][]const u8</text>
+
+  <path d="M 440 105 L 540 105" stroke="black" stroke-width="1.5" marker-end="url(#arrow14a)"/>
+  <path d="M 440 165 L 540 130" stroke="black" stroke-width="1.5" marker-end="url(#arrow14a)"/>
+  <rect x="540" y="80" width="200" height="110" stroke="black" stroke-width="2" fill="none"/>
+  <text x="640" y="100" font-size="12" text-anchor="middle" fill="black" font-weight="bold">서로 다른 두 타입의</text>
+  <text x="640" y="116" font-size="12" text-anchor="middle" fill="black" font-weight="bold">push/pop 기계어 생성</text>
+  <text x="640" y="140" font-size="11" text-anchor="middle" fill="black">(모노모피제이션)</text>
+  <text x="640" y="160" font-size="11" text-anchor="middle" fill="black">두 타입은 이름만 같은</text>
+  <text x="640" y="176" font-size="11" text-anchor="middle" fill="black">함수에서 나왔을 뿐 별개</text>
+
+  <!-- 화살표: 컴파일 타임 -> 런타임 -->
+  <path d="M 390 174 L 390 206" stroke="black" stroke-width="1.5" marker-end="url(#arrow14a)"/>
+  <text x="430" y="196" font-size="12" text-anchor="middle" fill="black">실행 파일 완성</text>
+
+  <!-- 런타임 영역 -->
+  <rect x="20" y="216" width="740" height="104" stroke="black" stroke-width="1.5" fill="none" stroke-dasharray="5,4"/>
+  <text x="40" y="236" font-size="13" fill="black" font-weight="bold">런타임</text>
+
+  <rect x="90" y="250" width="260" height="54" stroke="black" stroke-width="2" fill="none"/>
+  <text x="220" y="272" font-size="12" text-anchor="middle" fill="black">int_stack.push(10) / .pop()</text>
+  <text x="220" y="290" font-size="12" text-anchor="middle" fill="black">Stack(i32) 전용 코드 실행</text>
+
+  <rect x="430" y="250" width="260" height="54" stroke="black" stroke-width="2" fill="none"/>
+  <text x="560" y="272" font-size="12" text-anchor="middle" fill="black">name_stack.push("zig") / .pop()</text>
+  <text x="560" y="290" font-size="12" text-anchor="middle" fill="black">Stack([]const u8) 전용 코드 실행</text>
+
+  <defs>
+    <marker id="arrow14a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="black"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,51 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" />
+
+  <!-- Box: function call -->
+  <rect x="30" y="170" width="160" height="70" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="110" y="200" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#000000">foo() !i32</text>
+  <text x="110" y="222" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#000000">호출</text>
+
+  <!-- Arrow from call to decision -->
+  <line x1="190" y1="205" x2="250" y2="205" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Decision diamond -->
+  <polygon points="250,205 320,155 390,205 320,255" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="320" y="200" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#000000">에러</text>
+  <text x="320" y="218" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#000000">유니온</text>
+
+  <!-- Upper branch: normal value -->
+  <line x1="360" y1="180" x2="440" y2="110" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="420" y="140" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">정상값</text>
+
+  <rect x="440" y="70" width="150" height="70" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="515" y="100" font-family="sans-serif" font-size="15" text-anchor="middle" fill="#000000">i32 값</text>
+  <text x="515" y="122" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">그대로 사용</text>
+
+  <!-- Lower branch: error value -->
+  <line x1="360" y1="230" x2="440" y2="300" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="420" y="270" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">에러값</text>
+
+  <rect x="440" y="270" width="150" height="70" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="515" y="300" font-family="sans-serif" font-size="15" text-anchor="middle" fill="#000000">error 값</text>
+  <text x="515" y="322" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">(예: error.OutOfRange)</text>
+
+  <!-- try path -->
+  <line x1="590" y1="290" x2="650" y2="290" stroke="#000000" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="650" y="270" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">try</text>
+  <text x="620" y="360" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">호출자에게</text>
+  <text x="620" y="378" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">즉시 return</text>
+
+  <!-- catch path label near error box -->
+  <text x="515" y="235" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">catch |err| { ... }</text>
+  <text x="515" y="252" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">→ 그 자리에서 처리</text>
+
+  <!-- try label near value box -->
+  <text x="515" y="35" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">try foo() → 값만 남음</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#000000" />
+    </marker>
+  </defs>
+</svg>
