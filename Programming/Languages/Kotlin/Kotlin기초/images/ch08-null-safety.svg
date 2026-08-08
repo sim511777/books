@@ -1,0 +1,69 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="900" height="620" fill="#ffffff" stroke="none"/>
+
+  <!-- 제목 -->
+  <text x="450" y="35" font-size="22" font-weight="bold" text-anchor="middle" fill="#000000">Kotlin 타입 시스템: 널러블 타입과 널이 될 수 없는 타입</text>
+
+  <!-- 왼쪽 박스: String (non-null) -->
+  <rect x="60" y="80" width="330" height="140" fill="#ffffff" stroke="#000000" stroke-width="2" rx="8"/>
+  <text x="225" y="112" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">String</text>
+  <text x="225" y="134" font-size="13" text-anchor="middle" fill="#000000">널이 될 수 없는 타입</text>
+  <text x="225" y="160" font-size="13" text-anchor="middle" fill="#000000">val name: String = "지수"</text>
+  <text x="225" y="180" font-size="13" text-anchor="middle" fill="#000000">name.length  → 항상 안전하게 호출 가능</text>
+  <text x="225" y="205" font-size="12" text-anchor="middle" fill="#000000">null 대입 시 컴파일 오류 발생</text>
+
+  <!-- 오른쪽 박스: String? (nullable) -->
+  <rect x="510" y="80" width="330" height="140" fill="#ffffff" stroke="#000000" stroke-width="2" rx="8"/>
+  <text x="675" y="112" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">String?</text>
+  <text x="675" y="134" font-size="13" text-anchor="middle" fill="#000000">널러블 타입</text>
+  <text x="675" y="160" font-size="13" text-anchor="middle" fill="#000000">val name: String? = null</text>
+  <text x="675" y="180" font-size="13" text-anchor="middle" fill="#000000">name.length  → 컴파일 오류!</text>
+  <text x="675" y="205" font-size="12" text-anchor="middle" fill="#000000">null 대입 가능</text>
+
+  <!-- 컴파일러 체크 표시 -->
+  <text x="225" y="245" font-size="14" text-anchor="middle" fill="#000000">✓ 컴파일러가 허용</text>
+  <text x="675" y="245" font-size="14" text-anchor="middle" fill="#000000">✗ 직접 접근은 컴파일러가 차단</text>
+
+  <!-- 아래쪽: String?를 안전하게 다루는 세 가지 방법 -->
+  <text x="450" y="300" font-size="16" font-weight="bold" text-anchor="middle" fill="#000000">String? 값을 안전하게 다루는 방법</text>
+
+  <!-- 화살표: String?에서 세 방법으로 -->
+  <line x1="675" y1="220" x2="250" y2="340" stroke="#000000" stroke-width="1.5"/>
+  <line x1="675" y1="220" x2="450" y2="340" stroke="#000000" stroke-width="1.5"/>
+  <line x1="675" y1="220" x2="650" y2="340" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- 방법 1: 안전 호출 ?. -->
+  <rect x="70" y="340" width="240" height="120" fill="#ffffff" stroke="#000000" stroke-width="2" rx="8"/>
+  <text x="190" y="368" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">안전 호출 ?.</text>
+  <text x="190" y="392" font-size="12" text-anchor="middle" fill="#000000">name?.length</text>
+  <text x="190" y="414" font-size="12" text-anchor="middle" fill="#000000">name이 null이면</text>
+  <text x="190" y="432" font-size="12" text-anchor="middle" fill="#000000">전체 결과가 null</text>
+  <text x="190" y="450" font-size="12" text-anchor="middle" fill="#000000">(예외 없이 안전)</text>
+
+  <!-- 방법 2: 엘비스 ?: -->
+  <rect x="330" y="340" width="240" height="120" fill="#ffffff" stroke="#000000" stroke-width="2" rx="8"/>
+  <text x="450" y="368" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">엘비스 연산자 ?:</text>
+  <text x="450" y="392" font-size="12" text-anchor="middle" fill="#000000">name?.length ?: 0</text>
+  <text x="450" y="414" font-size="12" text-anchor="middle" fill="#000000">null일 때 사용할</text>
+  <text x="450" y="432" font-size="12" text-anchor="middle" fill="#000000">대체 값을 지정</text>
+  <text x="450" y="450" font-size="12" text-anchor="middle" fill="#000000">(기본값 제공)</text>
+
+  <!-- 방법 3: non-null 단언 !! -->
+  <rect x="590" y="340" width="240" height="120" fill="#ffffff" stroke="#000000" stroke-width="2" rx="8"/>
+  <text x="710" y="368" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">non-null 단언 !!</text>
+  <text x="710" y="392" font-size="12" text-anchor="middle" fill="#000000">name!!.length</text>
+  <text x="710" y="414" font-size="12" text-anchor="middle" fill="#000000">null이 아니라고</text>
+  <text x="710" y="432" font-size="12" text-anchor="middle" fill="#000000">강제로 단언</text>
+  <text x="710" y="450" font-size="12" text-anchor="middle" fill="#000000">(실제 null이면 예외 발생)</text>
+
+  <!-- let 패턴 -->
+  <rect x="200" y="500" width="500" height="90" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="6,4" rx="8"/>
+  <text x="450" y="528" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">let과 안전 호출 결합 패턴</text>
+  <text x="450" y="552" font-size="12" text-anchor="middle" fill="#000000">name?.let { println("이름: $it") }</text>
+  <text x="450" y="573" font-size="12" text-anchor="middle" fill="#000000">name이 null이 아닐 때만 블록 실행</text>
+
+  <!-- let로 연결하는 화살표 -->
+  <line x1="190" y1="460" x2="350" y2="500" stroke="#000000" stroke-width="1.2"/>
+
+</svg>

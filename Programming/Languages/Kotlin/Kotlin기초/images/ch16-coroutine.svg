@@ -1,0 +1,75 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="760" height="460" fill="#ffffff"/>
+
+  <!-- 제목 -->
+  <text x="380" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">블로킹 방식과 코루틴 방식 비교</text>
+
+  <!-- ===== 위쪽: 블로킹 방식 ===== -->
+  <text x="20" y="70" font-size="15" font-weight="bold" fill="#000000">1) 스레드를 블로킹하는 방식</text>
+
+  <!-- 스레드 레이블 -->
+  <text x="20" y="105" font-size="13" fill="#000000">스레드 1개</text>
+
+  <!-- 타임라인 축 -->
+  <line x1="120" y1="130" x2="720" y2="130" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- 작업 A 실행 구간 -->
+  <rect x="120" y="95" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="165" y="117" font-size="12" text-anchor="middle" fill="#000000">작업 A 실행</text>
+
+  <!-- 네트워크 대기(블로킹) 구간: 아무 일도 못 함 -->
+  <rect x="210" y="95" width="220" height="35" fill="#e6e6e6" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="320" y="112" font-size="12" text-anchor="middle" fill="#000000">네트워크 응답 대기</text>
+  <text x="320" y="126" font-size="11" text-anchor="middle" fill="#000000">(스레드 블로킹, 다른 일 못 함)</text>
+
+  <!-- 작업 A 후속 실행 -->
+  <rect x="430" y="95" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="475" y="117" font-size="12" text-anchor="middle" fill="#000000">결과 처리</text>
+
+  <!-- 작업 B: 대기 구간 동안 시작조차 못 함 -->
+  <rect x="540" y="95" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="585" y="117" font-size="12" text-anchor="middle" fill="#000000">작업 B 실행</text>
+  <text x="585" y="150" font-size="11" text-anchor="middle" fill="#000000">→ 작업 A가 끝날 때까지 시작 못 함</text>
+
+  <!-- ===== 구분선 ===== -->
+  <line x1="20" y1="200" x2="740" y2="200" stroke="#000000" stroke-width="1"/>
+
+  <!-- ===== 아래쪽: 코루틴 방식 ===== -->
+  <text x="20" y="230" font-size="15" font-weight="bold" fill="#000000">2) 코루틴을 사용하는 방식 (delay로 중단)</text>
+
+  <text x="20" y="265" font-size="13" fill="#000000">스레드 1개</text>
+
+  <!-- 타임라인 축 -->
+  <line x1="120" y1="290" x2="720" y2="290" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- 코루틴 A 실행 -->
+  <rect x="120" y="255" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="165" y="277" font-size="12" text-anchor="middle" fill="#000000">코루틴 A 실행</text>
+
+  <!-- 코루틴 A 중단(suspend) 지점 표시 -->
+  <line x1="210" y1="245" x2="210" y2="345" stroke="#000000" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="212" y="240" font-size="11" fill="#000000">delay 호출 → 중단(suspend)</text>
+
+  <!-- 그 사이 스레드는 코루틴 B를 실행 -->
+  <rect x="220" y="255" width="150" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="295" y="277" font-size="12" text-anchor="middle" fill="#000000">코루틴 B 실행</text>
+  <text x="295" y="310" font-size="11" text-anchor="middle" fill="#000000">스레드는 놀지 않고 다른 일을 함</text>
+
+  <!-- 코루틴 A 재개(resume) 지점 표시 -->
+  <line x1="380" y1="245" x2="380" y2="345" stroke="#000000" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="382" y="240" font-size="11" fill="#000000">응답 도착 → 재개(resume)</text>
+
+  <!-- 코루틴 A 재개 후 결과 처리 -->
+  <rect x="390" y="255" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="435" y="277" font-size="12" text-anchor="middle" fill="#000000">코루틴 A 결과 처리</text>
+
+  <!-- 코루틴 B 계속 실행 가능 -->
+  <rect x="490" y="255" width="90" height="35" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="535" y="277" font-size="12" text-anchor="middle" fill="#000000">코루틴 B 계속</text>
+
+  <!-- 하단 설명 박스 -->
+  <rect x="20" y="380" width="700" height="60" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="35" y="402" font-size="12" fill="#000000">핵심 차이: 블로킹 방식은 대기 시간 동안 스레드가 완전히 멈춰 있지만,</text>
+  <text x="35" y="422" font-size="12" fill="#000000">코루틴 방식은 대기 중인 코루틴을 "중단"시켜 두고 같은 스레드로 다른 코루틴을 실행합니다.</text>
+</svg>
