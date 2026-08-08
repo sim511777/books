@@ -1,0 +1,84 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="760" height="460" fill="#ffffff" stroke="none"/>
+
+  <!-- 중앙 구분선 -->
+  <line x1="380" y1="20" x2="380" y2="440" stroke="#000000" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- 왼쪽 패널 제목 -->
+  <text x="190" y="35" font-size="18" text-anchor="middle" fill="#000000" font-weight="bold">불변 참조는 여러 개 허용</text>
+
+  <!-- 왼쪽: 소유자 s -->
+  <rect x="140" y="55" width="100" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="190" y="83" font-size="16" text-anchor="middle" fill="#000000">s: String</text>
+
+  <!-- 왼쪽: 화살표 3개 -->
+  <line x1="190" y1="100" x2="90" y2="180" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="90,180 98,178 96,187" fill="#000000"/>
+
+  <line x1="190" y1="100" x2="190" y2="180" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="190,180 186,171 194,171" fill="#000000"/>
+
+  <line x1="190" y1="100" x2="290" y2="180" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="290,180 282,178 284,187" fill="#000000"/>
+
+  <!-- 왼쪽: 불변 참조 박스 3개 -->
+  <rect x="45" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="90" y="215" font-size="13" text-anchor="middle" fill="#000000">r1 = &amp;s</text>
+
+  <rect x="145" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="190" y="215" font-size="13" text-anchor="middle" fill="#000000">r2 = &amp;s</text>
+
+  <rect x="245" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="215" font-size="13" text-anchor="middle" fill="#000000">r3 = &amp;s</text>
+
+  <!-- 왼쪽: 결과 표시 -->
+  <rect x="70" y="260" width="240" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="190" y="288" font-size="14" text-anchor="middle" fill="#000000">동시에 읽기 가능 (O)</text>
+
+  <text x="190" y="335" font-size="12" text-anchor="middle" fill="#000000">읽기만 하는 참조는 서로 방해하지 않는다</text>
+  <text x="190" y="355" font-size="12" text-anchor="middle" fill="#000000">→ 개수 제한 없이 동시에 존재 가능</text>
+
+  <!-- 오른쪽 패널 제목 -->
+  <text x="570" y="35" font-size="18" text-anchor="middle" fill="#000000" font-weight="bold">가변 참조는 하나만 허용</text>
+
+  <!-- 오른쪽: 소유자 s -->
+  <rect x="520" y="55" width="100" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="83" font-size="16" text-anchor="middle" fill="#000000">s: String</text>
+
+  <!-- 오른쪽: 허용되는 화살표 1개 -->
+  <line x1="570" y1="100" x2="470" y2="180" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="470,180 478,178 476,187" fill="#000000"/>
+
+  <!-- 오른쪽: 차단되는 화살표 2개 (점선 + X) -->
+  <line x1="570" y1="100" x2="570" y2="180" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="570" y1="100" x2="670" y2="180" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+  <!-- 오른쪽: 참조 박스 3개 -->
+  <rect x="425" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="470" y="211" font-size="13" text-anchor="middle" fill="#000000">r1 = &amp;mut s</text>
+  <text x="470" y="226" font-size="11" text-anchor="middle" fill="#000000">(허용)</text>
+
+  <rect x="525" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="570" y="211" font-size="13" text-anchor="middle" fill="#000000">r2 = &amp;mut s</text>
+  <line x1="530" y1="195" x2="610" y2="225" stroke="#000000" stroke-width="1.5"/>
+  <line x1="610" y1="195" x2="530" y2="225" stroke="#000000" stroke-width="1.5"/>
+
+  <rect x="625" y="190" width="90" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="670" y="211" font-size="13" text-anchor="middle" fill="#000000">r3 = &amp;s</text>
+  <line x1="630" y1="195" x2="710" y2="225" stroke="#000000" stroke-width="1.5"/>
+  <line x1="710" y1="195" x2="630" y2="225" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- 오른쪽: 결과 표시 -->
+  <rect x="450" y="260" width="240" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="570" y="281" font-size="14" text-anchor="middle" fill="#000000">r1만 존재 가능 (O)</text>
+  <text x="570" y="298" font-size="12" text-anchor="middle" fill="#000000">r2, r3은 컴파일 오류 (X)</text>
+
+  <text x="570" y="335" font-size="12" text-anchor="middle" fill="#000000">쓰기 가능한 참조가 있는 동안</text>
+  <text x="570" y="355" font-size="12" text-anchor="middle" fill="#000000">다른 참조가 끼어들면 데이터 경쟁 위험</text>
+
+  <!-- 하단 요약 -->
+  <rect x="60" y="390" width="640" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="380" y="411" font-size="13" text-anchor="middle" fill="#000000">빌림 규칙: 가변 참조는 동시에 최대 1개, 가변 참조와 불변 참조는 함께 존재할 수 없다</text>
+  <text x="380" y="429" font-size="12" text-anchor="middle" fill="#000000">→ 컴파일 시점에 데이터 경쟁을 방지한다</text>
+</svg>
