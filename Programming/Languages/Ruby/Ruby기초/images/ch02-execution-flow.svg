@@ -1,0 +1,44 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Step 1: 소스 코드 작성 -->
+  <rect x="40" y="60" width="180" height="100" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="130" y="100" text-anchor="middle" font-size="16" fill="#000000">소스 코드 작성</text>
+  <text x="130" y="125" text-anchor="middle" font-size="13" fill="#333333">hello.rb</text>
+  <text x="130" y="145" text-anchor="middle" font-size="12" fill="#555555">(텍스트 에디터)</text>
+
+  <!-- Arrow 1 -->
+  <line x1="220" y1="110" x2="270" y2="110" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: ruby 인터프리터 실행 -->
+  <rect x="270" y="60" width="200" height="100" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="370" y="95" text-anchor="middle" font-size="16" fill="#000000">ruby 인터프리터</text>
+  <text x="370" y="120" text-anchor="middle" font-size="13" fill="#333333">$ ruby hello.rb</text>
+  <text x="370" y="145" text-anchor="middle" font-size="12" fill="#555555">코드를 한 줄씩 해석 및 실행</text>
+
+  <!-- Arrow 2 -->
+  <line x1="470" y1="110" x2="520" y2="110" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: 결과 출력 -->
+  <rect x="520" y="60" width="140" height="100" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="590" y="100" text-anchor="middle" font-size="16" fill="#000000">결과 출력</text>
+  <text x="590" y="125" text-anchor="middle" font-size="13" fill="#333333">터미널 화면</text>
+
+  <!-- Detail box below: 내부 처리 과정 -->
+  <rect x="120" y="240" width="460" height="120" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="350" y="265" text-anchor="middle" font-size="14" fill="#000000">인터프리터 내부 처리 순서</text>
+
+  <text x="180" y="300" text-anchor="middle" font-size="12" fill="#333333">코드 읽기</text>
+  <line x1="230" y1="296" x2="270" y2="296" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="320" y="300" text-anchor="middle" font-size="12" fill="#333333">문법 분석</text>
+  <line x1="370" y1="296" x2="410" y2="296" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="460" y="300" text-anchor="middle" font-size="12" fill="#333333">순차 실행</text>
+
+  <text x="350" y="335" text-anchor="middle" font-size="12" fill="#555555">별도의 컴파일 단계 없이 실행과 동시에 처리됩니다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

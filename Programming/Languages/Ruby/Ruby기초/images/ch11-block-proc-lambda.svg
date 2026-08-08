@@ -1,0 +1,93 @@
+<svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="460" fill="#ffffff"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="18" fill="#000000">블록 · 프로크 · 람다 비교</text>
+
+  <!-- Column headers -->
+  <rect x="20" y="55" width="160" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="100" y="83" text-anchor="middle" font-size="15" fill="#000000">구분</text>
+
+  <rect x="180" y="55" width="170" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="265" y="77" text-anchor="middle" font-size="15" fill="#000000">블록</text>
+  <text x="265" y="93" text-anchor="middle" font-size="11" fill="#555555">do...end / { }</text>
+
+  <rect x="350" y="55" width="170" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="435" y="77" text-anchor="middle" font-size="15" fill="#000000">프로크</text>
+  <text x="435" y="93" text-anchor="middle" font-size="11" fill="#555555">Proc.new / proc</text>
+
+  <rect x="520" y="55" width="160" height="45" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="600" y="77" text-anchor="middle" font-size="15" fill="#000000">람다</text>
+  <text x="600" y="93" text-anchor="middle" font-size="11" fill="#555555">lambda / -&gt;</text>
+
+  <!-- Row 1: 객체 여부 -->
+  <rect x="20" y="100" width="160" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="100" y="135" text-anchor="middle" font-size="13" fill="#000000">객체 여부</text>
+
+  <rect x="180" y="100" width="170" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="265" y="128" text-anchor="middle" font-size="12" fill="#333333">독립 객체 아님</text>
+  <text x="265" y="146" text-anchor="middle" font-size="12" fill="#333333">메서드에 붙어 전달</text>
+
+  <rect x="350" y="100" width="170" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="435" y="135" text-anchor="middle" font-size="12" fill="#333333">Proc 객체</text>
+
+  <rect x="520" y="100" width="160" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="600" y="128" text-anchor="middle" font-size="12" fill="#333333">Proc 객체</text>
+  <text x="600" y="146" text-anchor="middle" font-size="12" fill="#333333">(lambda?는 true)</text>
+
+  <!-- Row 2: 인자 개수 검사 -->
+  <rect x="20" y="160" width="160" height="70" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="100" y="200" text-anchor="middle" font-size="13" fill="#000000">인자 개수 검사</text>
+
+  <rect x="180" y="160" width="170" height="70" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="265" y="190" text-anchor="middle" font-size="12" fill="#333333">엄격하지 않음</text>
+  <text x="265" y="208" text-anchor="middle" font-size="12" fill="#333333">부족하면 nil로 채움</text>
+
+  <rect x="350" y="160" width="170" height="70" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="435" y="190" text-anchor="middle" font-size="12" fill="#333333">엄격하지 않음</text>
+  <text x="435" y="208" text-anchor="middle" font-size="12" fill="#333333">초과 인자는 무시</text>
+
+  <rect x="520" y="160" width="160" height="70" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="600" y="190" text-anchor="middle" font-size="12" fill="#333333">엄격함</text>
+  <text x="600" y="208" text-anchor="middle" font-size="12" fill="#333333">개수 다르면 ArgumentError</text>
+
+  <!-- Row 3: return 동작 -->
+  <rect x="20" y="230" width="160" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="100" y="264" text-anchor="middle" font-size="13" fill="#000000">return 동작</text>
+  <text x="100" y="284" text-anchor="middle" font-size="11" fill="#555555">(블록/proc 안에서)</text>
+
+  <rect x="180" y="230" width="170" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="265" y="260" text-anchor="middle" font-size="12" fill="#333333">블록을 감싼</text>
+  <text x="265" y="278" text-anchor="middle" font-size="12" fill="#333333">메서드 자체를 종료</text>
+
+  <rect x="350" y="230" width="170" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="435" y="260" text-anchor="middle" font-size="12" fill="#333333">프로크를 생성한</text>
+  <text x="435" y="278" text-anchor="middle" font-size="12" fill="#333333">메서드 자체를 종료</text>
+
+  <rect x="520" y="230" width="160" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="600" y="260" text-anchor="middle" font-size="12" fill="#333333">람다 자신만 종료</text>
+  <text x="600" y="278" text-anchor="middle" font-size="12" fill="#333333">(메서드처럼 동작)</text>
+
+  <!-- Row 4: 주요 용도 -->
+  <rect x="20" y="310" width="160" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="100" y="345" text-anchor="middle" font-size="13" fill="#000000">주요 용도</text>
+
+  <rect x="180" y="310" width="170" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="265" y="340" text-anchor="middle" font-size="12" fill="#333333">일회성 반복 처리</text>
+  <text x="265" y="358" text-anchor="middle" font-size="12" fill="#333333">each, map 등</text>
+
+  <rect x="350" y="310" width="170" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="435" y="340" text-anchor="middle" font-size="12" fill="#333333">저장/재사용할</text>
+  <text x="435" y="358" text-anchor="middle" font-size="12" fill="#333333">지연 실행 코드</text>
+
+  <rect x="520" y="310" width="160" height="80" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="600" y="340" text-anchor="middle" font-size="12" fill="#333333">함수처럼 쓰는</text>
+  <text x="600" y="358" text-anchor="middle" font-size="12" fill="#333333">콜백, 검증 로직</text>
+
+  <text x="350" y="425" text-anchor="middle" font-size="12" fill="#555555">세 가지 모두 "코드 덩어리를 값처럼 다룬다"는 공통점을 가집니다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

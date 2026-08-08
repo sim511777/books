@@ -1,0 +1,55 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="18" fill="#000000">Enumerable 메서드 체이닝 파이프라인</text>
+
+  <!-- Stage 0: 원본 배열 -->
+  <rect x="20" y="80" width="130" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="85" y="110" text-anchor="middle" font-size="14" fill="#000000">원본 배열</text>
+  <text x="85" y="132" text-anchor="middle" font-size="12" fill="#333333">[1, 2, 3, 4, 5]</text>
+  <text x="85" y="152" text-anchor="middle" font-size="11" fill="#555555">numbers</text>
+
+  <!-- Arrow 1 -->
+  <line x1="150" y1="125" x2="195" y2="125" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="172" y="115" text-anchor="middle" font-size="12" fill="#000000">.map</text>
+
+  <!-- Stage 1: map 결과 -->
+  <rect x="195" y="80" width="130" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="260" y="105" text-anchor="middle" font-size="13" fill="#000000">map { |n| n * n }</text>
+  <text x="260" y="132" text-anchor="middle" font-size="12" fill="#333333">[1, 4, 9, 16, 25]</text>
+  <text x="260" y="152" text-anchor="middle" font-size="11" fill="#555555">각 요소를 변환</text>
+
+  <!-- Arrow 2 -->
+  <line x1="325" y1="125" x2="370" y2="125" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="347" y="115" text-anchor="middle" font-size="12" fill="#000000">.select</text>
+
+  <!-- Stage 2: select 결과 -->
+  <rect x="370" y="80" width="140" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="440" y="105" text-anchor="middle" font-size="13" fill="#000000">select { |n| n.even? }</text>
+  <text x="440" y="132" text-anchor="middle" font-size="12" fill="#333333">[4, 16]</text>
+  <text x="440" y="152" text-anchor="middle" font-size="11" fill="#555555">조건에 맞는 요소만 남김</text>
+
+  <!-- Arrow 3 -->
+  <line x1="510" y1="125" x2="555" y2="125" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="532" y="115" text-anchor="middle" font-size="12" fill="#000000">.reduce</text>
+
+  <!-- Stage 3: reduce 결과 -->
+  <rect x="555" y="80" width="125" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="617" y="105" text-anchor="middle" font-size="13" fill="#000000">reduce(:+)</text>
+  <text x="617" y="132" text-anchor="middle" font-size="16" fill="#000000">20</text>
+  <text x="617" y="152" text-anchor="middle" font-size="11" fill="#555555">하나의 값으로 누적</text>
+
+  <!-- Code box below -->
+  <rect x="60" y="220" width="580" height="70" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="350" y="248" text-anchor="middle" font-size="13" fill="#000000">numbers.map { |n| n * n }</text>
+  <text x="350" y="268" text-anchor="middle" font-size="13" fill="#000000">.select { |n| n.even? }.reduce(:+)</text>
+
+  <text x="350" y="330" text-anchor="middle" font-size="12" fill="#555555">각 메서드는 새 배열(또는 값)을 반환하므로 점(.)으로 계속 이어 쓸 수 있습니다</text>
+  <text x="350" y="352" text-anchor="middle" font-size="12" fill="#555555">map, select, reduce는 모두 each를 기반으로 하는 Enumerable의 메서드입니다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
