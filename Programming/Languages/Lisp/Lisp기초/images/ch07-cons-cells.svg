@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="820" height="320" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="410" y="30" font-size="18" text-anchor="middle" fill="black">리스트 (1 2 3)의 cons 셀 구조</text>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- lst 변수 -->
+  <text x="40" y="95" font-size="15" fill="black">lst</text>
+  <line x1="55" y1="90" x2="90" y2="90" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Cons Cell 1 -->
+  <g>
+    <rect x="90" y="60" width="140" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+    <line x1="160" y1="60" x2="160" y2="120" stroke="black" stroke-width="1.5"/>
+    <text x="125" y="96" font-size="16" text-anchor="middle" fill="black">1</text>
+    <text x="100" y="45" font-size="12" fill="black">car</text>
+    <text x="195" y="45" font-size="12" fill="black">cdr</text>
+  </g>
+  <line x1="195" y1="90" x2="290" y2="90" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Cons Cell 2 -->
+  <g>
+    <rect x="290" y="60" width="140" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+    <line x1="360" y1="60" x2="360" y2="120" stroke="black" stroke-width="1.5"/>
+    <text x="325" y="96" font-size="16" text-anchor="middle" fill="black">2</text>
+  </g>
+  <line x1="395" y1="90" x2="490" y2="90" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Cons Cell 3 -->
+  <g>
+    <rect x="490" y="60" width="140" height="60" fill="white" stroke="black" stroke-width="1.5"/>
+    <line x1="560" y1="60" x2="560" y2="120" stroke="black" stroke-width="1.5"/>
+    <text x="525" y="96" font-size="16" text-anchor="middle" fill="black">3</text>
+  </g>
+  <line x1="595" y1="90" x2="690" y2="90" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- nil -->
+  <ellipse cx="740" cy="90" rx="40" ry="24" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="740" y="96" font-size="15" text-anchor="middle" fill="black">nil</text>
+
+  <!-- 각 cons 셀의 car/cdr 구성 안내 -->
+  <text x="410" y="160" font-size="13" text-anchor="middle" fill="black">각 상자는 car(값)와 cdr(다음 cons 셀 또는 nil을 가리키는 포인터)로 이루어진 cons 셀입니다.</text>
+
+  <!-- 대응하는 Lisp 함수 호출 -->
+  <text x="90" y="210" font-size="14" fill="black">(car lst)   =&gt;  1</text>
+  <text x="90" y="235" font-size="14" fill="black">(cdr lst)   =&gt;  (2 3)</text>
+  <text x="90" y="260" font-size="14" fill="black">(cadr lst)  =&gt;  2   ; (car (cdr lst))</text>
+  <text x="90" y="285" font-size="14" fill="black">(cddr lst)  =&gt;  nil ; 세 번째 cons 셀의 cdr</text>
+
+</svg>
