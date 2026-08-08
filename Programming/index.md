@@ -1,6 +1,6 @@
 # 프로그래밍 학습 자료실
 
-이 사이트는 프로그래밍 언어 12종, 디자인 패턴, 자료구조와 알고리즘을 처음부터 새로 집필한
+이 사이트는 프로그래밍 언어 15종, 디자인 패턴, 자료구조와 알고리즘을 처음부터 새로 집필한
 입문서 모음입니다. 각 책은 18~25개 장 + 부록으로 구성되어 있으며, 장마다 개념 설명·예제 코드·
 요약·연습문제를 담고 있습니다.
 
@@ -20,6 +20,9 @@
 | Clojure | JVM 기반의 Lisp 계열 함수형 언어 | [Clojure 기초부터 응용까지](Languages/Clojure/Clojure기초/00-목차.md) |
 | Haskell | 순수 함수형·지연 평가 언어 | [Haskell 기초부터 응용까지](Languages/Haskell/Haskell기초/00-목차.md) |
 | Lisp (Common Lisp) | 코드가 곧 데이터인 Lisp 계열의 원조 | [Lisp 기초부터 응용까지](Languages/Lisp/Lisp기초/00-목차.md) |
+| Ruby | 블록·믹스인·메타프로그래밍이 자연스러운 동적 객체지향 언어 | [Ruby 기초부터 응용까지](Languages/Ruby/Ruby기초/00-목차.md) |
+| Julia | 다중 디스패치와 JIT 컴파일로 과학계산에 최적화된 언어 | [Julia 기초부터 응용까지](Languages/Julia/Julia기초/00-목차.md) |
+| Zig | comptime과 명시적 메모리 관리를 특징으로 하는 C 대체 시스템 언어 | [Zig 기초부터 응용까지](Languages/Zig/Zig기초/00-목차.md) |
 
 ## 소프트웨어 설계
 

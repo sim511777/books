@@ -1,7 +1,7 @@
 site_name: 프로그래밍 학습 자료실
 site_description: >-
-  C, C++, C#, Java, Python, Go, Rust, Kotlin, Dart, Clojure, Haskell, Lisp 입문서와
-  디자인 패턴, 자료구조/알고리즘 책 모음
+  C, C++, C#, Java, Python, Go, Rust, Kotlin, Dart, Clojure, Haskell, Lisp, Ruby, Julia, Zig
+  입문서와 디자인 패턴, 자료구조/알고리즘 책 모음
 docs_dir: Programming
 site_dir: public
 
@@ -64,6 +64,9 @@ nav:
       - Clojure: Languages/Clojure/Clojure기초/00-목차.md
       - Haskell: Languages/Haskell/Haskell기초/00-목차.md
       - Lisp (Common Lisp): Languages/Lisp/Lisp기초/00-목차.md
+      - Ruby: Languages/Ruby/Ruby기초/00-목차.md
+      - Julia: Languages/Julia/Julia기초/00-목차.md
+      - Zig: Languages/Zig/Zig기초/00-목차.md
   - 소프트웨어 설계:
       - "디자인 패턴 (C#)": DesignPatterns/디자인패턴/00-목차.md
   - 자료구조와 알고리즘:
