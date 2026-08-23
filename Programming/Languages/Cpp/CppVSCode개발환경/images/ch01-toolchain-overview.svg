@@ -1,0 +1,64 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Center: VS Code -->
+  <rect x="270" y="165" width="160" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="195" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">VS Code</text>
+  <text x="350" y="215" text-anchor="middle" font-size="11" fill="#000000">에디터 / 통합 UI</text>
+
+  <!-- GCC : top-left -->
+  <rect x="30" y="30" width="150" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="105" y="55" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">GCC</text>
+  <text x="105" y="73" text-anchor="middle" font-size="11" fill="#000000">컴파일러</text>
+
+  <!-- CMake : top-right -->
+  <rect x="520" y="30" width="150" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="595" y="55" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">CMake</text>
+  <text x="595" y="73" text-anchor="middle" font-size="11" fill="#000000">빌드 시스템 생성기</text>
+
+  <!-- Ninja : bottom-right -->
+  <rect x="520" y="310" width="150" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="595" y="335" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">Ninja</text>
+  <text x="595" y="353" text-anchor="middle" font-size="11" fill="#000000">빌드 실행기</text>
+
+  <!-- vcpkg : bottom-left -->
+  <rect x="30" y="310" width="150" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="105" y="335" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">vcpkg</text>
+  <text x="105" y="353" text-anchor="middle" font-size="11" fill="#000000">패키지 관리자</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Arrows: VS Code <-> GCC -->
+  <line x1="275" y1="180" x2="150" y2="95" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="175" y="130" font-size="10.5" fill="#000000">확장이 g++ 호출</text>
+  <text x="175" y="143" font-size="10.5" fill="#000000">소스 → 실행 파일</text>
+
+  <!-- Arrows: VS Code <-> CMake -->
+  <line x1="425" y1="180" x2="550" y2="95" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="470" y="130" font-size="10.5" fill="#000000">CMake Tools 확장이</text>
+  <text x="470" y="143" font-size="10.5" fill="#000000">빌드 설정 구성</text>
+
+  <!-- Arrows: VS Code <-> Ninja -->
+  <line x1="425" y1="220" x2="550" y2="305" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="465" y="270" font-size="10.5" fill="#000000">CMake가 생성한</text>
+  <text x="465" y="283" font-size="10.5" fill="#000000">규칙으로 실제 빌드</text>
+
+  <!-- Arrows: VS Code <-> vcpkg -->
+  <line x1="275" y1="220" x2="150" y2="305" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="150" y="270" font-size="10.5" fill="#000000">외부 라이브러리</text>
+  <text x="150" y="283" font-size="10.5" fill="#000000">설치 및 연결</text>
+
+  <!-- CMake -> Ninja relation -->
+  <line x1="595" y1="90" x2="595" y2="310" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="602" y="205" font-size="10" fill="#000000">빌드 파일 생성</text>
+
+  <!-- vcpkg -> CMake relation -->
+  <line x1="180" y1="340" x2="520" y2="340" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="180" y1="60" x2="520" y2="60" stroke="none"/>
+  <text x="270" y="390" font-size="10" fill="#000000">vcpkg 툴체인 파일을 CMake에 전달</text>
+
+</svg>
