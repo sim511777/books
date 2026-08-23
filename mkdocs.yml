@@ -73,3 +73,5 @@ nav:
       - "자료구조와 알고리즘 (C#)": DataStructuresAndAlgorithms/자료구조와알고리즘/00-목차.md
   - UI 프레임워크:
       - "Avalonia (C#)": Avalonia/Avalonia기초/00-목차.md
+  - 개발 도구와 환경:
+      - "VS Code로 구축하는 C++ 개발환경": Languages/Cpp/CppVSCode개발환경/00-목차.md
