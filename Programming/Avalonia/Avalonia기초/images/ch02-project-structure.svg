@@ -1,0 +1,75 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="26" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">Avalonia 프로젝트 구조와 실행 흐름</text>
+
+  <!-- Box 1: Program.cs -->
+  <rect x="30" y="55" width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="120" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Program.cs</text>
+  <text x="120" y="100" font-size="12" text-anchor="middle" fill="#000000">Main()</text>
+  <text x="120" y="116" font-size="12" text-anchor="middle" fill="#000000">애플리케이션 진입점</text>
+
+  <!-- Arrow 1 -->
+  <line x1="210" y1="90" x2="255" y2="90" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="232" y="82" font-size="11" text-anchor="middle" fill="#000000">시작</text>
+
+  <!-- Box 2: App.axaml -->
+  <rect x="260" y="55" width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="76" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">App.axaml</text>
+  <text x="350" y="94" font-size="12" text-anchor="middle" fill="#000000">App.axaml.cs</text>
+  <text x="350" y="112" font-size="12" text-anchor="middle" fill="#000000">전역 스타일 / 초기화</text>
+
+  <!-- Arrow 2 -->
+  <line x1="440" y1="90" x2="485" y2="90" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="462" y="82" font-size="11" text-anchor="middle" fill="#000000">생성</text>
+
+  <!-- Box 3: MainWindow.axaml -->
+  <rect x="490" y="55" width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="580" y="76" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">MainWindow.axaml</text>
+  <text x="580" y="94" font-size="12" text-anchor="middle" fill="#000000">MainWindow.axaml.cs</text>
+  <text x="580" y="112" font-size="12" text-anchor="middle" fill="#000000">첫 화면 UI</text>
+
+  <!-- Vertical arrows to detail boxes -->
+  <line x1="120" y1="125" x2="120" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="125" x2="350" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="580" y1="125" x2="580" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Detail box 1 -->
+  <rect x="20" y="170" width="200" height="95" fill="#f5f5f5" stroke="#000000"/>
+  <text x="120" y="190" font-size="12" text-anchor="middle" fill="#000000">AppBuilder 구성</text>
+  <text x="120" y="208" font-size="12" text-anchor="middle" fill="#000000">UsePlatformDetect()</text>
+  <text x="120" y="226" font-size="12" text-anchor="middle" fill="#000000">WithInterFont()</text>
+  <text x="120" y="244" font-size="12" text-anchor="middle" fill="#000000">StartWithClassicDesktop-</text>
+  <text x="120" y="258" font-size="12" text-anchor="middle" fill="#000000">Lifetime(args)</text>
+
+  <!-- Detail box 2 -->
+  <rect x="250" y="170" width="200" height="95" fill="#f5f5f5" stroke="#000000"/>
+  <text x="350" y="190" font-size="12" text-anchor="middle" fill="#000000">Initialize()</text>
+  <text x="350" y="208" font-size="12" text-anchor="middle" fill="#000000">AvaloniaXamlLoader.Load</text>
+  <text x="350" y="230" font-size="12" text-anchor="middle" fill="#000000">OnFrameworkInitialization-</text>
+  <text x="350" y="246" font-size="12" text-anchor="middle" fill="#000000">Completed()</text>
+  <text x="350" y="262" font-size="12" text-anchor="middle" fill="#000000">→ desktop.MainWindow 지정</text>
+
+  <!-- Detail box 3 -->
+  <rect x="480" y="170" width="200" height="95" fill="#f5f5f5" stroke="#000000"/>
+  <text x="580" y="190" font-size="12" text-anchor="middle" fill="#000000">생성자에서</text>
+  <text x="580" y="208" font-size="12" text-anchor="middle" fill="#000000">InitializeComponent()</text>
+  <text x="580" y="226" font-size="12" text-anchor="middle" fill="#000000">호출</text>
+  <text x="580" y="248" font-size="12" text-anchor="middle" fill="#000000">→ TextBlock 등 UI 구성</text>
+
+  <!-- Arrow down to final result -->
+  <line x1="580" y1="265" x2="580" y2="300" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="580" y1="300" x2="350" y2="300" stroke="#000000" stroke-width="2"/>
+  <line x1="350" y1="300" x2="350" y2="320" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Final box -->
+  <rect x="220" y="325" width="260" height="55" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="348" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">화면에 창이 표시됨</text>
+  <text x="350" y="366" font-size="12" text-anchor="middle" fill="#000000">"Hello, Avalonia!"</text>
+</svg>

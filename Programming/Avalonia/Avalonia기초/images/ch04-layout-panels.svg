@@ -1,0 +1,84 @@
+<svg viewBox="0 0 860 640" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Malgun Gothic, sans-serif">
+  <style>
+    .panel-frame { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .child-box { fill: #ffffff; stroke: #000000; stroke-width: 1.5; }
+    .title { font-size: 20px; font-weight: bold; fill: #000000; }
+    .caption { font-size: 13px; fill: #000000; }
+    .label { font-size: 13px; fill: #000000; }
+    .arrow { stroke: #000000; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="860" height="640" fill="#ffffff" />
+
+  <!-- Quadrant 1: StackPanel (top-left) -->
+  <g transform="translate(20,20)">
+    <text x="0" y="0" class="title">StackPanel</text>
+    <rect x="0" y="15" width="380" height="260" class="panel-frame" />
+    <rect x="30" y="40" width="320" height="55" class="child-box" />
+    <text x="190" y="72" class="label" text-anchor="middle">Child 1</text>
+    <rect x="30" y="105" width="320" height="55" class="child-box" />
+    <text x="190" y="137" class="label" text-anchor="middle">Child 2</text>
+    <rect x="30" y="170" width="320" height="55" class="child-box" />
+    <text x="190" y="202" class="label" text-anchor="middle">Child 3</text>
+    <path d="M 370 45 L 370 220" class="arrow" />
+    <text x="0" y="300" class="caption">한 방향으로 순서대로 쌓는다 (Orientation="Vertical")</text>
+  </g>
+
+  <!-- Quadrant 2: Grid (top-right) -->
+  <g transform="translate(460,20)">
+    <text x="0" y="0" class="title">Grid</text>
+    <rect x="0" y="15" width="380" height="260" class="panel-frame" />
+    <!-- 2 columns x 3 rows grid lines -->
+    <line x1="190" y1="15" x2="190" y2="275" stroke="#000000" stroke-width="1.5" />
+    <line x1="0" y1="102" x2="380" y2="102" stroke="#000000" stroke-width="1.5" />
+    <line x1="0" y1="189" x2="380" y2="189" stroke="#000000" stroke-width="1.5" />
+    <text x="95" y="63" class="label" text-anchor="middle">[0,0]</text>
+    <text x="285" y="63" class="label" text-anchor="middle">[0,1]</text>
+    <text x="95" y="150" class="label" text-anchor="middle">[1,0]</text>
+    <text x="285" y="150" class="label" text-anchor="middle">[1,1]</text>
+    <text x="95" y="237" class="label" text-anchor="middle">[2,0]</text>
+    <text x="285" y="237" class="label" text-anchor="middle">[2,1]</text>
+    <text x="0" y="300" class="caption">행/열 격자에 Grid.Row / Grid.Column으로 배치한다</text>
+  </g>
+
+  <!-- Quadrant 3: DockPanel (bottom-left) -->
+  <g transform="translate(20,340)">
+    <text x="0" y="0" class="title">DockPanel</text>
+    <rect x="0" y="15" width="380" height="260" class="panel-frame" />
+    <rect x="0" y="15" width="380" height="45" class="child-box" />
+    <text x="190" y="42" class="label" text-anchor="middle">Dock="Top"</text>
+    <rect x="0" y="245" width="380" height="30" class="child-box" />
+    <text x="190" y="265" class="label" text-anchor="middle">Dock="Bottom"</text>
+    <rect x="0" y="60" width="60" height="185" class="child-box" />
+    <text x="30" y="155" class="label" text-anchor="middle" transform="rotate(-90 30 155)">Dock="Left"</text>
+    <rect x="320" y="60" width="60" height="185" class="child-box" />
+    <text x="350" y="155" class="label" text-anchor="middle" transform="rotate(-90 350 155)">Dock="Right"</text>
+    <rect x="60" y="60" width="260" height="185" class="child-box" />
+    <text x="190" y="157" class="label" text-anchor="middle">나머지(LastChildFill)</text>
+    <text x="0" y="300" class="caption">가장자리에 순서대로 도킹하고, 남는 공간은 마지막 자식이 채운다</text>
+  </g>
+
+  <!-- Quadrant 4: WrapPanel (bottom-right) -->
+  <g transform="translate(460,340)">
+    <text x="0" y="0" class="title">WrapPanel</text>
+    <rect x="0" y="15" width="380" height="260" class="panel-frame" />
+    <rect x="15" y="35" width="100" height="55" class="child-box" />
+    <text x="65" y="67" class="label" text-anchor="middle">1</text>
+    <rect x="125" y="35" width="100" height="55" class="child-box" />
+    <text x="175" y="67" class="label" text-anchor="middle">2</text>
+    <rect x="235" y="35" width="100" height="55" class="child-box" />
+    <text x="285" y="67" class="label" text-anchor="middle">3</text>
+    <rect x="15" y="100" width="100" height="55" class="child-box" />
+    <text x="65" y="132" class="label" text-anchor="middle">4</text>
+    <rect x="125" y="100" width="100" height="55" class="child-box" />
+    <text x="175" y="132" class="label" text-anchor="middle">5</text>
+    <path d="M 335 62 L 335 100 L 15 100" class="arrow" stroke-dasharray="4,3" />
+    <text x="0" y="300" class="caption">한 줄이 넘치면 자동으로 다음 줄로 넘어간다</text>
+  </g>
+</svg>

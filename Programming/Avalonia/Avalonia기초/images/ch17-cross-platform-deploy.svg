@@ -1,0 +1,55 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="380" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="350" y="28" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">하나의 코드베이스, 세 개의 실행 파일</text>
+
+  <!-- Source box -->
+  <rect x="230" y="55" width="240" height="80" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="82" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">Avalonia 프로젝트</text>
+  <text x="350" y="103" font-size="13" text-anchor="middle" fill="#000000">.axaml + C# 코드</text>
+  <text x="350" y="122" font-size="13" text-anchor="middle" fill="#000000">(단일 소스)</text>
+
+  <!-- Arrows from source to three targets -->
+  <line x1="300" y1="135" x2="150" y2="220" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="135" x2="350" y2="220" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="400" y1="135" x2="550" y2="220" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Labels on arrows -->
+  <text x="185" y="175" font-size="12" fill="#000000">dotnet publish</text>
+  <text x="185" y="190" font-size="12" fill="#000000">-r win-x64</text>
+
+  <text x="358" y="175" font-size="12" fill="#000000">dotnet publish</text>
+  <text x="358" y="190" font-size="12" fill="#000000">-r osx-x64</text>
+
+  <text x="470" y="175" font-size="12" fill="#000000">dotnet publish</text>
+  <text x="470" y="190" font-size="12" fill="#000000">-r linux-x64</text>
+
+  <!-- Windows target -->
+  <rect x="60" y="225" width="180" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="150" y="252" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">Windows</text>
+  <text x="150" y="273" font-size="13" text-anchor="middle" fill="#000000">MyApp.exe</text>
+  <text x="150" y="292" font-size="13" text-anchor="middle" fill="#000000">win-x64</text>
+
+  <!-- macOS target -->
+  <rect x="260" y="225" width="180" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="252" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">macOS</text>
+  <text x="350" y="273" font-size="13" text-anchor="middle" fill="#000000">MyApp.app</text>
+  <text x="350" y="292" font-size="13" text-anchor="middle" fill="#000000">osx-x64 / osx-arm64</text>
+
+  <!-- Linux target -->
+  <rect x="460" y="225" width="180" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="550" y="252" font-size="15" font-weight="bold" text-anchor="middle" fill="#000000">Linux</text>
+  <text x="550" y="273" font-size="13" text-anchor="middle" fill="#000000">MyApp</text>
+  <text x="550" y="292" font-size="13" text-anchor="middle" fill="#000000">linux-x64</text>
+
+  <!-- Bottom note -->
+  <rect x="60" y="335" width="580" height="35" fill="#ffffff" stroke="#000000"/>
+  <text x="350" y="357" font-size="13" text-anchor="middle" fill="#000000">RID(런타임 식별자)만 바꿔가며 같은 소스에서 플랫폼별 실행 파일을 각각 빌드합니다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

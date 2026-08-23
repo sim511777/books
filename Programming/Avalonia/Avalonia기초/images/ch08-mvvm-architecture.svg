@@ -1,0 +1,56 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .title { font-family: sans-serif; font-size: 17px; font-weight: bold; fill: #000000; text-anchor: middle; }
+    .sub { font-family: sans-serif; font-size: 12px; fill: #000000; text-anchor: middle; }
+    .label { font-family: sans-serif; font-size: 12px; fill: #000000; text-anchor: middle; }
+    .arrow-line { stroke: #000000; stroke-width: 2; fill: none; marker-end: url(#arrow2); marker-start: url(#arrow2); }
+  </style>
+
+  <text x="350" y="30" class="title" font-size="18">MVVM 아키텍처: View, ViewModel, Model의 관계</text>
+
+  <!-- View box -->
+  <rect x="30" y="150" width="180" height="120" class="box" rx="6"/>
+  <text x="120" y="178" class="title">View</text>
+  <text x="120" y="200" class="sub">XAML 파일</text>
+  <text x="120" y="218" class="sub">UI 구조와 모양만</text>
+  <text x="120" y="234" class="sub">코드비하인드는</text>
+  <text x="120" y="250" class="sub">거의 비어 있음</text>
+
+  <!-- ViewModel box -->
+  <rect x="260" y="150" width="180" height="120" class="box" rx="6"/>
+  <text x="350" y="178" class="title">ViewModel</text>
+  <text x="350" y="200" class="sub">바인딩 가능한 속성</text>
+  <text x="350" y="218" class="sub">(INotifyPropertyChanged)</text>
+  <text x="350" y="236" class="sub">커맨드, 화면 상태와 로직</text>
+  <text x="350" y="252" class="sub">View를 직접 모른다</text>
+
+  <!-- Model box -->
+  <rect x="490" y="150" width="180" height="120" class="box" rx="6"/>
+  <text x="580" y="178" class="title">Model</text>
+  <text x="580" y="200" class="sub">순수 데이터 구조와</text>
+  <text x="580" y="216" class="sub">비즈니스 로직</text>
+  <text x="580" y="234" class="sub">UI/바인딩을 전혀</text>
+  <text x="580" y="250" class="sub">모른다</text>
+
+  <!-- Arrow View <-> ViewModel -->
+  <path d="M 212 210 L 258 210" class="arrow-line"/>
+  <text x="235" y="192" class="label">바인딩</text>
+  <text x="235" y="300" class="label">{Binding},</text>
+  <text x="235" y="316" class="label">Command</text>
+
+  <!-- Arrow ViewModel <-> Model -->
+  <path d="M 442 210 L 488 210" class="arrow-line"/>
+  <text x="465" y="192" class="label">메서드 호출</text>
+  <text x="465" y="300" class="label">/ 결과·데이터</text>
+  <text x="465" y="316" class="label">반환</text>
+
+  <!-- Note: no direct connection View-Model -->
+  <text x="350" y="355" class="sub" font-style="italic">View와 Model은 서로 직접 연결되지 않고, 항상 ViewModel을 거쳐 상호작용한다</text>
+</svg>

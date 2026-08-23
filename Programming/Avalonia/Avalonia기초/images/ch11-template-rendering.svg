@@ -1,0 +1,70 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <!-- Column headers -->
+  <text x="90" y="30" font-size="14" font-weight="bold" text-anchor="middle">데이터 (People 컬렉션)</text>
+  <text x="350" y="30" font-size="14" font-weight="bold" text-anchor="middle">DataTemplate 적용</text>
+  <text x="600" y="30" font-size="14" font-weight="bold" text-anchor="middle">화면에 렌더링된 항목</text>
+
+  <!-- Left: data objects -->
+  <g stroke="black" fill="white" stroke-width="1.5">
+    <rect x="20" y="55" width="140" height="46"/>
+    <rect x="20" y="115" width="140" height="46"/>
+    <rect x="20" y="175" width="140" height="46"/>
+  </g>
+  <g font-size="12" fill="black">
+    <text x="30" y="73">Person</text>
+    <text x="30" y="90">Name="김민준", Age=28</text>
+
+    <text x="30" y="133">Person</text>
+    <text x="30" y="150">Name="이서연", Age=34</text>
+
+    <text x="30" y="193">Person</text>
+    <text x="30" y="210">Name="박도윤", Age=41</text>
+  </g>
+
+  <!-- Middle: template box -->
+  <rect x="280" y="110" width="140" height="90" stroke="black" fill="white" stroke-width="1.5"/>
+  <text x="350" y="132" font-size="12" text-anchor="middle" font-weight="bold">DataTemplate</text>
+  <line x1="292" y1="142" x2="408" y2="142" stroke="black" stroke-width="1"/>
+  <text x="350" y="160" font-size="11" text-anchor="middle">{Binding Name}</text>
+  <text x="350" y="176" font-size="11" text-anchor="middle">{Binding Age}</text>
+  <text x="350" y="230" font-size="11" text-anchor="middle">각 항목마다 반복 적용</text>
+
+  <!-- Right: rendered items -->
+  <g stroke="black" fill="white" stroke-width="1.5">
+    <rect x="530" y="55" width="150" height="46"/>
+    <rect x="530" y="115" width="150" height="46"/>
+    <rect x="530" y="175" width="150" height="46"/>
+  </g>
+  <g font-size="12" fill="black">
+    <text x="540" y="83" font-weight="bold">김민준</text>
+    <text x="600" y="83">28</text>
+
+    <text x="540" y="143" font-weight="bold">이서연</text>
+    <text x="600" y="143">34</text>
+
+    <text x="540" y="203" font-weight="bold">박도윤</text>
+    <text x="600" y="203">41</text>
+  </g>
+
+  <!-- Arrows: left -> middle -->
+  <line x1="160" y1="78" x2="278" y2="130" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="160" y1="138" x2="278" y2="150" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="160" y1="198" x2="278" y2="170" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrows: middle -> right -->
+  <line x1="420" y1="130" x2="528" y2="78" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="150" x2="528" y2="138" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="170" x2="528" y2="198" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Footer note -->
+  <text x="350" y="270" font-size="12" text-anchor="middle">데이터 자체는 UI를 모르지만, DataTemplate이 표현 방법을 정의합니다.</text>
+  <text x="350" y="290" font-size="12" text-anchor="middle">컬렉션의 항목 수가 바뀌면 렌더링된 항목도 자동으로 추가/제거됩니다.</text>
+</svg>

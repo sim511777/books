@@ -1,0 +1,102 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#000000">.NET UI 프레임워크별 플랫폼 지원 비교</text>
+
+  <!-- Table grid settings -->
+  <!-- Columns: label(140) + 5 platforms x 112 = 560, total 700 -->
+  <!-- Header row -->
+  <g font-size="14" fill="#000000">
+    <rect x="10" y="55" width="140" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="80" y="80" text-anchor="middle">프레임워크</text>
+
+    <rect x="150" y="55" width="110" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="205" y="80" text-anchor="middle">Windows</text>
+
+    <rect x="260" y="55" width="110" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="315" y="80" text-anchor="middle">macOS</text>
+
+    <rect x="370" y="55" width="110" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="425" y="80" text-anchor="middle">Linux</text>
+
+    <rect x="480" y="55" width="110" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="535" y="80" text-anchor="middle">모바일</text>
+
+    <rect x="590" y="55" width="100" height="40" fill="#f0f0f0" stroke="#000000"/>
+    <text x="640" y="80" text-anchor="middle">브라우저</text>
+  </g>
+
+  <!-- Row: WPF -->
+  <g font-size="14" fill="#000000">
+    <rect x="10" y="95" width="140" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="80" y="120" text-anchor="middle">WPF</text>
+    <rect x="150" y="95" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="205" y="120" text-anchor="middle">O</text>
+    <rect x="260" y="95" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="315" y="120" text-anchor="middle">X</text>
+    <rect x="370" y="95" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="425" y="120" text-anchor="middle">X</text>
+    <rect x="480" y="95" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="535" y="120" text-anchor="middle">X</text>
+    <rect x="590" y="95" width="100" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="640" y="120" text-anchor="middle">X</text>
+  </g>
+
+  <!-- Row: UWP -->
+  <g font-size="14" fill="#000000">
+    <rect x="10" y="135" width="140" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="80" y="160" text-anchor="middle">UWP</text>
+    <rect x="150" y="135" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="205" y="160" text-anchor="middle">O</text>
+    <rect x="260" y="135" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="315" y="160" text-anchor="middle">X</text>
+    <rect x="370" y="135" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="425" y="160" text-anchor="middle">X</text>
+    <rect x="480" y="135" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="535" y="160" text-anchor="middle">X</text>
+    <rect x="590" y="135" width="100" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="640" y="160" text-anchor="middle">X</text>
+  </g>
+
+  <!-- Row: .NET MAUI -->
+  <g font-size="14" fill="#000000">
+    <rect x="10" y="175" width="140" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="80" y="200" text-anchor="middle">.NET MAUI</text>
+    <rect x="150" y="175" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="205" y="200" text-anchor="middle">O</text>
+    <rect x="260" y="175" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="315" y="200" text-anchor="middle">O</text>
+    <rect x="370" y="175" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="425" y="200" text-anchor="middle">X</text>
+    <rect x="480" y="175" width="110" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="535" y="200" text-anchor="middle">O</text>
+    <rect x="590" y="175" width="100" height="40" fill="#ffffff" stroke="#000000"/>
+    <text x="640" y="200" text-anchor="middle">X</text>
+  </g>
+
+  <!-- Row: Avalonia (highlighted) -->
+  <g font-size="14">
+    <rect x="10" y="215" width="140" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="80" y="240" text-anchor="middle" font-weight="bold" fill="#000000">Avalonia</text>
+    <rect x="150" y="215" width="110" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="205" y="240" text-anchor="middle" fill="#000000">O</text>
+    <rect x="260" y="215" width="110" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="315" y="240" text-anchor="middle" fill="#000000">O</text>
+    <rect x="370" y="215" width="110" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="425" y="240" text-anchor="middle" fill="#000000">O</text>
+    <rect x="480" y="215" width="110" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="535" y="240" text-anchor="middle" fill="#000000">O</text>
+    <rect x="590" y="215" width="100" height="40" fill="#e8f4ff" stroke="#000000" stroke-width="2"/>
+    <text x="640" y="240" text-anchor="middle" fill="#000000">O</text>
+  </g>
+
+  <!-- Footnote -->
+  <text x="10" y="285" font-size="13" fill="#000000">O = 공식 지원, X = 미지원 (개괄적인 비교이며 버전에 따라 세부 지원 범위는 달라질 수 있음)</text>
+
+  <!-- Bottom note box -->
+  <rect x="10" y="305" width="680" height="75" fill="#ffffff" stroke="#000000"/>
+  <text x="20" y="328" font-size="13" fill="#000000">Avalonia는 Skia 기반 자체 렌더링 엔진을 사용하여 네이티브 위젯에 의존하지 않으므로,</text>
+  <text x="20" y="348" font-size="13" fill="#000000">모든 플랫폼에서 픽셀 단위로 동일한 룩앤필을 유지할 수 있습니다. 이는 각 플랫폼의</text>
+  <text x="20" y="368" font-size="13" fill="#000000">네이티브 컨트롤을 감싸는 방식의 프레임워크와 구분되는 핵심적인 설계 차이입니다.</text>
+</svg>

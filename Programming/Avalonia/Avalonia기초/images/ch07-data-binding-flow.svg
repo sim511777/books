@@ -1,0 +1,60 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .title { font-family: sans-serif; font-size: 16px; font-weight: bold; fill: #000000; text-anchor: middle; }
+    .sub { font-family: sans-serif; font-size: 12px; fill: #000000; text-anchor: middle; }
+    .label { font-family: sans-serif; font-size: 12px; fill: #000000; text-anchor: middle; }
+    .arrow-line { stroke: #000000; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .note { fill: #ffffff; stroke: #000000; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  </style>
+
+  <text x="350" y="30" class="title" font-size="18">데이터 바인딩과 INotifyPropertyChanged 흐름</text>
+
+  <!-- View box -->
+  <rect x="40" y="150" width="210" height="110" class="box" rx="6"/>
+  <text x="145" y="178" class="title">View (XAML)</text>
+  <text x="145" y="200" class="sub">예: &lt;TextBox</text>
+  <text x="145" y="216" class="sub">   Text="{Binding Greeting}"/&gt;</text>
+  <text x="145" y="238" class="sub">화면에 값을 표시하고</text>
+  <text x="145" y="252" class="sub">사용자 입력을 받는다</text>
+
+  <!-- DataContext box -->
+  <rect x="450" y="150" width="210" height="110" class="box" rx="6"/>
+  <text x="555" y="178" class="title">DataContext 객체</text>
+  <text x="555" y="200" class="sub">(ViewModel / Model)</text>
+  <text x="555" y="220" class="sub">public string Greeting</text>
+  <text x="555" y="236" class="sub">{ get; set; }</text>
+  <text x="555" y="252" class="sub">실제 값을 들고 있는 객체</text>
+
+  <!-- Arrow 1: View -> DataContext (read) -->
+  <path d="M 250 172 L 450 172" class="arrow-line"/>
+  <text x="350" y="163" class="label">① {Binding Greeting} 값 읽기</text>
+
+  <!-- Arrow 2: DataContext -> View (notify) -->
+  <path d="M 450 205 L 250 205" class="arrow-line"/>
+  <text x="350" y="196" class="label">③ PropertyChanged 이벤트 → UI 자동 갱신</text>
+
+  <!-- Arrow 3: View -> DataContext (write, TwoWay) -->
+  <path d="M 250 238 L 450 238" class="arrow-line"/>
+  <text x="350" y="229" class="label">② 사용자 입력 → 값 쓰기 (TwoWay일 때)</text>
+
+  <!-- INotifyPropertyChanged note -->
+  <rect x="470" y="290" width="170" height="60" class="note" rx="6"/>
+  <text x="555" y="312" class="sub" font-weight="bold">INotifyPropertyChanged</text>
+  <text x="555" y="330" class="sub">속성 값이 바뀔 때</text>
+  <text x="555" y="344" class="sub">PropertyChanged 이벤트 발생</text>
+  <path d="M 555 290 L 555 260" class="arrow-line"/>
+
+  <!-- Binding engine note -->
+  <rect x="60" y="290" width="170" height="60" class="note" rx="6"/>
+  <text x="145" y="312" class="sub" font-weight="bold">바인딩 엔진</text>
+  <text x="145" y="330" class="sub">이벤트를 구독하고</text>
+  <text x="145" y="344" class="sub">대상 속성을 갱신</text>
+  <path d="M 145 290 L 145 260" class="arrow-line"/>
+</svg>
