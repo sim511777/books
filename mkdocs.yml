@@ -71,3 +71,5 @@ nav:
       - "디자인 패턴 (C#)": DesignPatterns/디자인패턴/00-목차.md
   - 자료구조와 알고리즘:
       - "자료구조와 알고리즘 (C#)": DataStructuresAndAlgorithms/자료구조와알고리즘/00-목차.md
+  - UI 프레임워크:
+      - "Avalonia (C#)": Avalonia/Avalonia기초/00-목차.md
