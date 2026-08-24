@@ -1,0 +1,61 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="420" fill="#ffffff" stroke="none"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">경쟁 상태(Race Condition) 타임라인 — count = 0에서 시작</text>
+
+  <!-- Timeline axis -->
+  <line x1="140" y1="60" x2="140" y2="390" stroke="#000000" stroke-width="1.5"/>
+  <text x="70" y="55" font-size="12" fill="#000000">시간 흐름</text>
+  <line x1="130" y1="60" x2="140" y2="60" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="140,385 135,375 145,375" fill="#000000"/>
+
+  <!-- Column headers -->
+  <text x="330" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">스레드 A</text>
+  <text x="560" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">스레드 B</text>
+  <line x1="230" y1="58" x2="430" y2="58" stroke="#000000" stroke-width="1"/>
+  <line x1="460" y1="58" x2="660" y2="58" stroke="#000000" stroke-width="1"/>
+
+  <!-- Shared variable box (top) -->
+  <rect x="270" y="66" width="160" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="350" y="86" text-anchor="middle" font-size="12" fill="#000000">공유 변수 count = 0</text>
+
+  <!-- t1: Thread A reads count -->
+  <text x="150" y="118" font-size="11" fill="#000000">t1</text>
+  <rect x="230" y="104" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="330" y="124" text-anchor="middle" font-size="12" fill="#000000">count 읽기 → 로컬 값 0</text>
+
+  <!-- t2: Thread B reads count -->
+  <text x="150" y="158" font-size="11" fill="#000000">t2</text>
+  <rect x="460" y="144" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="560" y="164" text-anchor="middle" font-size="12" fill="#000000">count 읽기 → 로컬 값 0</text>
+
+  <!-- t3: Thread A computes -->
+  <text x="150" y="198" font-size="11" fill="#000000">t3</text>
+  <rect x="230" y="184" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="330" y="204" text-anchor="middle" font-size="12" fill="#000000">0 + 1 = 1 계산</text>
+
+  <!-- t4: Thread B computes -->
+  <text x="150" y="238" font-size="11" fill="#000000">t4</text>
+  <rect x="460" y="224" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="560" y="244" text-anchor="middle" font-size="12" fill="#000000">0 + 1 = 1 계산</text>
+
+  <!-- t5: Thread A writes -->
+  <text x="150" y="278" font-size="11" fill="#000000">t5</text>
+  <rect x="230" y="264" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="330" y="284" text-anchor="middle" font-size="12" fill="#000000">count에 1 쓰기</text>
+  <line x1="330" y1="294" x2="330" y2="330" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- t6: Thread B writes (overwrites) -->
+  <text x="150" y="318" font-size="11" fill="#000000">t6</text>
+  <rect x="460" y="304" width="200" height="30" fill="none" stroke="#000000" stroke-width="1.5"/>
+  <text x="560" y="324" text-anchor="middle" font-size="12" fill="#000000">count에 1 쓰기 (덮어씀)</text>
+  <line x1="560" y1="334" x2="560" y2="345" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="330" y1="330" x2="560" y2="345" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Final shared variable state -->
+  <rect x="270" y="350" width="160" height="34" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="366" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">최종 count = 1</text>
+  <text x="350" y="380" text-anchor="middle" font-size="10" fill="#000000">(기대값 2, 갱신 1회 유실)</text>
+</svg>

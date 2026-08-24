@@ -1,0 +1,65 @@
+<svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="440" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">동기 호출 vs async/await 호출</text>
+
+  <!-- Left panel: Synchronous call -->
+  <text x="175" y="52" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">동기 호출 - 호출자가 계속 블록됨</text>
+
+  <text x="20" y="80" font-size="12" fill="#000000">호출자</text>
+  <rect x="30" y="88" width="290" height="34" fill="#cfe8ff" stroke="#000000" />
+  <text x="175" y="109" text-anchor="middle" font-size="11" fill="#000000">ReadFile() 호출</text>
+
+  <rect x="30" y="130" width="290" height="90" fill="#eeeeee" stroke="#000000" stroke-dasharray="3,3" />
+  <text x="175" y="150" text-anchor="middle" font-size="11" fill="#333333">호출 스레드가 여기서</text>
+  <text x="175" y="167" text-anchor="middle" font-size="11" fill="#333333">그대로 멈춰서(block) I/O가</text>
+  <text x="175" y="184" text-anchor="middle" font-size="11" fill="#333333">끝날 때까지 아무 일도</text>
+  <text x="175" y="201" text-anchor="middle" font-size="11" fill="#333333">하지 못함</text>
+
+  <rect x="30" y="228" width="290" height="34" fill="#ffe0b3" stroke="#000000" />
+  <text x="175" y="249" text-anchor="middle" font-size="11" fill="#000000">I/O 완료 후 다음 코드 실행</text>
+
+  <line x1="30" y1="290" x2="320" y2="290" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow9)" />
+  <text x="175" y="308" text-anchor="middle" font-size="12" fill="#000000">시간</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="45" x2="350" y2="400" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4,4" />
+
+  <!-- Right panel: async/await -->
+  <text x="525" y="52" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">async/await 호출 - 호출자가 제어권을 돌려받음</text>
+
+  <text x="370" y="80" font-size="12" fill="#000000">호출자</text>
+  <rect x="380" y="88" width="290" height="34" fill="#cfe8ff" stroke="#000000" />
+  <text x="525" y="109" text-anchor="middle" font-size="11" fill="#000000">await ReadFileAsync() 호출</text>
+
+  <rect x="380" y="130" width="130" height="34" fill="#d9f2d9" stroke="#000000" />
+  <text x="445" y="151" text-anchor="middle" font-size="11" fill="#000000">제어 반환, 다른 일 수행</text>
+
+  <rect x="520" y="130" width="150" height="90" fill="#eeeeee" stroke="#000000" stroke-dasharray="3,3" />
+  <text x="595" y="150" text-anchor="middle" font-size="11" fill="#333333">그동안 I/O 장치가</text>
+  <text x="595" y="167" text-anchor="middle" font-size="11" fill="#333333">백그라운드에서 작업을</text>
+  <text x="595" y="184" text-anchor="middle" font-size="11" fill="#333333">처리 (스레드 점유 없음)</text>
+
+  <rect x="380" y="176" width="130" height="34" fill="#d9f2d9" stroke="#000000" />
+  <text x="445" y="197" text-anchor="middle" font-size="11" fill="#000000">계속 다른 일 수행 가능</text>
+
+  <rect x="380" y="228" width="290" height="34" fill="#ffe0b3" stroke="#000000" />
+  <text x="525" y="249" text-anchor="middle" font-size="11" fill="#000000">완료 콜백으로 나머지 코드 재개</text>
+
+  <line x1="380" y1="290" x2="670" y2="290" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow9)" />
+  <text x="525" y="308" text-anchor="middle" font-size="12" fill="#000000">시간</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="330" width="640" height="95" fill="#f7f7f7" stroke="#000000" stroke-width="1" />
+  <text x="350" y="353" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">핵심 차이</text>
+  <text x="50" y="376" font-size="12" fill="#000000">· 동기 호출은 I/O가 끝날 때까지 호출 스레드를 계속 점유(block)합니다.</text>
+  <text x="50" y="396" font-size="12" fill="#000000">· async/await는 await 지점에서 스레드를 반납하고, I/O 완료 후 그 이어지는 코드만 다시 스케줄됩니다.</text>
+  <text x="50" y="413" font-size="12" fill="#000000">· 이 과정에서 새로운 스레드가 만들어지지 않습니다 - I/O 자체가 스레드 없이 진행되기 때문입니다.</text>
+
+  <defs>
+    <marker id="arrow9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#000000" />
+    </marker>
+  </defs>
+</svg>
