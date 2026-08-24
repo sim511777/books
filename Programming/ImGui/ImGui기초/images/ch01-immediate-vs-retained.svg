@@ -1,0 +1,66 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <!-- Divider -->
+  <line x1="350" y1="20" x2="350" y2="380" stroke="black" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Titles -->
+  <text x="175" y="30" text-anchor="middle" font-size="17" font-weight="bold">유지 모드 (Retained Mode)</text>
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="bold">즉시 모드 (Immediate Mode)</text>
+
+  <!-- Retained mode: build tree once -->
+  <rect x="75" y="55" width="200" height="45" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="175" y="83" text-anchor="middle" font-size="13">위젯 객체 트리 생성 (최초 1회)</text>
+
+  <!-- Tree diagram -->
+  <rect x="150" y="125" width="50" height="30" fill="none" stroke="black"/>
+  <text x="175" y="144" text-anchor="middle" font-size="11">Window</text>
+
+  <line x1="175" y1="155" x2="120" y2="185" stroke="black" marker-end="url(#arrow)"/>
+  <line x1="175" y1="155" x2="230" y2="185" stroke="black" marker-end="url(#arrow)"/>
+
+  <rect x="90" y="185" width="60" height="28" fill="none" stroke="black"/>
+  <text x="120" y="203" text-anchor="middle" font-size="10">Button</text>
+
+  <rect x="200" y="185" width="60" height="28" fill="none" stroke="black"/>
+  <text x="230" y="203" text-anchor="middle" font-size="10">Checkbox</text>
+
+  <text x="175" y="240" text-anchor="middle" font-size="12">→ 트리는 메모리에 계속 남아있음</text>
+
+  <!-- Event driven update -->
+  <rect x="75" y="260" width="200" height="45" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="175" y="283" text-anchor="middle" font-size="12">이벤트 발생 시</text>
+  <text x="175" y="298" text-anchor="middle" font-size="12">해당 노드만 찾아 갱신</text>
+
+  <path d="M 275 282 C 310 282 310 230 275 190" fill="none" stroke="black" marker-end="url(#arrow)"/>
+  <text x="330" y="240" text-anchor="middle" font-size="10">클릭 이벤트</text>
+
+  <text x="175" y="345" text-anchor="middle" font-size="11">예: WPF, Avalonia, Qt Widgets</text>
+
+  <!-- Immediate mode: loop -->
+  <rect x="425" y="70" width="200" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="525" y="95" text-anchor="middle" font-size="13">프레임 시작</text>
+
+  <line x1="525" y1="110" x2="525" y2="150" stroke="black" marker-end="url(#arrow)"/>
+
+  <rect x="425" y="150" width="200" height="50" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="525" y="172" text-anchor="middle" font-size="12">UI 함수를 처음부터 다시 호출</text>
+  <text x="525" y="188" text-anchor="middle" font-size="11">(Begin, Text, Button, End...)</text>
+
+  <line x1="525" y1="200" x2="525" y2="240" stroke="black" marker-end="url(#arrow)"/>
+
+  <rect x="425" y="240" width="200" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+  <text x="525" y="265" text-anchor="middle" font-size="13">화면에 그리기</text>
+
+  <path d="M 625 260 C 670 260 670 90 625 90" fill="none" stroke="black" marker-end="url(#arrow)"/>
+  <text x="650" y="175" text-anchor="middle" font-size="11" transform="rotate(90 650 175)">매 프레임 반복</text>
+
+  <text x="525" y="330" text-anchor="middle" font-size="12">→ 트리를 따로 보관하지 않음</text>
+  <text x="525" y="350" text-anchor="middle" font-size="11">예: Dear ImGui</text>
+</svg>

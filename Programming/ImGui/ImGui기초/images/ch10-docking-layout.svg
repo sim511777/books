@@ -1,0 +1,48 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <text x="350" y="28" text-anchor="middle" font-size="17" font-weight="bold">DockSpace로 구성된 에디터 레이아웃</text>
+
+  <!-- Outer viewport frame -->
+  <rect x="40" y="50" width="620" height="320" fill="none" stroke="black" stroke-width="2"/>
+  <text x="60" y="45" font-size="11">메인 뷰포트 (DockSpaceOverViewport)</text>
+
+  <!-- Left panel: tabbed dock node -->
+  <rect x="45" y="55" width="150" height="310" fill="none" stroke="black" stroke-width="1.5"/>
+  <!-- tab bar -->
+  <rect x="45" y="55" width="75" height="22" fill="none" stroke="black"/>
+  <text x="82" y="70" text-anchor="middle" font-size="10">Scene</text>
+  <rect x="120" y="55" width="75" height="22" fill="none" stroke="black"/>
+  <text x="157" y="70" text-anchor="middle" font-size="10">Assets</text>
+  <text x="120" y="215" text-anchor="middle" font-size="11">왼쪽 패널</text>
+  <text x="120" y="230" text-anchor="middle" font-size="10">(탭으로 병합된</text>
+  <text x="120" y="243" text-anchor="middle" font-size="10">두 개의 창)</text>
+
+  <!-- Center: main content -->
+  <rect x="200" y="55" width="300" height="230" fill="none" stroke="black" stroke-width="1.5"/>
+  <rect x="200" y="55" width="90" height="22" fill="none" stroke="black"/>
+  <text x="245" y="70" text-anchor="middle" font-size="10">Viewport</text>
+  <text x="350" y="175" text-anchor="middle" font-size="12">중앙 도킹 노드</text>
+  <text x="350" y="192" text-anchor="middle" font-size="10">(메인 작업 영역)</text>
+
+  <!-- Right panel -->
+  <rect x="505" y="55" width="150" height="310" fill="none" stroke="black" stroke-width="1.5"/>
+  <rect x="505" y="55" width="90" height="22" fill="none" stroke="black"/>
+  <text x="550" y="70" text-anchor="middle" font-size="10">Inspector</text>
+  <text x="580" y="215" text-anchor="middle" font-size="11">오른쪽 패널</text>
+  <text x="580" y="230" text-anchor="middle" font-size="10">(속성 창)</text>
+
+  <!-- Bottom panel -->
+  <rect x="200" y="290" width="300" height="75" fill="none" stroke="black" stroke-width="1.5"/>
+  <rect x="200" y="290" width="90" height="22" fill="none" stroke="black"/>
+  <text x="245" y="305" text-anchor="middle" font-size="10">Console</text>
+  <text x="350" y="335" text-anchor="middle" font-size="11">아래쪽 패널 (로그/콘솔)</text>
+
+  <text x="350" y="390" text-anchor="middle" font-size="10">각 패널의 경계는 사용자가 드래그로 재조정할 수 있는 분할선입니다</text>
+</svg>
