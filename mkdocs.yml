@@ -77,3 +77,5 @@ nav:
       - "VS Code로 구축하는 C++ 개발환경": Languages/Cpp/CppVSCode개발환경/00-목차.md
   - 동시성과 병렬 프로그래밍:
       - "동시성과 병렬 프로그래밍 (C#)": Concurrency/동시성과병렬프로그래밍/00-목차.md
+  - 컴퓨터 비전:
+      - "OpenCV (Python·C++·C#)": OpenCV/OpenCV로배우는컴퓨터비전/00-목차.md
