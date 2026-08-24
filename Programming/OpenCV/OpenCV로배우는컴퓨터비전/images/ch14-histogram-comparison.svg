@@ -1,0 +1,79 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" stroke="none"/>
+
+  <!-- 제목 -->
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">히스토그램 평활화 전후 비교</text>
+
+  <!-- 왼쪽: 평활화 전 (좁게 몰린 분포) -->
+  <g transform="translate(60,60)">
+    <text x="130" y="0" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">평활화 전 (저대비)</text>
+
+    <!-- 축 -->
+    <line x1="0" y1="220" x2="260" y2="220" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="20" x2="0" y2="220" stroke="#000000" stroke-width="1.5"/>
+    <text x="130" y="245" text-anchor="middle" font-size="11" fill="#000000">밝기 값 (0 ~ 255)</text>
+    <text x="-30" y="120" text-anchor="middle" font-size="11" fill="#000000" transform="rotate(-90 -30 120)">빈도수</text>
+
+    <!-- 좁은 구간에 몰린 막대들 -->
+    <rect x="40" y="200" width="6" height="20" fill="#000000"/>
+    <rect x="48" y="170" width="6" height="50" fill="#000000"/>
+    <rect x="56" y="130" width="6" height="90" fill="#000000"/>
+    <rect x="64" y="90" width="6" height="130" fill="#000000"/>
+    <rect x="72" y="60" width="6" height="160" fill="#000000"/>
+    <rect x="80" y="80" width="6" height="140" fill="#000000"/>
+    <rect x="88" y="120" width="6" height="100" fill="#000000"/>
+    <rect x="96" y="160" width="6" height="60" fill="#000000"/>
+    <rect x="104" y="195" width="6" height="25" fill="#000000"/>
+
+    <!-- 0과 255 표시 -->
+    <text x="0" y="235" text-anchor="middle" font-size="10" fill="#000000">0</text>
+    <text x="260" y="235" text-anchor="middle" font-size="10" fill="#000000">255</text>
+    <text x="72" y="45" text-anchor="middle" font-size="10" fill="#000000">▲ 좁은 구간에 집중</text>
+  </g>
+
+  <!-- 화살표 -->
+  <line x1="345" y1="180" x2="405" y2="180" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="375" y="165" text-anchor="middle" font-size="11" fill="#000000">equalizeHist</text>
+
+  <!-- 오른쪽: 평활화 후 (넓게 퍼진 분포) -->
+  <g transform="translate(420,60)">
+    <text x="130" y="0" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">평활화 후 (대비 개선)</text>
+
+    <!-- 축 -->
+    <line x1="0" y1="220" x2="260" y2="220" stroke="#000000" stroke-width="1.5"/>
+    <line x1="0" y1="20" x2="0" y2="220" stroke="#000000" stroke-width="1.5"/>
+    <text x="130" y="245" text-anchor="middle" font-size="11" fill="#000000">밝기 값 (0 ~ 255)</text>
+    <text x="-30" y="120" text-anchor="middle" font-size="11" fill="#000000" transform="rotate(-90 -30 120)">빈도수</text>
+
+    <!-- 넓게 퍼진 막대들 -->
+    <rect x="10" y="150" width="8" height="70" fill="#000000"/>
+    <rect x="30" y="130" width="8" height="90" fill="#000000"/>
+    <rect x="55" y="170" width="8" height="50" fill="#000000"/>
+    <rect x="80" y="110" width="8" height="110" fill="#000000"/>
+    <rect x="105" y="90" width="8" height="130" fill="#000000"/>
+    <rect x="130" y="140" width="8" height="80" fill="#000000"/>
+    <rect x="155" y="100" width="8" height="120" fill="#000000"/>
+    <rect x="180" y="160" width="8" height="60" fill="#000000"/>
+    <rect x="205" y="120" width="8" height="100" fill="#000000"/>
+    <rect x="230" y="150" width="8" height="70" fill="#000000"/>
+
+    <text x="0" y="235" text-anchor="middle" font-size="10" fill="#000000">0</text>
+    <text x="260" y="235" text-anchor="middle" font-size="10" fill="#000000">255</text>
+    <text x="130" y="45" text-anchor="middle" font-size="10" fill="#000000">▲ 0~255 전체로 퍼짐</text>
+  </g>
+
+  <!-- 하단 설명 -->
+  <g transform="translate(90,330)">
+    <rect x="0" y="0" width="520" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <text x="260" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">누적 분포를 이용해 좁은 구간의 값을 넓은 구간으로 재매핑</text>
+    <text x="260" y="38" text-anchor="middle" font-size="11" fill="#000000">→ 어두운 부분과 밝은 부분의 구분이 뚜렷해짐</text>
+  </g>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

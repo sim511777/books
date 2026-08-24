@@ -1,0 +1,80 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- 배경 -->
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" stroke="none"/>
+
+  <!-- 제목 -->
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">Canny 엣지 검출의 3단계 파이프라인</text>
+
+  <!-- 입력 이미지 박스 -->
+  <g transform="translate(20,150)">
+    <rect x="0" y="0" width="90" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="45" y="45" text-anchor="middle" font-size="12" fill="#000000">입력</text>
+    <text x="45" y="62" text-anchor="middle" font-size="12" fill="#000000">그레이스케일</text>
+    <text x="45" y="115" text-anchor="middle" font-size="11" fill="#000000">(블러 적용됨)</text>
+  </g>
+
+  <!-- 화살표 1 -->
+  <line x1="112" y1="195" x2="150" y2="195" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 1단계: 그래디언트 계산 -->
+  <g transform="translate(155,110)">
+    <rect x="0" y="0" width="150" height="170" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="75" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">1단계</text>
+    <text x="75" y="44" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">그래디언트 계산</text>
+    <line x1="15" y1="55" x2="135" y2="55" stroke="#000000" stroke-width="1"/>
+    <text x="75" y="75" text-anchor="middle" font-size="11" fill="#000000">Sobel 필터로</text>
+    <text x="75" y="92" text-anchor="middle" font-size="11" fill="#000000">Gx, Gy 계산</text>
+    <text x="75" y="115" text-anchor="middle" font-size="11" fill="#000000">→ 크기 |G|와</text>
+    <text x="75" y="132" text-anchor="middle" font-size="11" fill="#000000">방향 θ 산출</text>
+    <text x="75" y="155" text-anchor="middle" font-size="10" fill="#000000">(밝기 변화량 측정)</text>
+  </g>
+
+  <!-- 화살표 2 -->
+  <line x1="312" y1="195" x2="350" y2="195" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2단계: 비최대 억제 -->
+  <g transform="translate(355,110)">
+    <rect x="0" y="0" width="150" height="170" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="75" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">2단계</text>
+    <text x="75" y="44" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">비최대 억제</text>
+    <line x1="15" y1="55" x2="135" y2="55" stroke="#000000" stroke-width="1"/>
+    <text x="75" y="75" text-anchor="middle" font-size="11" fill="#000000">그래디언트 방향으로</text>
+    <text x="75" y="92" text-anchor="middle" font-size="11" fill="#000000">국소 최대값만</text>
+    <text x="75" y="109" text-anchor="middle" font-size="11" fill="#000000">남기고 나머지</text>
+    <text x="75" y="126" text-anchor="middle" font-size="11" fill="#000000">억제(0으로)</text>
+    <text x="75" y="155" text-anchor="middle" font-size="10" fill="#000000">(굵은 경계를 얇게)</text>
+  </g>
+
+  <!-- 화살표 3 -->
+  <line x1="512" y1="195" x2="550" y2="195" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3단계: 히스테리시스 임계처리 -->
+  <g transform="translate(555,90)">
+    <rect x="0" y="0" width="130" height="210" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+    <text x="65" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">3단계</text>
+    <text x="65" y="44" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">히스테리시스</text>
+    <text x="65" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">임계처리</text>
+    <line x1="12" y1="70" x2="118" y2="70" stroke="#000000" stroke-width="1"/>
+    <text x="65" y="90" text-anchor="middle" font-size="10.5" fill="#000000">|G| ≥ 상위 임계값</text>
+    <text x="65" y="105" text-anchor="middle" font-size="10.5" fill="#000000">→ 강한 엣지 확정</text>
+    <text x="65" y="128" text-anchor="middle" font-size="10.5" fill="#000000">하위 &lt; |G| &lt; 상위</text>
+    <text x="65" y="143" text-anchor="middle" font-size="10.5" fill="#000000">→ 강한 엣지와</text>
+    <text x="65" y="158" text-anchor="middle" font-size="10.5" fill="#000000">연결되면 채택</text>
+    <text x="65" y="180" text-anchor="middle" font-size="10.5" fill="#000000">|G| ≤ 하위 임계값</text>
+    <text x="65" y="195" text-anchor="middle" font-size="10.5" fill="#000000">→ 제거</text>
+  </g>
+
+  <!-- 하단 설명 -->
+  <g transform="translate(60,330)">
+    <rect x="0" y="0" width="580" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+    <text x="290" y="22" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#000000">cv2.Canny(img, threshold1, threshold2)</text>
+    <text x="290" y="42" text-anchor="middle" font-size="11.5" fill="#000000">threshold1 = 하위 임계값,  threshold2 = 상위 임계값</text>
+  </g>
+
+  <!-- 화살표 마커 정의 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
