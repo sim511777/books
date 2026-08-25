@@ -35,6 +35,7 @@
 ## UI 프레임워크
 
 - **[Avalonia로 배우는 크로스플랫폼 UI 개발](Avalonia/Avalonia기초/00-목차.md)** — C#/.NET 기반 크로스플랫폼 UI 프레임워크 Avalonia를 XAML 기초부터 레이아웃, 데이터 바인딩, MVVM 패턴, 스타일·템플릿, Windows/macOS/Linux 배포까지 다룹니다.
+- **[Dear ImGui로 배우는 C++ GUI 프로그래밍](ImGui/ImGui기초/00-목차.md)** — C++ 즉시 모드(immediate mode) GUI 라이브러리 Dear ImGui를 핵심 개념부터 기본 위젯, 레이아웃, 테이블, 도킹, 커스텀 렌더링, 상태 관리 패턴, 실전 프로젝트까지 다룹니다.
 
 ## 개발 도구와 환경
 
