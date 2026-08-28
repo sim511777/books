@@ -74,6 +74,7 @@ nav:
   - UI 프레임워크:
       - "Avalonia (C#)": Avalonia/Avalonia기초/00-목차.md
       - "Dear ImGui (C++)": ImGui/ImGui기초/00-목차.md
+      - "Slint (C++)": Slint/Slint기초/00-목차.md
   - 개발 도구와 환경:
       - "VS Code로 구축하는 C++ 개발환경": Languages/Cpp/CppVSCode개발환경/00-목차.md
   - 동시성과 병렬 프로그래밍:

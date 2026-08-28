@@ -37,6 +37,7 @@
 
 - **[Avalonia로 배우는 크로스플랫폼 UI 개발](Avalonia/Avalonia기초/00-목차.md)** — C#/.NET 기반 크로스플랫폼 UI 프레임워크 Avalonia를 XAML 기초부터 레이아웃, 데이터 바인딩, MVVM 패턴, 스타일·템플릿, Windows/macOS/Linux 배포까지 다룹니다.
 - **[Dear ImGui로 배우는 C++ GUI 프로그래밍](ImGui/ImGui기초/00-목차.md)** — C++ 즉시 모드(immediate mode) GUI 라이브러리 Dear ImGui를 핵심 개념부터 기본 위젯, 레이아웃, 테이블, 도킹, 커스텀 렌더링, 상태 관리 패턴, 실전 프로젝트까지 다룹니다.
+- **[Slint로 배우는 C++ GUI 프로그래밍](Slint/Slint기초/00-목차.md)** — Rust 코어에 C++ 바인딩을 제공하는 선언적(declarative) GUI 툴킷 Slint를 `.slint` 언어 기초부터 프로퍼티 바인딩, C++ 연동, 표준 위젯, 상태/애니메이션, 리스트/모델, 임베디드 타겟팅, 실전 프로젝트까지 다룹니다.
 
 ## 개발 도구와 환경
 
