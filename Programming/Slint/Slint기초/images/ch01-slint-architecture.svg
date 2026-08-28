@@ -1,0 +1,43 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Core -->
+  <rect x="270" y="165" width="160" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="193" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">Slint 코어</text>
+  <text x="350" y="213" text-anchor="middle" font-size="12" fill="#000000">(Rust로 작성)</text>
+
+  <!-- .slint compiler note -->
+  <text x="350" y="150" text-anchor="middle" font-size="12" fill="#000000">.slint 컴파일러 + 렌더링 엔진</text>
+
+  <!-- C++ binding (top-left) -->
+  <rect x="60" y="40" width="140" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="130" y="75" text-anchor="middle" font-size="15" fill="#000000">C++ 바인딩</text>
+
+  <!-- Rust binding (top-right) -->
+  <rect x="500" y="40" width="140" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="75" text-anchor="middle" font-size="15" fill="#000000">Rust 바인딩</text>
+
+  <!-- JavaScript binding (bottom-left) -->
+  <rect x="60" y="300" width="140" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="130" y="330" text-anchor="middle" font-size="15" fill="#000000">JavaScript</text>
+  <text x="130" y="348" text-anchor="middle" font-size="12" fill="#000000">(Node.js) 바인딩</text>
+
+  <!-- Python binding (bottom-right) -->
+  <rect x="500" y="300" width="140" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="330" text-anchor="middle" font-size="15" fill="#000000">Python 바인딩</text>
+
+  <!-- Arrows from core to each binding -->
+  <line x1="290" y1="175" x2="170" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="175" x2="530" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="290" y1="225" x2="170" y2="300" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="410" y1="225" x2="530" y2="300" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- footer note -->
+  <text x="350" y="390" text-anchor="middle" font-size="12" fill="#000000">이 책에서는 C++ 바인딩을 다룹니다</text>
+</svg>

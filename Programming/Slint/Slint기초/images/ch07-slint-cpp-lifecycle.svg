@@ -1,0 +1,72 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">Slint C++ 컴포넌트의 생명주기</text>
+
+  <!-- Step 1: .slint file -->
+  <rect x="20" y="70" width="120" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="80" y="95" text-anchor="middle" font-size="13" fill="#000000">app-window</text>
+  <text x="80" y="112" text-anchor="middle" font-size="13" fill="#000000">.slint</text>
+
+  <!-- Step 2: build-time codegen -->
+  <rect x="180" y="70" width="130" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="245" y="95" text-anchor="middle" font-size="12" fill="#000000">빌드타임</text>
+  <text x="245" y="112" text-anchor="middle" font-size="12" fill="#000000">코드 생성</text>
+
+  <!-- Step 3: generated class -->
+  <rect x="350" y="70" width="150" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="425" y="95" text-anchor="middle" font-size="12" fill="#000000">class AppWindow</text>
+  <text x="425" y="112" text-anchor="middle" font-size="11" fill="#000000">(생성된 C++ 클래스)</text>
+
+  <!-- Step 4: create() -->
+  <rect x="540" y="70" width="140" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="610" y="90" text-anchor="middle" font-size="12" fill="#000000">AppWindow::create()</text>
+  <text x="610" y="106" text-anchor="middle" font-size="11" fill="#000000">ComponentHandle&lt;T&gt;</text>
+  <text x="610" y="120" text-anchor="middle" font-size="11" fill="#000000">(참조 카운팅)</text>
+
+  <!-- Arrows row1 -->
+  <line x1="140" y1="100" x2="176" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+  <line x1="310" y1="100" x2="346" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+  <line x1="500" y1="100" x2="536" y2="100" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <!-- down arrow to run() -->
+  <line x1="610" y1="130" x2="610" y2="175" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <!-- Step 5: ->run() -->
+  <rect x="480" y="180" width="180" height="55" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="570" y="203" text-anchor="middle" font-size="13" fill="#000000">ui-&gt;run()</text>
+  <text x="570" y="220" text-anchor="middle" font-size="11" fill="#000000">창이 뜨고 이벤트 루프 시작</text>
+
+  <!-- arrow down/left to event loop -->
+  <line x1="480" y1="207" x2="330" y2="207" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <!-- Step 6: event loop (blocking) -->
+  <rect x="120" y="175" width="200" height="65" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="220" y="198" text-anchor="middle" font-size="13" fill="#000000">이벤트 루프</text>
+  <text x="220" y="215" text-anchor="middle" font-size="11" fill="#000000">사용자 입력 처리</text>
+  <text x="220" y="230" text-anchor="middle" font-size="11" fill="#000000">(run()이 블로킹됨)</text>
+
+  <!-- self loop arrow -->
+  <path d="M120,190 C90,190 90,225 120,225" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <!-- arrow down to close -->
+  <line x1="220" y1="240" x2="220" y2="285" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <!-- Step 7: window closed -->
+  <rect x="120" y="290" width="200" height="55" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="220" y="313" text-anchor="middle" font-size="13" fill="#000000">창 닫힘</text>
+  <text x="220" y="330" text-anchor="middle" font-size="11" fill="#000000">run()이 반환됨</text>
+
+  <!-- Step 8: cleanup -->
+  <rect x="380" y="290" width="220" height="55" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="490" y="313" text-anchor="middle" font-size="13" fill="#000000">ComponentHandle 소멸</text>
+  <text x="490" y="330" text-anchor="middle" font-size="11" fill="#000000">main() 종료</text>
+
+  <line x1="320" y1="317" x2="376" y2="317" stroke="#000000" stroke-width="2" marker-end="url(#arrow7)"/>
+
+  <defs>
+    <marker id="arrow7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

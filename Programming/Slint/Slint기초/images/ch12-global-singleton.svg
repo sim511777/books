@@ -1,0 +1,45 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">여러 컴포넌트가 공유하는 Global 싱글톤</text>
+
+  <!-- Central global -->
+  <rect x="270" y="165" width="160" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
+  <text x="350" y="193" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">global AppState</text>
+  <text x="350" y="210" text-anchor="middle" font-size="11" fill="#000000">user-name, is-logged-in</text>
+  <text x="350" y="224" text-anchor="middle" font-size="11" fill="#000000">callback login()</text>
+
+  <!-- Screen A -->
+  <rect x="40" y="40" width="150" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="115" y="68" text-anchor="middle" font-size="13" fill="#000000">화면 A</text>
+  <text x="115" y="86" text-anchor="middle" font-size="11" fill="#000000">component LoginPage</text>
+
+  <!-- Screen B -->
+  <rect x="510" y="40" width="150" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="585" y="68" text-anchor="middle" font-size="13" fill="#000000">화면 B</text>
+  <text x="585" y="86" text-anchor="middle" font-size="11" fill="#000000">component ProfilePage</text>
+
+  <!-- Screen C -->
+  <rect x="275" y="300" width="150" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="328" text-anchor="middle" font-size="13" fill="#000000">화면 C</text>
+  <text x="350" y="346" text-anchor="middle" font-size="11" fill="#000000">component SettingsPage</text>
+
+  <!-- Arrows: bidirectional between each screen and global -->
+  <line x1="175" y1="105" x2="300" y2="170" stroke="#000000" stroke-width="2" marker-end="url(#arrow12)" marker-start="url(#arrow12start)"/>
+  <line x1="525" y1="105" x2="400" y2="170" stroke="#000000" stroke-width="2" marker-end="url(#arrow12)" marker-start="url(#arrow12start)"/>
+  <line x1="350" y1="235" x2="350" y2="296" stroke="#000000" stroke-width="2" marker-end="url(#arrow12)" marker-start="url(#arrow12start)"/>
+
+  <text x="700" y="0" font-size="1"> </text>
+
+  <!-- Legend -->
+  <text x="60" y="380" font-size="11" fill="#000000">각 화면은 AppState.프로퍼티 로 값을 읽고 쓰며, 값이 바뀌면 이를 참조하는 다른 화면도 함께 갱신됩니다.</text>
+
+  <defs>
+    <marker id="arrow12" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+    <marker id="arrow12start" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M9,0 L9,6 L0,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

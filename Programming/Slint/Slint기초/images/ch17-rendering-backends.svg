@@ -1,0 +1,58 @@
+<svg viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="440" fill="#ffffff"/>
+
+  <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">하나의 UI 소스, 두 가지 렌더링 백엔드</text>
+
+  <!-- Shared .slint source -->
+  <rect x="270" y="55" width="160" height="55" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="78" text-anchor="middle" font-size="13" fill="#000000">todo-app.slint</text>
+  <text x="350" y="95" text-anchor="middle" font-size="11" fill="#000000">(공통 UI 정의)</text>
+
+  <!-- split arrows -->
+  <line x1="320" y1="110" x2="180" y2="150" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+  <line x1="380" y1="110" x2="520" y2="150" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+
+  <!-- Desktop build -->
+  <rect x="80" y="155" width="200" height="50" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="180" y="185" text-anchor="middle" font-size="12" fill="#000000">데스크톱 빌드 (Windows/macOS/Linux)</text>
+
+  <!-- Embedded build -->
+  <rect x="420" y="155" width="200" height="50" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="520" y="185" text-anchor="middle" font-size="12" fill="#000000">임베디드 빌드 (MCU/임베디드 리눅스)</text>
+
+  <!-- down arrows -->
+  <line x1="180" y1="205" x2="180" y2="235" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+  <line x1="520" y1="205" x2="520" y2="235" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+
+  <!-- GPU renderer -->
+  <rect x="70" y="240" width="220" height="65" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="180" y="263" text-anchor="middle" font-size="13" fill="#000000">GPU 가속 렌더러</text>
+  <text x="180" y="280" text-anchor="middle" font-size="11" fill="#000000">FemtoVG / Skia 백엔드</text>
+  <text x="180" y="296" text-anchor="middle" font-size="11" fill="#000000">그래픽 카드가 픽셀을 그림</text>
+
+  <!-- Software renderer -->
+  <rect x="410" y="240" width="220" height="65" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="520" y="263" text-anchor="middle" font-size="13" fill="#000000">소프트웨어 렌더러</text>
+  <text x="520" y="280" text-anchor="middle" font-size="11" fill="#000000">GPU 없이 CPU로 직접 렌더링</text>
+  <text x="520" y="296" text-anchor="middle" font-size="11" fill="#000000">RAM/연산력이 제한된 환경용</text>
+
+  <!-- down arrows to output -->
+  <line x1="180" y1="305" x2="180" y2="335" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+  <line x1="520" y1="305" x2="520" y2="335" stroke="#000000" stroke-width="2" marker-end="url(#arrow17)"/>
+
+  <!-- Output desktop -->
+  <rect x="70" y="340" width="220" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="180" y="365" text-anchor="middle" font-size="12" fill="#000000">데스크톱 창</text>
+  <text x="180" y="382" text-anchor="middle" font-size="11" fill="#000000">고해상도, 부드러운 애니메이션</text>
+
+  <!-- Output embedded -->
+  <rect x="410" y="340" width="220" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="520" y="365" text-anchor="middle" font-size="12" fill="#000000">산업 장비 터치스크린 HMI</text>
+  <text x="520" y="382" text-anchor="middle" font-size="11" fill="#000000">가전제품 디스플레이 등</text>
+
+  <defs>
+    <marker id="arrow17" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

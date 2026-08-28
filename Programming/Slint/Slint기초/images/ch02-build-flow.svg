@@ -1,0 +1,47 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="40" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">.slint 파일에서 실행까지의 빌드 흐름</text>
+
+  <!-- Step 1: .slint file -->
+  <rect x="30" y="150" width="130" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="95" y="180" text-anchor="middle" font-size="14" fill="#000000">app-window</text>
+  <text x="95" y="198" text-anchor="middle" font-size="14" fill="#000000">.slint</text>
+
+  <!-- Step 2: build-time codegen -->
+  <rect x="200" y="150" width="140" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="270" y="178" text-anchor="middle" font-size="13" fill="#000000">빌드 시점</text>
+  <text x="270" y="196" text-anchor="middle" font-size="13" fill="#000000">코드 생성</text>
+  <text x="270" y="212" text-anchor="middle" font-size="11" fill="#000000">(slint_target_sources)</text>
+
+  <!-- Step 3: C++ header -->
+  <rect x="380" y="150" width="130" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="445" y="180" text-anchor="middle" font-size="14" fill="#000000">app-window.h</text>
+  <text x="445" y="198" text-anchor="middle" font-size="12" fill="#000000">(생성된 헤더)</text>
+
+  <!-- Step 4: main.cpp -->
+  <rect x="550" y="150" width="120" height="70" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="610" y="178" text-anchor="middle" font-size="14" fill="#000000">main.cpp</text>
+  <text x="610" y="196" text-anchor="middle" font-size="11" fill="#000000">include &amp; run()</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="185" x2="196" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="340" y1="185" x2="376" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="510" y1="185" x2="546" y2="185" stroke="#000000" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom: run window -->
+  <rect x="480" y="280" width="160" height="60" rx="8" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="560" y="308" text-anchor="middle" font-size="13" fill="#000000">AppWindow::create()</text>
+  <text x="560" y="326" text-anchor="middle" font-size="13" fill="#000000">-&gt;run()  실행</text>
+
+  <line x1="610" y1="220" x2="580" y2="276" stroke="#000000" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <text x="270" y="260" text-anchor="middle" font-size="11" fill="#000000">CMakeLists.txt의 slint_target_sources()가</text>
+  <text x="270" y="275" text-anchor="middle" font-size="11" fill="#000000">이 과정을 빌드 시스템에 연결합니다</text>
+</svg>
