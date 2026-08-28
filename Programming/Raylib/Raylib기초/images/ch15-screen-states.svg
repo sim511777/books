@@ -1,0 +1,43 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- SCREEN_MENU -->
+  <rect x="60" y="170" width="150" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="135" y="200" font-family="sans-serif" font-size="15" text-anchor="middle">SCREEN_MENU</text>
+  <text x="135" y="220" font-family="sans-serif" font-size="12" text-anchor="middle">(메뉴 화면)</text>
+
+  <!-- SCREEN_GAMEPLAY -->
+  <rect x="290" y="170" width="150" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="365" y="200" font-family="sans-serif" font-size="15" text-anchor="middle">SCREEN_GAMEPLAY</text>
+  <text x="365" y="220" font-family="sans-serif" font-size="12" text-anchor="middle">(플레이 화면)</text>
+
+  <!-- SCREEN_GAMEOVER -->
+  <rect x="520" y="170" width="150" height="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="595" y="200" font-family="sans-serif" font-size="15" text-anchor="middle">SCREEN_GAMEOVER</text>
+  <text x="595" y="220" font-family="sans-serif" font-size="12" text-anchor="middle">(게임 오버 화면)</text>
+
+  <!-- MENU -> GAMEPLAY -->
+  <line x1="210" y1="205" x2="290" y2="205" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="250" y="185" font-family="sans-serif" font-size="11" text-anchor="middle">Enter 입력</text>
+  <text x="250" y="245" font-family="sans-serif" font-size="11" text-anchor="middle">(점수·시간 초기화)</text>
+
+  <!-- GAMEPLAY -> GAMEOVER -->
+  <line x1="440" y1="205" x2="520" y2="205" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="480" y="185" font-family="sans-serif" font-size="11" text-anchor="middle">제한 시간</text>
+  <text x="480" y="245" font-family="sans-serif" font-size="11" text-anchor="middle">종료</text>
+
+  <!-- GAMEOVER -> MENU (재시작, curved path below) -->
+  <path d="M 595 240 L 595 320 L 135 320 L 135 240" fill="none" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="365" y="340" font-family="sans-serif" font-size="12" text-anchor="middle">Enter 입력 (메뉴로 복귀)</text>
+
+  <!-- title -->
+  <text x="350" y="40" font-family="sans-serif" font-size="16" text-anchor="middle" font-weight="bold">게임 화면(GameScreen) 상태 전이</text>
+  <text x="350" y="62" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#333">각 화살표 위에는 전환 조건을, 아래에는 전환 시 처리할 초기화를 표시했습니다</text>
+
+</svg>
