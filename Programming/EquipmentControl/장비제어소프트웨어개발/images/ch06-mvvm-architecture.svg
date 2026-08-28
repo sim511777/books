@@ -1,0 +1,79 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Model layer -->
+  <rect x="20" y="60" width="180" height="280" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="110" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Model 계층</text>
+
+  <rect x="35" y="100" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="110" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">FSM/시퀀스 엔진</text>
+  <text x="110" y="138" text-anchor="middle" font-size="9" fill="#555555">(5장)</text>
+
+  <rect x="35" y="165" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="110" y="187" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">모터/IO 드라이버</text>
+  <text x="110" y="203" text-anchor="middle" font-size="9" fill="#555555">(3, 4장)</text>
+
+  <rect x="35" y="230" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="110" y="252" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">통신/드라이버</text>
+  <text x="110" y="268" text-anchor="middle" font-size="9" fill="#555555">이벤트, 상태 객체</text>
+
+  <text x="110" y="310" text-anchor="middle" font-size="9" fill="#555555">UI를 전혀 모름</text>
+  <text x="110" y="324" text-anchor="middle" font-size="9" fill="#555555">순수 도메인 로직</text>
+
+  <!-- ViewModel layer -->
+  <rect x="260" y="60" width="180" height="280" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">ViewModel 계층</text>
+
+  <rect x="275" y="100" width="150" height="65" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="350" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">AxisViewModel</text>
+  <text x="350" y="138" text-anchor="middle" font-size="9" fill="#555555">MainViewModel</text>
+  <text x="350" y="152" text-anchor="middle" font-size="9" fill="#555555">INotifyPropertyChanged</text>
+
+  <rect x="275" y="175" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="350" y="197" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">RelayCommand</text>
+  <text x="350" y="213" text-anchor="middle" font-size="9" fill="#555555">ICommand 구현</text>
+
+  <text x="350" y="260" text-anchor="middle" font-size="9" fill="#555555">Dispatcher로 이벤트를</text>
+  <text x="350" y="274" text-anchor="middle" font-size="9" fill="#555555">UI 스레드로 마샬링 후</text>
+  <text x="350" y="288" text-anchor="middle" font-size="9" fill="#555555">프로퍼티 갱신 (6.2절)</text>
+
+  <!-- View layer -->
+  <rect x="500" y="60" width="180" height="280" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="590" y="85" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">View 계층</text>
+
+  <rect x="515" y="100" width="150" height="65" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="590" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">XAML</text>
+  <text x="590" y="138" text-anchor="middle" font-size="9" fill="#555555">TextBlock, DataGrid,</text>
+  <text x="590" y="152" text-anchor="middle" font-size="9" fill="#555555">인디케이터 등</text>
+
+  <rect x="515" y="175" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+  <text x="590" y="197" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">DataContext 바인딩</text>
+  <text x="590" y="213" text-anchor="middle" font-size="9" fill="#555555">Binding, Command</text>
+
+  <text x="590" y="260" text-anchor="middle" font-size="9" fill="#555555">코드비하인드 최소화</text>
+  <text x="590" y="274" text-anchor="middle" font-size="9" fill="#555555">선언적 바인딩만 존재</text>
+
+  <!-- top arrow: state change events -->
+  <line x1="200" y1="130" x2="255" y2="130" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="228" y="118" text-anchor="middle" font-size="9" fill="#555555">상태 변경</text>
+  <text x="228" y="152" text-anchor="middle" font-size="9" fill="#555555">이벤트 구독</text>
+
+  <line x1="440" y1="130" x2="495" y2="130" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="468" y="118" text-anchor="middle" font-size="9" fill="#555555">Property</text>
+  <text x="468" y="152" text-anchor="middle" font-size="9" fill="#555555">Changed</text>
+
+  <!-- bottom arrow: commands -->
+  <line x1="495" y1="200" x2="440" y2="200" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="468" y="190" text-anchor="middle" font-size="9" fill="#555555">Command 실행</text>
+
+  <line x1="255" y1="200" x2="200" y2="200" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="228" y="190" text-anchor="middle" font-size="9" fill="#555555">제어 메서드 호출</text>
+
+  <text x="350" y="370" text-anchor="middle" font-size="10" fill="#555555">Model은 View를 모르고, View는 Model을 모른다 — ViewModel이 중개</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,68 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Equipment Controller -->
+  <rect x="250" y="12" width="200" height="42" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="30" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">장비 컨트롤러</text>
+  <text x="350" y="45" text-anchor="middle" font-size="9" fill="#333333">레시피 오케스트레이션</text>
+
+  <!-- Module boxes -->
+  <rect x="20" y="90" width="180" height="80" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="110" y="112" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">로더 모듈</text>
+  <text x="110" y="130" text-anchor="middle" font-size="9" fill="#555555">StateMachine (FSM)</text>
+  <text x="110" y="144" text-anchor="middle" font-size="9" fill="#555555">SequenceEngine</text>
+  <text x="110" y="160" text-anchor="middle" font-size="9" fill="#555555">웨이퍼 투입/취출</text>
+
+  <rect x="260" y="90" width="180" height="80" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="112" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">챔버 모듈</text>
+  <text x="350" y="130" text-anchor="middle" font-size="9" fill="#555555">StateMachine (FSM)</text>
+  <text x="350" y="144" text-anchor="middle" font-size="9" fill="#555555">SequenceEngine</text>
+  <text x="350" y="160" text-anchor="middle" font-size="9" fill="#555555">공정 처리</text>
+
+  <rect x="500" y="90" width="180" height="80" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="590" y="112" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">언로더 모듈</text>
+  <text x="590" y="130" text-anchor="middle" font-size="9" fill="#555555">StateMachine (FSM)</text>
+  <text x="590" y="144" text-anchor="middle" font-size="9" fill="#555555">SequenceEngine</text>
+  <text x="590" y="160" text-anchor="middle" font-size="9" fill="#555555">웨이퍼 배출</text>
+
+  <!-- controller -> modules -->
+  <line x1="300" y1="54" x2="130" y2="86" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="350" y1="54" x2="350" y2="86" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <line x1="400" y1="54" x2="570" y2="86" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="350" y="72" text-anchor="middle" font-size="8" fill="#555555">RunAsync() 호출</text>
+
+  <!-- shared resource -->
+  <rect x="250" y="220" width="200" height="55" fill="#f0f0f0" stroke="#000000" stroke-width="2.5"/>
+  <text x="350" y="242" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">공유 로봇 암</text>
+  <text x="350" y="258" text-anchor="middle" font-size="9" fill="#333333">SemaphoreSlim(1, 1)</text>
+
+  <!-- modules -> resource -->
+  <line x1="110" y1="170" x2="290" y2="222" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <line x1="350" y1="170" x2="350" y2="216" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <line x1="590" y1="170" x2="410" y2="222" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="500" y="200" text-anchor="middle" font-size="8" fill="#555555">WaitAsync() / Release()</text>
+
+  <!-- Timeline illustration -->
+  <text x="30" y="305" font-size="10" font-weight="bold" fill="#000000">시간에 따른 로봇 암 점유 (상호 배제)</text>
+  <line x1="30" y1="380" x2="670" y2="380" stroke="#000000" stroke-width="1.2"/>
+  <text x="670" y="393" text-anchor="end" font-size="8" fill="#555555">t</text>
+
+  <rect x="60" y="330" width="140" height="30" fill="#e0e0e0" stroke="#000000" stroke-width="1.4"/>
+  <text x="130" y="349" text-anchor="middle" font-size="9" fill="#000000">로더: 웨이퍼 투입</text>
+
+  <rect x="230" y="330" width="180" height="30" fill="#e0e0e0" stroke="#000000" stroke-width="1.4"/>
+  <text x="320" y="349" text-anchor="middle" font-size="9" fill="#000000">챔버: 웨이퍼 이송</text>
+
+  <rect x="440" y="330" width="160" height="30" fill="#e0e0e0" stroke="#000000" stroke-width="1.4"/>
+  <text x="520" y="349" text-anchor="middle" font-size="9" fill="#000000">언로더: 웨이퍼 취출 대기 → 점유</text>
+
+  <text x="130" y="322" text-anchor="middle" font-size="8" fill="#555555">Acquire</text>
+  <text x="320" y="322" text-anchor="middle" font-size="8" fill="#555555">Acquire</text>
+  <text x="520" y="322" text-anchor="middle" font-size="8" fill="#555555">대기 → Acquire</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

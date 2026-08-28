@@ -1,0 +1,58 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Physical device on the left -->
+  <rect x="10" y="160" width="90" height="70" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="55" y="190" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">장비</text>
+  <text x="55" y="206" text-anchor="middle" font-size="10" fill="#333333">시리얼/TCP</text>
+
+  <line x1="100" y1="195" x2="140" y2="195" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Producer: receive thread -->
+  <rect x="140" y="150" width="150" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="215" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">수신 스레드</text>
+  <text x="215" y="198" text-anchor="middle" font-size="11" fill="#333333">(Producer)</text>
+  <text x="215" y="216" text-anchor="middle" font-size="10" fill="#555555">전용 Thread</text>
+  <text x="215" y="230" text-anchor="middle" font-size="10" fill="#555555">Port.Read 블로킹 루프</text>
+
+  <line x1="290" y1="195" x2="335" y2="195" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="312" y="185" text-anchor="middle" font-size="9" fill="#555555">WriteAsync</text>
+
+  <!-- Channel queue -->
+  <rect x="335" y="140" width="150" height="110" fill="#f0f0f0" stroke="#000000" stroke-width="2"/>
+  <text x="410" y="168" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Channel&lt;T&gt;</text>
+  <text x="410" y="186" text-anchor="middle" font-size="10" fill="#333333">Bounded Queue</text>
+  <rect x="350" y="196" width="26" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <rect x="380" y="196" width="26" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <rect x="410" y="196" width="26" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <rect x="440" y="196" width="26" height="20" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="410" y="235" text-anchor="middle" font-size="9" fill="#555555">FIFO, 백프레셔 지원</text>
+
+  <line x1="485" y1="195" x2="530" y2="195" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="507" y="185" text-anchor="middle" font-size="9" fill="#555555">ReadAllAsync</text>
+
+  <!-- Consumer: parsing thread -->
+  <rect x="530" y="150" width="150" height="90" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="605" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">파싱/처리 스레드</text>
+  <text x="605" y="198" text-anchor="middle" font-size="11" fill="#333333">(Consumer)</text>
+  <text x="605" y="216" text-anchor="middle" font-size="10" fill="#555555">Task.Run 기반</text>
+  <text x="605" y="230" text-anchor="middle" font-size="10" fill="#555555">프로토콜 파싱 · 디스패치</text>
+
+  <line x1="605" y1="240" x2="605" y2="270" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- downstream -->
+  <rect x="500" y="270" width="210" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="605" y="294" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">상위 로직 (FSM/시퀀스)</text>
+  <text x="605" y="312" text-anchor="middle" font-size="10" fill="#555555">이벤트 발행, 콜백 완료 통지</text>
+
+  <!-- Annotation -->
+  <text x="215" y="270" text-anchor="middle" font-size="10" fill="#555555">수신 지연 최소화:</text>
+  <text x="215" y="286" text-anchor="middle" font-size="10" fill="#555555">수신 루프는 큐에 넣기만</text>
+  <text x="215" y="302" text-anchor="middle" font-size="10" fill="#555555">하고 즉시 다음 수신으로</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

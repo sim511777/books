@@ -1,0 +1,83 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- Row 1 -->
+  <rect x="20" y="25" width="110" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="75" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Init</text>
+
+  <rect x="210" y="25" width="110" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="265" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Ready</text>
+
+  <rect x="400" y="25" width="130" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="465" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Running</text>
+
+  <!-- Row 2 -->
+  <rect x="210" y="150" width="110" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="265" y="183" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Stop</text>
+
+  <rect x="400" y="150" width="130" height="55" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="465" y="183" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Paused</text>
+
+  <!-- Row 3: Alarm -->
+  <rect x="250" y="310" width="200" height="60" fill="#f0f0f0" stroke="#000000" stroke-width="2.5"/>
+  <text x="350" y="336" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Alarm</text>
+  <text x="350" y="354" text-anchor="middle" font-size="9" fill="#333333">모든 상태에서 즉시 진입 가능</text>
+
+  <!-- Init -> Ready -->
+  <line x1="130" y1="52" x2="205" y2="52" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="167" y="44" text-anchor="middle" font-size="9" fill="#333333">InitCompleted</text>
+
+  <!-- Ready -> Running -->
+  <line x1="320" y1="44" x2="396" y2="44" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="358" y="36" text-anchor="middle" font-size="9" fill="#333333">StartCommand</text>
+
+  <!-- Running -> Ready -->
+  <line x1="396" y1="68" x2="320" y2="68" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="358" y="82" text-anchor="middle" font-size="9" fill="#333333">ProcessCompleted</text>
+
+  <!-- Running -> Paused -->
+  <line x1="440" y1="80" x2="440" y2="146" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="405" y="115" text-anchor="middle" font-size="9" fill="#333333">Pause</text>
+  <text x="405" y="127" text-anchor="middle" font-size="9" fill="#333333">Command</text>
+
+  <!-- Paused -> Running -->
+  <line x1="488" y1="146" x2="488" y2="80" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="524" y="115" text-anchor="middle" font-size="9" fill="#333333">Resume</text>
+  <text x="524" y="127" text-anchor="middle" font-size="9" fill="#333333">Command</text>
+
+  <!-- Paused -> Ready (diagonal) -->
+  <line x1="400" y1="160" x2="323" y2="82" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="392" y="122" text-anchor="middle" font-size="9" fill="#333333">StopCommand</text>
+
+  <!-- Ready -> Stop -->
+  <line x1="265" y1="80" x2="265" y2="146" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="228" y="115" text-anchor="middle" font-size="9" fill="#333333">Stop</text>
+  <text x="228" y="127" text-anchor="middle" font-size="9" fill="#333333">Command</text>
+
+  <!-- Stop -> Init (diagonal) -->
+  <line x1="210" y1="158" x2="128" y2="82" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="128" y="122" text-anchor="middle" font-size="9" fill="#333333">InitCommand</text>
+
+  <!-- Alarm-in dashed lines from each state -->
+  <line x1="75" y1="80" x2="290" y2="308" stroke="#555555" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowg)"/>
+  <line x1="265" y1="80" x2="330" y2="308" stroke="#555555" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowg)"/>
+  <line x1="465" y1="80" x2="400" y2="308" stroke="#555555" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowg)"/>
+  <line x1="265" y1="205" x2="310" y2="308" stroke="#555555" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowg)"/>
+  <line x1="465" y1="205" x2="410" y2="308" stroke="#555555" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowg)"/>
+  <text x="600" y="250" text-anchor="middle" font-size="9" fill="#555555">AlarmRaised</text>
+  <text x="600" y="262" text-anchor="middle" font-size="9" fill="#555555">(점선 = 모든 상태 공통)</text>
+
+  <!-- Alarm -> Ready -->
+  <path d="M 260 310 C 150 260, 150 150, 220 82" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="130" y="220" text-anchor="middle" font-size="9" fill="#333333">AlarmAcknowledged</text>
+  <text x="130" y="232" text-anchor="middle" font-size="9" fill="#333333">(이상 해제 확인 후에만)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+    <marker id="arrowg" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#555555"/>
+    </marker>
+  </defs>
+</svg>

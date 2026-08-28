@@ -1,0 +1,73 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">속도 프로파일 비교: 사다리꼴 vs S-커브</text>
+
+  <!-- divider -->
+  <line x1="345" y1="50" x2="345" y2="365" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ===== Left: Trapezoidal ===== -->
+  <text x="182" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">사다리꼴(Trapezoidal) 프로파일</text>
+
+  <!-- axes -->
+  <line x1="60" y1="340" x2="320" y2="340" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="60" y1="340" x2="60" y2="65" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="315" y="356" font-size="12" fill="#000000">t</text>
+  <text x="44" y="70" font-size="12" fill="#000000">v</text>
+
+  <!-- trapezoid curve -->
+  <polyline points="60,340 130,100 220,100 290,340" fill="none" stroke="#000000" stroke-width="2.5"/>
+
+  <!-- corner markers (sharp velocity-slope discontinuity -> jerk) -->
+  <circle cx="130" cy="100" r="3.5" fill="#000000"/>
+  <circle cx="220" cy="100" r="3.5" fill="#000000"/>
+  <circle cx="60" cy="340" r="3.5" fill="#000000"/>
+  <circle cx="290" cy="340" r="3.5" fill="#000000"/>
+
+  <!-- guide dashed lines -->
+  <line x1="130" y1="100" x2="130" y2="340" stroke="#999999" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="220" y1="100" x2="220" y2="340" stroke="#999999" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- segment labels -->
+  <text x="95" y="360" text-anchor="middle" font-size="11" fill="#333333">가속</text>
+  <text x="175" y="360" text-anchor="middle" font-size="11" fill="#333333">정속</text>
+  <text x="255" y="360" text-anchor="middle" font-size="11" fill="#333333">감속</text>
+
+  <text x="182" y="384" text-anchor="middle" font-size="10.5" fill="#555555">코너에서 가속도가 순간적으로 바뀜 (jerk 발생)</text>
+
+  <!-- ===== Right: S-Curve ===== -->
+  <text x="518" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">S-커브(저크 제한) 프로파일</text>
+
+  <!-- axes -->
+  <line x1="410" y1="340" x2="670" y2="340" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="410" y1="340" x2="410" y2="65" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="665" y="356" font-size="12" fill="#000000">t</text>
+  <text x="394" y="70" font-size="12" fill="#000000">v</text>
+
+  <!-- s-curve path: smooth accel-ramp, plateau, smooth decel-ramp -->
+  <path d="M 410,340
+           C 435,340 445,180 480,140
+           C 495,124 505,100 530,100
+           L 550,100
+           C 575,100 585,124 600,140
+           C 635,180 645,340 670,340"
+        fill="none" stroke="#000000" stroke-width="2.5"/>
+
+  <circle cx="410" cy="340" r="3.5" fill="#000000"/>
+  <circle cx="670" cy="340" r="3.5" fill="#000000"/>
+
+  <line x1="480" y1="140" x2="480" y2="340" stroke="#999999" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="600" y1="140" x2="600" y2="340" stroke="#999999" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <text x="445" y="360" text-anchor="middle" font-size="11" fill="#333333">가속(저크 구간)</text>
+  <text x="540" y="360" text-anchor="middle" font-size="11" fill="#333333">정속</text>
+  <text x="635" y="360" text-anchor="middle" font-size="11" fill="#333333">감속(저크 구간)</text>
+
+  <text x="540" y="384" text-anchor="middle" font-size="10.5" fill="#555555">가속도가 연속적으로 완만하게 변화 (jerk 완화)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
