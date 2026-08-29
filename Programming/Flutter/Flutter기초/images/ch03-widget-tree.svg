@@ -1,0 +1,66 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <!-- MaterialApp -->
+  <rect x="250" y="15" width="200" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="40" text-anchor="middle" font-size="15" fill="#000000">MaterialApp</text>
+
+  <!-- arrow MaterialApp -> Scaffold -->
+  <line x1="350" y1="55" x2="350" y2="90" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Scaffold -->
+  <rect x="250" y="90" width="200" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="115" text-anchor="middle" font-size="15" fill="#000000">Scaffold</text>
+
+  <!-- arrow Scaffold -> AppBar -->
+  <line x1="310" y1="130" x2="180" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- arrow Scaffold -> Column(body) -->
+  <line x1="350" y1="130" x2="350" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- arrow Scaffold -> FloatingActionButton -->
+  <line x1="390" y1="130" x2="530" y2="165" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- AppBar -->
+  <rect x="90" y="165" width="180" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="180" y="190" text-anchor="middle" font-size="14" fill="#000000">AppBar (appBar)</text>
+
+  <!-- Column (body) -->
+  <rect x="260" y="165" width="180" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="190" text-anchor="middle" font-size="14" fill="#000000">Column (body)</text>
+
+  <!-- FloatingActionButton -->
+  <rect x="440" y="165" width="200" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="540" y="182" text-anchor="middle" font-size="12" fill="#000000">FloatingActionButton</text>
+  <text x="540" y="197" text-anchor="middle" font-size="11" fill="#000000">(floatingActionButton)</text>
+
+  <!-- arrows Column -> children -->
+  <line x1="310" y1="205" x2="220" y2="250" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="205" x2="350" y2="250" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="390" y1="205" x2="480" y2="250" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- children: Text, Icon, ElevatedButton -->
+  <rect x="120" y="250" width="150" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="195" y="275" text-anchor="middle" font-size="14" fill="#000000">Text('안녕하세요')</text>
+
+  <rect x="275" y="250" width="150" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="350" y="275" text-anchor="middle" font-size="14" fill="#000000">Icon(Icons.star)</text>
+
+  <rect x="440" y="250" width="180" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="530" y="275" text-anchor="middle" font-size="13" fill="#000000">ElevatedButton</text>
+
+  <!-- arrow ElevatedButton -> child Text -->
+  <line x1="530" y1="290" x2="530" y2="320" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="440" y="320" width="180" height="40" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="530" y="345" text-anchor="middle" font-size="13" fill="#000000">Text('클릭')</text>
+
+  <!-- children label on Column -->
+  <text x="350" y="235" text-anchor="middle" font-size="11" fill="#555555">children: [ ... ]</text>
+
+  <!-- legend -->
+  <text x="20" y="30" font-size="12" fill="#555555">화살표: child / children 관계 (부모 → 자식)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,58 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- 배경 -->
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <!-- 제목 -->
+  <text x="350" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="black">Flutter의 아키텍처와 크로스플랫폼 렌더링</text>
+
+  <!-- 최상단: 플랫폼별 결과물 -->
+  <rect x="30" y="40" width="140" height="46" fill="white" stroke="black" stroke-width="2"/>
+  <text x="100" y="68" text-anchor="middle" font-size="13" fill="black">iOS 앱</text>
+
+  <rect x="190" y="40" width="140" height="46" fill="white" stroke="black" stroke-width="2"/>
+  <text x="260" y="68" text-anchor="middle" font-size="13" fill="black">Android 앱</text>
+
+  <rect x="350" y="40" width="140" height="46" fill="white" stroke="black" stroke-width="2"/>
+  <text x="420" y="68" text-anchor="middle" font-size="13" fill="black">Web</text>
+
+  <rect x="510" y="40" width="160" height="46" fill="white" stroke="black" stroke-width="2"/>
+  <text x="590" y="61" text-anchor="middle" font-size="13" fill="black">Desktop</text>
+  <text x="590" y="77" text-anchor="middle" font-size="11" fill="black">(Windows/macOS/Linux)</text>
+
+  <!-- 플랫폼 박스들을 렌더링 엔진으로 모으는 선 -->
+  <line x1="100" y1="86" x2="100" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="260" y1="86" x2="260" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="420" y1="86" x2="420" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="590" y1="86" x2="590" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="100" y1="104" x2="590" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="350" y1="104" x2="350" y2="118" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 자체 렌더링 엔진 -->
+  <rect x="150" y="118" width="400" height="52" fill="#f5f5f5" stroke="black" stroke-width="2"/>
+  <text x="350" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="black">자체 렌더링 엔진 (Skia / Impeller)</text>
+  <text x="350" y="158" text-anchor="middle" font-size="11" fill="black">플랫폼 네이티브 위젯을 거치지 않고 모든 픽셀을 직접 그린다</text>
+
+  <line x1="350" y1="170" x2="350" y2="192" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Flutter 프레임워크 (위젯 레이어) -->
+  <rect x="120" y="192" width="460" height="60" fill="white" stroke="black" stroke-width="2"/>
+  <text x="350" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="black">Flutter 프레임워크 (위젯 레이어)</text>
+  <text x="350" y="236" text-anchor="middle" font-size="11" fill="black">Everything is a widget — 화면의 모든 것을 위젯 트리로 구성</text>
+
+  <line x1="350" y1="252" x2="350" y2="274" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Dart 언어 -->
+  <rect x="90" y="274" width="520" height="56" fill="white" stroke="black" stroke-width="2"/>
+  <text x="350" y="298" text-anchor="middle" font-size="14" font-weight="bold" fill="black">Dart 언어</text>
+  <text x="350" y="317" text-anchor="middle" font-size="11" fill="black">Flutter 프레임워크가 지어진 기반 — 문법, 클래스, null safety, 비동기</text>
+
+  <!-- 하단 설명 -->
+  <rect x="70" y="348" width="560" height="34" fill="white" stroke="black" stroke-width="1"/>
+  <text x="350" y="369" text-anchor="middle" font-size="12" fill="black">하나의 Dart 코드베이스가 모든 플랫폼에서 동일한 UI를 픽셀 단위로 그려낸다</text>
+</svg>

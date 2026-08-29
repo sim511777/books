@@ -1,0 +1,55 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">StatefulWidget의 생명주기</text>
+
+  <!-- createState -->
+  <rect x="30" y="70" width="130" height="55" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="95" y="93" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">createState()</text>
+  <text x="95" y="110" text-anchor="middle" font-size="10" fill="#000000">State 객체 생성</text>
+
+  <!-- initState -->
+  <rect x="200" y="70" width="130" height="55" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="265" y="93" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">initState()</text>
+  <text x="265" y="110" text-anchor="middle" font-size="10" fill="#000000">최초 1회, 초기화</text>
+
+  <!-- build -->
+  <rect x="370" y="70" width="130" height="55" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="435" y="93" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">build()</text>
+  <text x="435" y="110" text-anchor="middle" font-size="10" fill="#000000">화면 그리기</text>
+
+  <!-- dispose -->
+  <rect x="540" y="70" width="130" height="55" fill="none" stroke="#000000" stroke-width="2"/>
+  <text x="605" y="93" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">dispose()</text>
+  <text x="605" y="110" text-anchor="middle" font-size="10" fill="#000000">리소스 정리</text>
+
+  <!-- arrows top row -->
+  <line x1="160" y1="97" x2="196" y2="97" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="330" y1="97" x2="366" y2="97" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <line x1="500" y1="97" x2="536" y2="97" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+  <!-- setState loop -->
+  <rect x="200" y="220" width="300" height="90" fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="350" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">setState(() { ... })</text>
+  <text x="350" y="263" text-anchor="middle" font-size="10" fill="#000000">상태 변경 알림</text>
+  <text x="350" y="280" text-anchor="middle" font-size="10" fill="#000000">→ build() 재호출</text>
+  <text x="350" y="297" text-anchor="middle" font-size="10" fill="#000000">→ 화면 갱신</text>
+
+  <!-- arrow build -> setState loop -->
+  <path d="M435,125 L435,180 L350,180 L350,216" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="440" y="175" font-size="10" fill="#000000">사용자 이벤트 등</text>
+
+  <!-- loop back to build -->
+  <path d="M500,265 L560,265 L560,150 L440,150 L440,128" fill="none" stroke="#000000" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow2)"/>
+  <text x="562" y="200" font-size="10" fill="#000000" transform="rotate(90 562 200)">반복</text>
+
+  <!-- arrow to dispose -->
+  <path d="M350,310 L350,350 L605,350 L605,128" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="470" y="345" font-size="10" fill="#000000">위젯 트리에서 제거될 때</text>
+
+  <defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

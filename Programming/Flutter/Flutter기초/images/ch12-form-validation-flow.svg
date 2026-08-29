@@ -1,0 +1,47 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow12" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="black"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+
+  <rect x="40" y="10" width="620" height="45" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="350" y="38" text-anchor="middle" font-family="monospace" font-size="15" fill="black">Form(key: _formKey, child: Column(...))</text>
+
+  <line x1="190" y1="55" x2="190" y2="83" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+  <line x1="510" y1="55" x2="510" y2="83" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+
+  <rect x="40" y="83" width="300" height="65" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="190" y="108" text-anchor="middle" font-family="monospace" font-size="13" fill="black">TextFormField (이름)</text>
+  <text x="190" y="128" text-anchor="middle" font-family="monospace" font-size="12" fill="black">validator: 비어 있으면 에러 문자열</text>
+
+  <rect x="360" y="83" width="300" height="65" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="510" y="108" text-anchor="middle" font-family="monospace" font-size="13" fill="black">TextFormField (이메일)</text>
+  <text x="510" y="128" text-anchor="middle" font-family="monospace" font-size="12" fill="black">validator: 형식 검사, 통과 시 null</text>
+
+  <line x1="190" y1="148" x2="330" y2="176" stroke="black" stroke-width="2"/>
+  <line x1="510" y1="148" x2="370" y2="176" stroke="black" stroke-width="2"/>
+  <line x1="350" y1="176" x2="350" y2="180" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+
+  <rect x="200" y="180" width="300" height="45" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="350" y="207" text-anchor="middle" font-family="monospace" font-size="14" fill="black">제출 버튼 onPressed</text>
+
+  <line x1="350" y1="225" x2="350" y2="253" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+
+  <rect x="130" y="253" width="440" height="50" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="350" y="283" text-anchor="middle" font-family="monospace" font-size="14" fill="black">_formKey.currentState!.validate()</text>
+
+  <line x1="270" y1="303" x2="170" y2="335" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+  <line x1="430" y1="303" x2="530" y2="335" stroke="black" stroke-width="2" marker-end="url(#arrow12)"/>
+
+  <text x="220" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="black">false</text>
+  <text x="480" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="black">true</text>
+
+  <rect x="20" y="337" width="300" height="50" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="170" y="367" text-anchor="middle" font-family="sans-serif" font-size="13" fill="black">각 필드 아래 에러 메시지 표시</text>
+
+  <rect x="380" y="337" width="300" height="50" fill="white" stroke="black" stroke-width="2" rx="8"/>
+  <text x="530" y="360" text-anchor="middle" font-family="monospace" font-size="12" fill="black">.save() → onSaved 실행</text>
+  <text x="530" y="378" text-anchor="middle" font-family="sans-serif" font-size="12" fill="black">→ 가입 처리</text>
+</svg>
