@@ -1,0 +1,51 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" />
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Initialize -->
+  <rect x="30" y="30" width="150" height="55" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="105" y="53" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Initialize()</text>
+  <text x="105" y="70" text-anchor="middle" font-size="10" fill="#000000">그래픽 디바이스 준비 후 1회</text>
+
+  <!-- LoadContent -->
+  <rect x="260" y="30" width="180" height="55" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="350" y="53" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">LoadContent()</text>
+  <text x="350" y="70" text-anchor="middle" font-size="10" fill="#000000">에셋 로딩 (4장 참고), 1회</text>
+
+  <line x1="180" y1="57" x2="258" y2="57" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Loop box: Update / Draw -->
+  <rect x="150" y="150" width="400" height="150" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="6,4" />
+  <text x="350" y="172" text-anchor="middle" font-size="11" fill="#000000">매 프레임 반복되는 게임 루프</text>
+
+  <rect x="190" y="195" width="150" height="60" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="265" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Update(gameTime)</text>
+  <text x="265" y="238" text-anchor="middle" font-size="10" fill="#000000">게임 로직 갱신</text>
+
+  <rect x="400" y="195" width="130" height="60" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="465" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Draw(gameTime)</text>
+  <text x="465" y="238" text-anchor="middle" font-size="10" fill="#000000">화면 그리기</text>
+
+  <line x1="340" y1="225" x2="398" y2="225" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- loop back arrow -->
+  <path d="M 465 255 L 465 280 L 265 280 L 265 257" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- LoadContent to loop -->
+  <line x1="350" y1="85" x2="350" y2="148" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="105" y1="85" x2="105" y2="115" stroke="#000000" stroke-width="1.5" />
+  <line x1="105" y1="115" x2="260" y2="115" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- UnloadContent -->
+  <rect x="260" y="330" width="180" height="55" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="350" y="353" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">UnloadContent()</text>
+  <text x="350" y="370" text-anchor="middle" font-size="10" fill="#000000">종료 시 리소스 해제, 1회</text>
+
+  <line x1="350" y1="300" x2="350" y2="328" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="440" y="315" text-anchor="middle" font-size="10" fill="#000000">Exit() 호출 또는 창 닫기</text>
+</svg>

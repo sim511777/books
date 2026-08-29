@@ -1,0 +1,50 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" />
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <text x="350" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#000000">ScreenManager와 IGameScreen 구현체</text>
+
+  <!-- ScreenManager -->
+  <rect x="270" y="55" width="160" height="60" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="350" y="80" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">ScreenManager</text>
+  <text x="350" y="97" text-anchor="middle" font-size="10" fill="#000000">currentScreen 참조 1개 보유</text>
+
+  <line x1="350" y1="115" x2="350" y2="150" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="365" y="135" font-size="10" fill="#000000">Update / Draw 위임</text>
+
+  <!-- IGameScreen -->
+  <rect x="250" y="155" width="200" height="45" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-dasharray="6,4" />
+  <text x="350" y="182" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">&lt;&lt;interface&gt;&gt; IGameScreen</text>
+
+  <!-- three screens -->
+  <rect x="60" y="250" width="150" height="70" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="135" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">MenuScreen</text>
+  <text x="135" y="295" text-anchor="middle" font-size="10" fill="#000000">Enter/Update/Draw</text>
+
+  <rect x="275" y="250" width="150" height="70" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="350" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">PlayingScreen</text>
+  <text x="350" y="295" text-anchor="middle" font-size="10" fill="#000000">Enter/Update/Draw</text>
+
+  <rect x="490" y="250" width="150" height="70" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="565" y="278" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">GameOverScreen</text>
+  <text x="565" y="295" text-anchor="middle" font-size="10" fill="#000000">Enter/Update/Draw</text>
+
+  <line x1="135" y1="250" x2="300" y2="200" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="350" y1="250" x2="350" y2="200" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,3" />
+  <line x1="565" y1="250" x2="400" y2="200" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,3" />
+
+  <!-- transition arrows between screens -->
+  <path d="M 210 260 L 273 260" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="240" y="252" text-anchor="middle" font-size="9" fill="#000000">시작</text>
+
+  <path d="M 425 265 L 488 265" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="455" y="257" text-anchor="middle" font-size="9" fill="#000000">플레이어 사망</text>
+
+  <path d="M 490 305 C 380 360, 220 360, 90 322" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="290" y="358" text-anchor="middle" font-size="9" fill="#000000">ChangeScreen(new MenuScreen(...)) → 메뉴로 복귀</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="400" fill="#ffffff" />
+
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000" />
+    </marker>
+  </defs>
+
+  <!-- Raw assets -->
+  <rect x="20" y="60" width="150" height="80" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="95" y="88" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">원본 에셋 파일</text>
+  <text x="95" y="106" text-anchor="middle" font-size="11" fill="#000000">player.png</text>
+  <text x="95" y="122" text-anchor="middle" font-size="11" fill="#000000">jump.wav, font.spritefont</text>
+
+  <!-- arrow -->
+  <line x1="170" y1="100" x2="215" y2="100" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)" />
+
+  <!-- Content.mgcb / MGCB build tool -->
+  <rect x="220" y="55" width="180" height="90" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="310" y="80" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Content.mgcb</text>
+  <text x="310" y="98" text-anchor="middle" font-size="11" fill="#000000">MGCB 빌드 도구</text>
+  <text x="310" y="115" text-anchor="middle" font-size="11" fill="#000000">(MGCB Editor에서</text>
+  <text x="310" y="130" text-anchor="middle" font-size="11" fill="#000000">에셋 추가/관리)</text>
+
+  <line x1="400" y1="100" x2="445" y2="100" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)" />
+
+  <!-- xnb -->
+  <rect x="450" y="60" width="150" height="80" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="525" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">컴파일된 .xnb</text>
+  <text x="525" y="108" text-anchor="middle" font-size="11" fill="#000000">플랫폼별 최적화</text>
+  <text x="525" y="124" text-anchor="middle" font-size="11" fill="#000000">바이너리 포맷</text>
+
+  <!-- down arrow -->
+  <line x1="525" y1="140" x2="525" y2="200" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)" />
+
+  <!-- runtime load -->
+  <rect x="380" y="205" width="240" height="80" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="500" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">런타임 로드</text>
+  <text x="500" y="250" text-anchor="middle" font-size="11" fill="#000000">Content.Load&lt;Texture2D&gt;</text>
+  <text x="500" y="267" text-anchor="middle" font-size="11" fill="#000000">("player")</text>
+
+  <line x1="380" y1="245" x2="240" y2="245" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow2)" />
+
+  <!-- LoadContent -->
+  <rect x="20" y="205" width="200" height="80" fill="#ffffff" stroke="#000000" stroke-width="2" />
+  <text x="120" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">게임 코드</text>
+  <text x="120" y="250" text-anchor="middle" font-size="11" fill="#000000">LoadContent() 안에서</text>
+  <text x="120" y="267" text-anchor="middle" font-size="11" fill="#000000">호출하여 사용</text>
+
+  <text x="350" y="340" text-anchor="middle" font-size="12" fill="#000000">빌드 타임에 최적화를 마쳐두어, 실행 타임에는 빠르게 불러오기만 한다</text>
+</svg>
