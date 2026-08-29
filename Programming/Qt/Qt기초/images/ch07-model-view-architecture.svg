@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowEnd" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333333"/>
+    </marker>
+    <marker id="arrowStart" markerWidth="10" markerHeight="10" refX="2" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M8,0 L0,3 L8,6 Z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="520" fill="#ffffff"/>
+
+  <text x="400" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#222222">Model-View Architecture</text>
+
+  <!-- Data Source -->
+  <rect x="30" y="170" width="180" height="80" rx="8" fill="#fdf3d8" stroke="#c99a2e" stroke-width="2"/>
+  <text x="120" y="205" text-anchor="middle" font-size="15" font-weight="bold" fill="#5c4711">Data Source</text>
+  <text x="120" y="226" text-anchor="middle" font-size="12" fill="#5c4711">array / file / database</text>
+
+  <!-- Arrow: Data Source -> Model -->
+  <line x1="210" y1="210" x2="288" y2="210" stroke="#333333" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+  <!-- Model -->
+  <rect x="300" y="150" width="220" height="120" rx="10" fill="#dbe9fb" stroke="#2f6fb8" stroke-width="2.5"/>
+  <text x="410" y="192" text-anchor="middle" font-size="18" font-weight="bold" fill="#123a63">Model</text>
+  <text x="410" y="214" text-anchor="middle" font-size="12.5" fill="#123a63">QAbstractItemModel</text>
+  <text x="410" y="234" text-anchor="middle" font-size="11.5" fill="#3b5f87">rowCount() / data()</text>
+  <text x="410" y="250" text-anchor="middle" font-size="11.5" fill="#3b5f87">headerData() / setData()</text>
+
+  <!-- Selection model note -->
+  <rect x="560" y="170" width="200" height="80" rx="8" fill="#f1e6fb" stroke="#7a4fb0" stroke-width="2"/>
+  <text x="660" y="200" text-anchor="middle" font-size="14" font-weight="bold" fill="#452a6b">QItemSelectionModel</text>
+  <text x="660" y="221" text-anchor="middle" font-size="11.5" fill="#452a6b">tracks current item</text>
+  <text x="660" y="237" text-anchor="middle" font-size="11.5" fill="#452a6b">and selected items</text>
+
+  <line x1="520" y1="210" x2="558" y2="210" stroke="#333333" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+  <!-- Fan-out lines from Model to three views -->
+  <line x1="360" y1="270" x2="130" y2="380" stroke="#333333" stroke-width="2" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>
+  <line x1="410" y1="270" x2="410" y2="380" stroke="#333333" stroke-width="2" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>
+  <line x1="460" y1="270" x2="670" y2="380" stroke="#333333" stroke-width="2" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>
+
+  <text x="410" y="335" text-anchor="middle" font-size="12" fill="#555555">setModel() / dataChanged()</text>
+
+  <!-- View 1: QListView -->
+  <rect x="30" y="390" width="200" height="90" rx="8" fill="#e2f5e6" stroke="#3f9553" stroke-width="2"/>
+  <text x="130" y="424" text-anchor="middle" font-size="15" font-weight="bold" fill="#245530">QListView</text>
+  <text x="130" y="446" text-anchor="middle" font-size="11.5" fill="#245530">shows rows as a list</text>
+  <text x="130" y="463" text-anchor="middle" font-size="11.5" fill="#245530">setModel(model)</text>
+
+  <!-- View 2: QTableView -->
+  <rect x="310" y="390" width="200" height="90" rx="8" fill="#e2f5e6" stroke="#3f9553" stroke-width="2"/>
+  <text x="410" y="424" text-anchor="middle" font-size="15" font-weight="bold" fill="#245530">QTableView</text>
+  <text x="410" y="446" text-anchor="middle" font-size="11.5" fill="#245530">shows rows and columns</text>
+  <text x="410" y="463" text-anchor="middle" font-size="11.5" fill="#245530">setModel(model)</text>
+
+  <!-- View 3: QTreeView -->
+  <rect x="570" y="390" width="200" height="90" rx="8" fill="#e2f5e6" stroke="#3f9553" stroke-width="2"/>
+  <text x="670" y="424" text-anchor="middle" font-size="15" font-weight="bold" fill="#245530">QTreeView</text>
+  <text x="670" y="446" text-anchor="middle" font-size="11.5" fill="#245530">shows a hierarchy</text>
+  <text x="670" y="463" text-anchor="middle" font-size="11.5" fill="#245530">setModel(model)</text>
+
+  <text x="400" y="502" text-anchor="middle" font-size="12" fill="#666666">One Model, connected to many Views at the same time</text>
+</svg>

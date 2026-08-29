@@ -1,0 +1,63 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+
+  <text x="450" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">Qt Module Layers</text>
+
+  <!-- Layer 3: Application-facing UI modules -->
+  <text x="30" y="80" font-size="13" fill="#666666">Layer 3: UI Modules</text>
+  <rect x="30" y="90" width="260" height="80" rx="8" fill="#cfe8ff" stroke="#3f7fbf" stroke-width="1.5"/>
+  <text x="160" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#123a5c">QtWidgets</text>
+  <text x="160" y="144" text-anchor="middle" font-size="12" fill="#123a5c">Traditional desktop widgets</text>
+  <text x="160" y="160" text-anchor="middle" font-size="11" fill="#123a5c">(this book's main focus)</text>
+
+  <rect x="320" y="90" width="260" height="80" rx="8" fill="#d9f2d9" stroke="#4a9c4a" stroke-width="1.5"/>
+  <text x="450" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f5c1f">QtQml / QtQuick</text>
+  <text x="450" y="138" text-anchor="middle" font-size="12" fill="#1f5c1f">Declarative UI (QML)</text>
+  <text x="450" y="156" text-anchor="middle" font-size="11" fill="#1f5c1f">introduced in Chapter 16</text>
+
+  <rect x="610" y="90" width="260" height="80" rx="8" fill="#f5e6c8" stroke="#c9982f" stroke-width="1.5"/>
+  <text x="740" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#7a5b12">QtPrintSupport</text>
+  <text x="740" y="144" text-anchor="middle" font-size="12" fill="#7a5b12">Printing / print preview</text>
+  <text x="740" y="160" text-anchor="middle" font-size="11" fill="#7a5b12">optional add-on style module</text>
+
+  <!-- Connector lines from layer 3 to layer 2 -->
+  <line x1="160" y1="170" x2="160" y2="230" stroke="#999999" stroke-width="1.5"/>
+  <line x1="450" y1="170" x2="450" y2="230" stroke="#999999" stroke-width="1.5"/>
+  <line x1="740" y1="170" x2="740" y2="230" stroke="#999999" stroke-width="1.5"/>
+
+  <!-- Layer 2: QtGui -->
+  <text x="30" y="222" font-size="13" fill="#666666">Layer 2: Graphics / Windowing</text>
+  <rect x="90" y="230" width="720" height="70" rx="8" fill="#e3d9f5" stroke="#7a5cbf" stroke-width="1.5"/>
+  <text x="450" y="258" text-anchor="middle" font-size="16" font-weight="bold" fill="#3d2a5c">QtGui</text>
+  <text x="450" y="280" text-anchor="middle" font-size="12" fill="#3d2a5c">Painting, fonts, images, events, window system integration</text>
+
+  <!-- Connector to layer 1 -->
+  <line x1="450" y1="300" x2="450" y2="330" stroke="#999999" stroke-width="1.5"/>
+
+  <!-- Layer 1: QtCore -->
+  <text x="30" y="322" font-size="13" fill="#666666">Layer 1: Core (non-GUI)</text>
+  <rect x="90" y="330" width="720" height="70" rx="8" fill="#f7d9d9" stroke="#c14f4f" stroke-width="1.5"/>
+  <text x="450" y="358" text-anchor="middle" font-size="16" font-weight="bold" fill="#5c1f1f">QtCore</text>
+  <text x="450" y="380" text-anchor="middle" font-size="12" fill="#5c1f1f">QObject, containers, strings, threads, event loop, timers</text>
+
+  <!-- Side modules also depending on QtCore -->
+  <text x="30" y="432" font-size="13" fill="#666666">Independent feature modules (built on QtCore)</text>
+
+  <rect x="90" y="440" width="220" height="60" rx="8" fill="#d9f2ec" stroke="#3f9c8a" stroke-width="1.5"/>
+  <text x="200" y="464" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f4a42">QtNetwork</text>
+  <text x="200" y="484" text-anchor="middle" font-size="11" fill="#1f4a42">Sockets, HTTP client</text>
+
+  <rect x="340" y="440" width="220" height="60" rx="8" fill="#f2e0f2" stroke="#a24fa2" stroke-width="1.5"/>
+  <text x="450" y="464" text-anchor="middle" font-size="15" font-weight="bold" fill="#5c1f5c">QtSql</text>
+  <text x="450" y="484" text-anchor="middle" font-size="11" fill="#5c1f5c">SQLite, MySQL, PostgreSQL, ODBC</text>
+
+  <rect x="590" y="440" width="220" height="60" rx="8" fill="#e6ece0" stroke="#6f8a4f" stroke-width="1.5"/>
+  <text x="700" y="464" text-anchor="middle" font-size="15" font-weight="bold" fill="#3a4c26">QtXml / Others</text>
+  <text x="700" y="484" text-anchor="middle" font-size="11" fill="#3a4c26">XML, charts, etc.</text>
+
+  <line x1="200" y1="440" x2="200" y2="400" stroke="#999999" stroke-width="1.5"/>
+  <line x1="450" y1="440" x2="450" y2="400" stroke="#999999" stroke-width="1.5"/>
+  <line x1="700" y1="440" x2="700" y2="400" stroke="#999999" stroke-width="1.5"/>
+
+  <text x="450" y="530" text-anchor="middle" font-size="12" fill="#888888">Higher layers depend on lower layers. QtGui is the shared foundation for both QtWidgets and QtQuick.</text>
+</svg>

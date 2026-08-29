@@ -1,0 +1,68 @@
+<svg width="900" height="640" viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="900" height="640" fill="#ffffff" />
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#222222" />
+    </marker>
+  </defs>
+
+  <text x="450" y="34" font-size="20" fill="#111111" text-anchor="middle">시그널 발생부터 슬롯 호출까지</text>
+
+  <!-- Step 1 -->
+  <rect x="330" y="60" width="240" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="450" y="93" font-size="15" fill="#111111" text-anchor="middle">사용자가 버튼을 클릭</text>
+
+  <path d="M 450 116 L 450 148" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Step 2 -->
+  <rect x="270" y="150" width="360" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="450" y="174" font-size="15" fill="#111111" text-anchor="middle">QPushButton 이(가) clicked() 시그널을 emit</text>
+  <text x="450" y="194" font-size="12" fill="#444444" text-anchor="middle">signal 함수 몸체는 moc 가 생성한 코드가 담당</text>
+
+  <path d="M 450 206 L 450 238" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Step 3 -->
+  <rect x="230" y="240" width="440" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="450" y="264" font-size="15" fill="#111111" text-anchor="middle">메타 오브젝트 시스템이 connect() 로 등록된 연결 목록을 조회</text>
+  <text x="450" y="284" font-size="12" fill="#444444" text-anchor="middle">QMetaObject::Connection 목록 순회 (sender, signal index 기준)</text>
+
+  <!-- Branch lines -->
+  <path d="M 350 296 C 300 320, 230 330, 200 350" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 550 296 C 600 320, 670 330, 700 350" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <text x="270" y="330" font-size="13" fill="#333333" text-anchor="middle">Direct / Auto(같은 스레드)</text>
+  <text x="630" y="330" font-size="13" fill="#333333" text-anchor="middle">Queued(다른 스레드)</text>
+
+  <!-- Left branch: Direct -->
+  <rect x="60" y="352" width="280" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="200" y="376" font-size="14" fill="#111111" text-anchor="middle">슬롯 함수를 그 자리에서 즉시 호출</text>
+  <text x="200" y="396" font-size="12" fill="#444444" text-anchor="middle">일반 함수 호출과 동일하게 동기 실행</text>
+
+  <path d="M 200 408 L 200 440" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="60" y="442" width="280" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="200" y="466" font-size="14" fill="#111111" text-anchor="middle">슬롯 실행이 끝나면</text>
+  <text x="200" y="486" font-size="12" fill="#444444" text-anchor="middle">emit 지점(clicked() 호출 다음 줄)으로 복귀</text>
+
+  <!-- Right branch: Queued -->
+  <rect x="560" y="352" width="280" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="700" y="376" font-size="14" fill="#111111" text-anchor="middle">인자를 복사해 QEvent 로 감싼 뒤</text>
+  <text x="700" y="396" font-size="12" fill="#444444" text-anchor="middle">수신 객체가 속한 스레드의 이벤트 큐에 전달</text>
+
+  <path d="M 700 408 L 700 440" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="560" y="442" width="280" height="56" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="700" y="466" font-size="14" fill="#111111" text-anchor="middle">수신 스레드의 이벤트 루프가</text>
+  <text x="700" y="486" font-size="12" fill="#444444" text-anchor="middle">큐에서 이벤트를 꺼내 슬롯을 나중에 호출</text>
+
+  <!-- Bottom note -->
+  <path d="M 200 498 L 200 520" fill="none" stroke="#222222" stroke-width="1.5" stroke-dasharray="4,3" />
+  <path d="M 700 498 L 700 520" fill="none" stroke="#222222" stroke-width="1.5" stroke-dasharray="4,3" />
+  <path d="M 200 520 L 700 520" fill="none" stroke="#222222" stroke-width="1.5" stroke-dasharray="4,3" />
+  <path d="M 450 520 L 450 552" fill="none" stroke="#222222" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="230" y="554" width="440" height="66" rx="8" fill="none" stroke="#222222" stroke-width="2" />
+  <text x="450" y="580" font-size="14" fill="#111111" text-anchor="middle">Qt::AutoConnection(기본값)은 sender 와 receiver 가</text>
+  <text x="450" y="600" font-size="14" fill="#111111" text-anchor="middle">같은 스레드이면 Direct, 다른 스레드이면 Queued 로 동작</text>
+</svg>

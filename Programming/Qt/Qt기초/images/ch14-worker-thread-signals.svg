@@ -1,0 +1,102 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#000000">Main Thread and Worker Thread Communication via Queued Connection</text>
+
+  <!-- Main thread box -->
+  <rect x="30" y="60" width="300" height="400" fill="#eaf3ff" stroke="#000000" stroke-width="1.5" />
+  <text x="180" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Main Thread (GUI)</text>
+  <text x="180" y="102" text-anchor="middle" font-size="10" fill="#333333">Owns all QWidget objects</text>
+
+  <!-- MainWindow object -->
+  <rect x="55" y="120" width="250" height="150" fill="#ffffff" stroke="#000000" stroke-width="1.2" />
+  <text x="180" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">MainWindow</text>
+
+  <rect x="70" y="150" width="220" height="28" fill="#cfe8ff" stroke="#000000" stroke-width="1" />
+  <text x="180" y="169" text-anchor="middle" font-size="11" fill="#000000">startButton (QPushButton)</text>
+
+  <rect x="70" y="185" width="220" height="28" fill="#d9ffd9" stroke="#000000" stroke-width="1" />
+  <text x="180" y="204" text-anchor="middle" font-size="11" fill="#000000">slot: onProgress(int)</text>
+
+  <rect x="70" y="220" width="220" height="28" fill="#d9ffd9" stroke="#000000" stroke-width="1" />
+  <text x="180" y="239" text-anchor="middle" font-size="11" fill="#000000">slot: onFinished()</text>
+
+  <!-- progress bar -->
+  <rect x="55" y="285" width="250" height="60" fill="#ffffff" stroke="#000000" stroke-width="1.2" />
+  <text x="180" y="303" text-anchor="middle" font-size="11" font-weight="bold" fill="#000000">QProgressBar</text>
+  <rect x="70" y="312" width="220" height="18" fill="#f0f0f0" stroke="#000000" stroke-width="1" />
+  <rect x="70" y="312" width="140" height="18" fill="#6fa8ff" stroke="none" />
+
+  <text x="180" y="375" text-anchor="middle" font-size="10" fill="#333333">Main thread runs the Qt event loop</text>
+  <text x="180" y="392" text-anchor="middle" font-size="10" fill="#333333">and must never block (no sleep, no</text>
+  <text x="180" y="409" text-anchor="middle" font-size="10" fill="#333333">long loops) or the UI freezes.</text>
+
+  <!-- Event loop queue in the middle -->
+  <rect x="360" y="150" width="180" height="220" fill="#fff3cf" stroke="#000000" stroke-width="1.5" />
+  <text x="450" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">Event Loop Queue</text>
+  <text x="450" y="188" text-anchor="middle" font-size="10" fill="#333333">Qt::QueuedConnection</text>
+
+  <rect x="375" y="200" width="150" height="24" fill="#ffffff" stroke="#000000" stroke-dasharray="3,2" />
+  <text x="450" y="216" text-anchor="middle" font-size="10" fill="#000000">requestStart()</text>
+
+  <rect x="375" y="232" width="150" height="24" fill="#ffffff" stroke="#000000" stroke-dasharray="3,2" />
+  <text x="450" y="248" text-anchor="middle" font-size="10" fill="#000000">progress(int)</text>
+
+  <rect x="375" y="264" width="150" height="24" fill="#ffffff" stroke="#000000" stroke-dasharray="3,2" />
+  <text x="450" y="280" text-anchor="middle" font-size="10" fill="#000000">finished()</text>
+
+  <text x="450" y="310" text-anchor="middle" font-size="9" fill="#333333">Each signal is copied as an</text>
+  <text x="450" y="323" text-anchor="middle" font-size="9" fill="#333333">event and delivered on the</text>
+  <text x="450" y="336" text-anchor="middle" font-size="9" fill="#333333">receiver's own thread -</text>
+  <text x="450" y="349" text-anchor="middle" font-size="9" fill="#333333">no shared-memory race.</text>
+
+  <!-- Worker thread box -->
+  <rect x="570" y="60" width="300" height="400" fill="#ffece0" stroke="#000000" stroke-width="1.5" />
+  <text x="720" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">Worker Thread (QThread)</text>
+  <text x="720" y="102" text-anchor="middle" font-size="10" fill="#333333">Runs its own event loop</text>
+
+  <!-- Worker object -->
+  <rect x="595" y="120" width="250" height="150" fill="#ffffff" stroke="#000000" stroke-width="1.2" />
+  <text x="720" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">Worker (QObject)</text>
+  <text x="720" y="156" text-anchor="middle" font-size="9" fill="#333333">moved to thread via moveToThread()</text>
+
+  <rect x="610" y="165" width="220" height="28" fill="#ffd9b3" stroke="#000000" stroke-width="1" />
+  <text x="720" y="184" text-anchor="middle" font-size="11" fill="#000000">slot: doWork()</text>
+
+  <rect x="610" y="200" width="220" height="28" fill="#d9ffd9" stroke="#000000" stroke-width="1" />
+  <text x="720" y="219" text-anchor="middle" font-size="11" fill="#000000">signal: progress(int)</text>
+
+  <rect x="610" y="235" width="220" height="28" fill="#d9ffd9" stroke="#000000" stroke-width="1" />
+  <text x="720" y="254" text-anchor="middle" font-size="11" fill="#000000">signal: finished()</text>
+
+  <text x="720" y="300" text-anchor="middle" font-size="10" fill="#333333">Heavy computation runs here,</text>
+  <text x="720" y="317" text-anchor="middle" font-size="10" fill="#333333">so it never blocks the GUI.</text>
+  <text x="720" y="334" text-anchor="middle" font-size="10" fill="#333333">This object must never touch</text>
+  <text x="720" y="351" text-anchor="middle" font-size="10" fill="#333333">QWidget instances directly.</text>
+
+  <!-- Arrows: main -> queue (start) -->
+  <line x1="305" y1="164" x2="373" y2="210" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- queue -> worker (start) -->
+  <line x1="527" y1="212" x2="608" y2="179" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- worker -> queue (progress) -->
+  <line x1="608" y1="214" x2="527" y2="244" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- queue -> main (progress) -->
+  <line x1="373" y1="240" x2="292" y2="199" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- worker -> queue (finished) -->
+  <line x1="608" y1="249" x2="527" y2="276" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- queue -> main (finished) -->
+  <line x1="373" y1="272" x2="292" y2="234" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Bottom note -->
+  <rect x="30" y="475" width="840" height="35" fill="#f7f7f7" stroke="#000000" stroke-width="1" />
+  <text x="450" y="497" text-anchor="middle" font-size="11" fill="#000000">Rule of thumb: only the main thread touches QWidget objects; worker threads talk back only through queued signals.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#000000" />
+    </marker>
+  </defs>
+</svg>

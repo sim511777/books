@@ -1,0 +1,64 @@
+<svg width="760" height="520" viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect x="0" y="0" width="760" height="520" fill="white" />
+
+  <text x="380" y="26" font-size="16" font-weight="bold" text-anchor="middle" fill="black">이벤트 전파와 이벤트 필터의 개입 지점</text>
+
+  <line x1="450" y1="45" x2="450" y2="500" stroke="#999999" stroke-width="1" stroke-dasharray="4,4" />
+
+  <text x="225" y="50" font-size="13" font-weight="bold" text-anchor="middle" fill="black">이벤트 전파 (자식 -&gt; 부모)</text>
+  <text x="600" y="50" font-size="13" font-weight="bold" text-anchor="middle" fill="black">이벤트 필터의 개입 지점</text>
+
+  <!-- Left: widget hierarchy and propagation -->
+  <rect x="20" y="65" width="410" height="390" fill="none" stroke="black" stroke-width="2" />
+  <text x="34" y="88" font-size="13" fill="black">QMainWindow (최상위 윈도우)</text>
+
+  <rect x="60" y="115" width="330" height="310" fill="none" stroke="black" stroke-width="2" />
+  <text x="74" y="138" font-size="13" fill="black">QWidget (부모 위젯)</text>
+
+  <rect x="100" y="340" width="250" height="70" fill="none" stroke="black" stroke-width="2" />
+  <text x="115" y="368" font-size="13" fill="black">QLineEdit (자식 위젯)</text>
+  <text x="115" y="388" font-size="12" fill="black">여기서 이벤트가 처음 발생</text>
+
+  <path d="M 220 340 C 160 300, 100 200, 55 100" fill="none" stroke="black" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)" />
+
+  <text x="225" y="468" font-size="12" text-anchor="middle" fill="black">event-&gt;ignore()로 처리하지 않은 이벤트는</text>
+  <text x="225" y="485" font-size="12" text-anchor="middle" fill="black">위쪽 부모 위젯으로 전파될 수 있다 (이벤트 종류에 따라 다름)</text>
+
+  <!-- Right: event filter flow -->
+  <rect x="480" y="65" width="240" height="40" rx="4" fill="none" stroke="black" stroke-width="2" />
+  <text x="600" y="90" font-size="12" text-anchor="middle" fill="black">1) 이벤트가 위젯에 전달 시도</text>
+
+  <path d="M 600 105 L 600 122" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="480" y="122" width="240" height="46" rx="4" fill="none" stroke="black" stroke-width="2" />
+  <text x="600" y="140" font-size="12" text-anchor="middle" fill="black">2) 등록된 감시 객체의</text>
+  <text x="600" y="157" font-size="12" text-anchor="middle" fill="black">eventFilter() 호출</text>
+
+  <path d="M 600 168 L 600 179" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <polygon points="600,179 700,239 600,299 500,239" fill="none" stroke="black" stroke-width="2" />
+  <text x="600" y="235" font-size="12" text-anchor="middle" fill="black">eventFilter()가</text>
+  <text x="600" y="252" font-size="12" text-anchor="middle" fill="black">true 반환?</text>
+
+  <path d="M 700 239 C 745 239, 745 300, 655 318" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="710" y="262" font-size="12" fill="black">예</text>
+
+  <rect x="550" y="320" width="200" height="50" rx="4" fill="none" stroke="black" stroke-width="2" />
+  <text x="650" y="340" font-size="12" text-anchor="middle" fill="black">이벤트 소멸</text>
+  <text x="650" y="357" font-size="12" text-anchor="middle" fill="black">(위젯에 전달 안 됨)</text>
+
+  <path d="M 600 299 L 600 390" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="612" y="345" font-size="12" fill="black">아니오</text>
+
+  <rect x="480" y="390" width="240" height="55" rx="4" fill="none" stroke="black" stroke-width="2" />
+  <text x="600" y="411" font-size="12" text-anchor="middle" fill="black">위젯 자신의 event() /</text>
+  <text x="600" y="428" font-size="12" text-anchor="middle" fill="black">mousePressEvent() 등이 실행됨</text>
+
+  <text x="380" y="512" font-size="12" text-anchor="middle" fill="black">이벤트 필터는 대상 위젯이 자신의 event()를 실행하기 전에 이벤트를 가로챌 수 있는 지점이다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="black" />
+    </marker>
+  </defs>
+</svg>
