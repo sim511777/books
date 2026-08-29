@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <!-- background -->
+  <rect x="0" y="0" width="1000" height="560" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- title -->
+  <text x="500" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Git Flow branching model</text>
+
+  <!-- lane labels -->
+  <g font-size="14" font-weight="bold">
+    <rect x="20" y="55" width="90" height="26" rx="4" fill="#16a34a"/>
+    <text x="65" y="73" text-anchor="middle" fill="#ffffff">feature</text>
+
+    <rect x="20" y="155" width="90" height="26" rx="4" fill="#2563eb"/>
+    <text x="65" y="173" text-anchor="middle" fill="#ffffff">develop</text>
+
+    <rect x="20" y="255" width="90" height="26" rx="4" fill="#ea580c"/>
+    <text x="65" y="273" text-anchor="middle" fill="#ffffff">release</text>
+
+    <rect x="20" y="355" width="90" height="26" rx="4" fill="#dc2626"/>
+    <text x="65" y="373" text-anchor="middle" fill="#ffffff">hotfix</text>
+
+    <rect x="20" y="465" width="90" height="26" rx="4" fill="#111827"/>
+    <text x="65" y="483" text-anchor="middle" fill="#ffffff">main</text>
+  </g>
+
+  <!-- base lane lines -->
+  <line x1="150" y1="478" x2="960" y2="478" stroke="#111827" stroke-width="3"/>
+  <line x1="190" y1="168" x2="920" y2="168" stroke="#2563eb" stroke-width="3"/>
+
+  <!-- develop branches off main at the start -->
+  <line x1="190" y1="478" x2="190" y2="168" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- feature branch 1 -->
+  <path d="M 260,168 L 260,68 L 380,68 L 380,168" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <!-- feature branch 2 -->
+  <path d="M 470,168 L 470,68 L 600,68 L 600,168" fill="none" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <!-- release branch: from develop down, then to main and back to develop -->
+  <path d="M 660,168 L 660,268 L 800,268" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+  <path d="M 800,268 L 800,468" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+  <path d="M 800,268 L 800,178" fill="none" stroke="#ea580c" stroke-width="2.5" marker-end="url(#arrow-orange)"/>
+
+  <!-- hotfix branch: from main up, then back to main and up to develop -->
+  <path d="M 870,478 L 870,368 L 910,368" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <path d="M 910,368 L 910,468" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <path d="M 910,368 L 910,178" fill="none" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+
+  <!-- commit dots: main -->
+  <g fill="#111827">
+    <circle cx="190" cy="478" r="5"/>
+    <circle cx="800" cy="478" r="5"/>
+    <circle cx="910" cy="478" r="5"/>
+    <circle cx="960" cy="478" r="5"/>
+  </g>
+
+  <!-- commit dots: develop -->
+  <g fill="#2563eb">
+    <circle cx="260" cy="168" r="5"/>
+    <circle cx="380" cy="168" r="5"/>
+    <circle cx="470" cy="168" r="5"/>
+    <circle cx="600" cy="168" r="5"/>
+    <circle cx="660" cy="168" r="5"/>
+    <circle cx="800" cy="168" r="5"/>
+    <circle cx="910" cy="168" r="5"/>
+  </g>
+
+  <!-- commit dots: feature -->
+  <g fill="#16a34a">
+    <circle cx="300" cy="68" r="5"/>
+    <circle cx="340" cy="68" r="5"/>
+    <circle cx="520" cy="68" r="5"/>
+    <circle cx="560" cy="68" r="5"/>
+  </g>
+
+  <!-- commit dots: release -->
+  <g fill="#ea580c">
+    <circle cx="700" cy="268" r="5"/>
+    <circle cx="760" cy="268" r="5"/>
+  </g>
+
+  <!-- commit dots: hotfix -->
+  <g fill="#dc2626">
+    <circle cx="870" cy="368" r="5"/>
+    <circle cx="890" cy="368" r="5"/>
+  </g>
+
+  <!-- tags on main -->
+  <g font-size="12" fill="#374151">
+    <rect x="770" y="440" width="60" height="20" rx="3" fill="#fef3c7" stroke="#d97706"/>
+    <text x="800" y="454" text-anchor="middle">v1.0</text>
+
+    <rect x="880" y="440" width="70" height="20" rx="3" fill="#fef3c7" stroke="#d97706"/>
+    <text x="915" y="454" text-anchor="middle">v1.0.1</text>
+  </g>
+
+  <!-- annotations -->
+  <g font-size="12" fill="#4b5563">
+    <text x="320" y="55">short-lived feature branch</text>
+    <text x="660" y="255">prepare release, bump version, fix small bugs</text>
+    <text x="815" y="360">urgent fix branched from main</text>
+  </g>
+
+  <!-- legend note -->
+  <text x="500" y="530" text-anchor="middle" font-size="13" fill="#6b7280">feature branches off develop; release branches off develop and merges into main and develop; hotfix branches off main and merges into main and develop</text>
+</svg>

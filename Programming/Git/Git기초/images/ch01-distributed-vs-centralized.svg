@@ -1,0 +1,92 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="520" fill="#ffffff"/>
+
+  <!-- Main title -->
+  <text x="400" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Centralized VCS vs Distributed VCS (Git)</text>
+
+  <!-- ===================== LEFT: Centralized VCS ===================== -->
+  <text x="200" y="60" font-size="15" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Centralized VCS (e.g. SVN)</text>
+
+  <!-- Central server -->
+  <rect x="120" y="80" width="160" height="70" rx="6" fill="#fdecea" stroke="#b3261e" stroke-width="2"/>
+  <text x="200" y="107" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Central Server</text>
+  <text x="200" y="125" font-size="11" text-anchor="middle" fill="#1a1a1a">Full History</text>
+  <text x="200" y="140" font-size="11" text-anchor="middle" fill="#1a1a1a">(single point)</text>
+
+  <!-- Client boxes -->
+  <rect x="30" y="230" width="110" height="60" rx="6" fill="#f0f0f0" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="255" font-size="12" text-anchor="middle" fill="#1a1a1a">Client A</text>
+  <text x="85" y="272" font-size="10" text-anchor="middle" fill="#555555">working copy</text>
+
+  <rect x="145" y="230" width="110" height="60" rx="6" fill="#f0f0f0" stroke="#555555" stroke-width="1.5"/>
+  <text x="200" y="255" font-size="12" text-anchor="middle" fill="#1a1a1a">Client B</text>
+  <text x="200" y="272" font-size="10" text-anchor="middle" fill="#555555">working copy</text>
+
+  <rect x="260" y="230" width="110" height="60" rx="6" fill="#f0f0f0" stroke="#555555" stroke-width="1.5"/>
+  <text x="315" y="255" font-size="12" text-anchor="middle" fill="#1a1a1a">Client C</text>
+  <text x="315" y="272" font-size="10" text-anchor="middle" fill="#555555">working copy</text>
+
+  <!-- Connections: all clients must reach server -->
+  <line x1="85" y1="230" x2="180" y2="150" stroke="#888888" stroke-width="1.5"/>
+  <line x1="200" y1="230" x2="200" y2="150" stroke="#888888" stroke-width="1.5"/>
+  <line x1="315" y1="230" x2="220" y2="150" stroke="#888888" stroke-width="1.5"/>
+
+  <!-- Note for centralized -->
+  <rect x="20" y="320" width="360" height="90" rx="4" fill="#ffffff" stroke="#b3261e" stroke-width="1"/>
+  <text x="35" y="342" font-size="11" fill="#1a1a1a">- Only the central server holds the full history.</text>
+  <text x="35" y="360" font-size="11" fill="#1a1a1a">- Clients keep only the latest working copy.</text>
+  <text x="35" y="378" font-size="11" fill="#1a1a1a">- Committing requires a network connection to</text>
+  <text x="35" y="394" font-size="11" fill="#1a1a1a">  the server. If the server is lost, history may</text>
+  <text x="35" y="410" font-size="11" fill="#1a1a1a">  be lost without a separate backup.</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="50" x2="400" y2="470" stroke="#cccccc" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ===================== RIGHT: Distributed VCS (Git) ===================== -->
+  <text x="600" y="60" font-size="15" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Distributed VCS (Git)</text>
+
+  <!-- Remote repo -->
+  <rect x="520" y="80" width="160" height="70" rx="6" fill="#e8f4ff" stroke="#1a5fb4" stroke-width="2"/>
+  <text x="600" y="107" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Remote Repository</text>
+  <text x="600" y="125" font-size="11" text-anchor="middle" fill="#1a1a1a">Full History</text>
+  <text x="600" y="140" font-size="11" text-anchor="middle" fill="#1a1a1a">(shared reference point)</text>
+
+  <!-- Local repos (each has full history + working dir) -->
+  <rect x="430" y="230" width="110" height="80" rx="6" fill="#e8f4ff" stroke="#1a5fb4" stroke-width="1.5"/>
+  <text x="485" y="252" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Local Repo A</text>
+  <text x="485" y="269" font-size="10" text-anchor="middle" fill="#1a1a1a">Full History</text>
+  <text x="485" y="284" font-size="10" text-anchor="middle" fill="#1a1a1a">+ Working Dir</text>
+  <text x="485" y="299" font-size="9" text-anchor="middle" fill="#555555">(clone)</text>
+
+  <rect x="545" y="230" width="110" height="80" rx="6" fill="#e8f4ff" stroke="#1a5fb4" stroke-width="1.5"/>
+  <text x="600" y="252" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Local Repo B</text>
+  <text x="600" y="269" font-size="10" text-anchor="middle" fill="#1a1a1a">Full History</text>
+  <text x="600" y="284" font-size="10" text-anchor="middle" fill="#1a1a1a">+ Working Dir</text>
+  <text x="600" y="299" font-size="9" text-anchor="middle" fill="#555555">(clone)</text>
+
+  <rect x="660" y="230" width="110" height="80" rx="6" fill="#e8f4ff" stroke="#1a5fb4" stroke-width="1.5"/>
+  <text x="715" y="252" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Local Repo C</text>
+  <text x="715" y="269" font-size="10" text-anchor="middle" fill="#1a1a1a">Full History</text>
+  <text x="715" y="284" font-size="10" text-anchor="middle" fill="#1a1a1a">+ Working Dir</text>
+  <text x="715" y="299" font-size="9" text-anchor="middle" fill="#555555">(clone)</text>
+
+  <!-- Connections with push/pull labels -->
+  <line x1="485" y1="230" x2="580" y2="150" stroke="#888888" stroke-width="1.5"/>
+  <line x1="600" y1="230" x2="600" y2="150" stroke="#888888" stroke-width="1.5"/>
+  <line x1="715" y1="230" x2="620" y2="150" stroke="#888888" stroke-width="1.5"/>
+  <text x="640" y="190" font-size="10" fill="#555555" text-anchor="middle">push / pull</text>
+
+  <!-- Note for distributed -->
+  <rect x="420" y="320" width="360" height="90" rx="4" fill="#ffffff" stroke="#1a5fb4" stroke-width="1"/>
+  <text x="435" y="342" font-size="11" fill="#1a1a1a">- Every local repository holds a full copy of the</text>
+  <text x="435" y="360" font-size="11" fill="#1a1a1a">  project history, not just the latest files.</text>
+  <text x="435" y="378" font-size="11" fill="#1a1a1a">- Commit, log, diff, and branch work offline.</text>
+  <text x="435" y="394" font-size="11" fill="#1a1a1a">- A network connection is only needed to sync</text>
+  <text x="435" y="410" font-size="11" fill="#1a1a1a">  with the remote repository (push / pull / fetch).</text>
+
+  <!-- Bottom summary -->
+  <rect x="20" y="430" width="760" height="70" rx="4" fill="#f7f7f7" stroke="#999999" stroke-width="1"/>
+  <text x="400" y="454" font-size="12" text-anchor="middle" fill="#1a1a1a" font-weight="bold">Key difference: WHERE does the full project history live?</text>
+  <text x="400" y="474" font-size="11" text-anchor="middle" fill="#1a1a1a">Centralized: only on the server.  Distributed (Git): on the server AND on every clone.</text>
+  <text x="400" y="490" font-size="11" text-anchor="middle" fill="#1a1a1a">This is why losing the Git remote does not mean losing the project history.</text>
+</svg>

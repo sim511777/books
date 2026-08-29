@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="900" height="600" fill="#ffffff"/>
+
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Merge Conflict: Same Line Changed on Both Branches</text>
+
+  <!-- Branch labels -->
+  <text x="760" y="96" font-size="16" font-weight="bold" fill="#2563eb">main</text>
+  <text x="760" y="276" font-size="16" font-weight="bold" fill="#16a34a">feature</text>
+
+  <!-- main branch line -->
+  <line x1="120" y1="180" x2="440" y2="100" stroke="#2563eb" stroke-width="3"/>
+  <line x1="440" y1="100" x2="620" y2="100" stroke="#2563eb" stroke-width="3"/>
+  <line x1="620" y1="100" x2="660" y2="170" stroke="#2563eb" stroke-width="3" stroke-dasharray="6,5"/>
+
+  <!-- feature branch line -->
+  <line x1="120" y1="180" x2="440" y2="260" stroke="#16a34a" stroke-width="3"/>
+  <line x1="440" y1="260" x2="620" y2="260" stroke="#16a34a" stroke-width="3"/>
+  <line x1="620" y1="260" x2="660" y2="190" stroke="#16a34a" stroke-width="3" stroke-dasharray="6,5"/>
+
+  <!-- Commit nodes: base -->
+  <circle cx="120" cy="180" r="11" fill="#e5e7eb" stroke="#4b5563" stroke-width="2"/>
+  <text x="120" y="215" text-anchor="middle" font-size="13" fill="#374151">C1</text>
+  <text x="120" y="232" text-anchor="middle" font-size="12" fill="#6b7280">common ancestor</text>
+
+  <!-- main commits -->
+  <circle cx="440" cy="100" r="11" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="440" y="78" text-anchor="middle" font-size="13" fill="#2563eb">C2 (main)</text>
+  <text x="440" y="63" text-anchor="middle" font-size="12" fill="#2563eb">edits line 1</text>
+
+  <circle cx="620" cy="100" r="11" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="78" text-anchor="middle" font-size="13" fill="#2563eb">C3 (main)</text>
+
+  <!-- feature commits -->
+  <circle cx="440" cy="260" r="11" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="440" y="292" text-anchor="middle" font-size="13" fill="#16a34a">C4 (feature)</text>
+  <text x="440" y="307" text-anchor="middle" font-size="12" fill="#16a34a">edits line 1 too</text>
+
+  <circle cx="620" cy="260" r="11" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="620" y="292" text-anchor="middle" font-size="13" fill="#16a34a">C5 (feature)</text>
+
+  <!-- merge attempt node -->
+  <circle cx="670" cy="180" r="16" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+  <text x="670" y="186" text-anchor="middle" font-size="16" font-weight="bold" fill="#dc2626">!</text>
+  <text x="670" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626">CONFLICT</text>
+
+  <!-- command label -->
+  <text x="490" y="200" text-anchor="middle" font-size="13" fill="#4b5563">git merge feature</text>
+
+  <!-- arrow down to file box -->
+  <line x1="670" y1="196" x2="670" y2="330" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- File box -->
+  <rect x="150" y="335" width="600" height="220" rx="8" ry="8" fill="#f9fafb" stroke="#94a3b8" stroke-width="2"/>
+  <text x="170" y="360" font-size="13" fill="#6b7280">greeting.txt (working directory, after failed merge)</text>
+
+  <!-- highlight bands -->
+  <rect x="165" y="391" width="570" height="22" fill="#dbeafe"/>
+  <rect x="165" y="439" width="570" height="22" fill="#dcfce7"/>
+
+  <g font-family="Courier New, Courier, monospace" font-size="15">
+    <text x="170" y="407" fill="#1f2937">function greet() {</text>
+    <text x="170" y="431" fill="#dc2626">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</text>
+    <text x="190" y="455" fill="#1e3a8a">print("Hello from main")</text>
+    <text x="170" y="479" fill="#6b7280">=======</text>
+    <text x="190" y="503" fill="#14532d">print("Hello from feature")</text>
+    <text x="170" y="527" fill="#dc2626">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature</text>
+    <text x="170" y="551" fill="#1f2937">}</text>
+  </g>
+</svg>

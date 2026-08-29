@@ -1,0 +1,74 @@
+<svg viewBox="0 0 900 610" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace">
+  <rect x="0" y="0" width="900" height="610" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" font-size="18" font-weight="bold" fill="#111111" text-anchor="middle">Git Object Model</text>
+
+  <!-- commit object -->
+  <rect x="360" y="55" width="180" height="60" rx="6" fill="#fdf3d8" stroke="#c9a227" stroke-width="2"/>
+  <text x="450" y="78" font-size="14" font-weight="bold" fill="#5a4600" text-anchor="middle">commit</text>
+  <text x="450" y="97" font-size="12" fill="#5a4600" text-anchor="middle">tree: a1b2c3d...</text>
+  <text x="450" y="112" font-size="11" fill="#5a4600" text-anchor="middle">author / message</text>
+
+  <!-- root tree object -->
+  <rect x="350" y="180" width="200" height="70" rx="6" fill="#dceefb" stroke="#2f7fb5" stroke-width="2"/>
+  <text x="450" y="203" font-size="14" font-weight="bold" fill="#12435f" text-anchor="middle">tree (root)</text>
+  <text x="450" y="221" font-size="11" fill="#12435f" text-anchor="middle">README.md -&gt; blob 9f8e7d6</text>
+  <text x="450" y="237" font-size="11" fill="#12435f" text-anchor="middle">src/ -&gt; tree 4c5b6a7</text>
+
+  <!-- blob: README.md -->
+  <rect x="110" y="330" width="200" height="70" rx="6" fill="#e3f6df" stroke="#3f9142" stroke-width="2"/>
+  <text x="210" y="353" font-size="14" font-weight="bold" fill="#1f5c22" text-anchor="middle">blob</text>
+  <text x="210" y="371" font-size="11" fill="#1f5c22" text-anchor="middle">hash: 9f8e7d6...</text>
+  <text x="210" y="387" font-size="11" fill="#1f5c22" text-anchor="middle">content of README.md</text>
+
+  <!-- sub tree: src/ -->
+  <rect x="360" y="330" width="200" height="70" rx="6" fill="#dceefb" stroke="#2f7fb5" stroke-width="2"/>
+  <text x="460" y="353" font-size="14" font-weight="bold" fill="#12435f" text-anchor="middle">tree (src/)</text>
+  <text x="460" y="371" font-size="11" fill="#12435f" text-anchor="middle">main.c -&gt; blob 1a2b3c4</text>
+  <text x="460" y="387" font-size="11" fill="#12435f" text-anchor="middle">util.c -&gt; blob 5d6e7f8</text>
+
+  <!-- blob: main.c -->
+  <rect x="360" y="450" width="180" height="70" rx="6" fill="#e3f6df" stroke="#3f9142" stroke-width="2"/>
+  <text x="450" y="473" font-size="14" font-weight="bold" fill="#1f5c22" text-anchor="middle">blob</text>
+  <text x="450" y="491" font-size="11" fill="#1f5c22" text-anchor="middle">hash: 1a2b3c4...</text>
+  <text x="450" y="507" font-size="11" fill="#1f5c22" text-anchor="middle">content of main.c</text>
+
+  <!-- blob: util.c -->
+  <rect x="600" y="450" width="180" height="70" rx="6" fill="#e3f6df" stroke="#3f9142" stroke-width="2"/>
+  <text x="690" y="473" font-size="14" font-weight="bold" fill="#1f5c22" text-anchor="middle">blob</text>
+  <text x="690" y="491" font-size="11" fill="#1f5c22" text-anchor="middle">hash: 5d6e7f8...</text>
+  <text x="690" y="507" font-size="11" fill="#1f5c22" text-anchor="middle">content of util.c</text>
+
+  <!-- arrows -->
+  <!-- commit -> root tree -->
+  <line x1="450" y1="115" x2="450" y2="178" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- root tree -> blob README.md -->
+  <line x1="400" y1="250" x2="230" y2="328" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- root tree -> sub tree src/ -->
+  <line x1="460" y1="250" x2="460" y2="328" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- sub tree -> blob main.c -->
+  <line x1="440" y1="400" x2="450" y2="448" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- sub tree -> blob util.c -->
+  <line x1="500" y1="400" x2="670" y2="448" stroke="#444444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- legend -->
+  <rect x="30" y="560" width="16" height="16" fill="#fdf3d8" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="52" y="573" font-size="12" fill="#111111">commit object</text>
+
+  <rect x="200" y="560" width="16" height="16" fill="#dceefb" stroke="#2f7fb5" stroke-width="1.5"/>
+  <text x="222" y="573" font-size="12" fill="#111111">tree object</text>
+
+  <rect x="350" y="560" width="16" height="16" fill="#e3f6df" stroke="#3f9142" stroke-width="1.5"/>
+  <text x="372" y="573" font-size="12" fill="#111111">blob object</text>
+</svg>

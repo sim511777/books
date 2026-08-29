@@ -43,6 +43,7 @@
 ## 개발 도구와 환경
 
 - **[VS Code로 구축하는 C++ 개발환경](Languages/Cpp/CppVSCode개발환경/00-목차.md)** — GCC, VS Code, CMake, Ninja, vcpkg를 하나씩 설치하고 서로 연결하는 실전 강좌입니다. 빌드·디버깅·IntelliSense 설정부터 패키지 관리, 정적 분석, 테스트, 크로스플랫폼 배포까지 다룹니다.
+- **[Git으로 배우는 버전 관리](Git/Git기초/00-목차.md)** — 분산 버전 관리 시스템 Git을 스테이징/커밋 같은 기초부터 브랜치, 병합과 충돌 해결, 원격 저장소와 GitHub, rebase와 cherry-pick, stash, Pull Request와 코드 리뷰, 브랜치 전략, 태그와 릴리스, 서브모듈, Git 내부 구조, Git Hooks, 실전 협업 시나리오까지 다룹니다.
 
 ## 동시성과 병렬 프로그래밍
 
