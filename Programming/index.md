@@ -38,6 +38,7 @@
 - **[Avalonia로 배우는 크로스플랫폼 UI 개발](Avalonia/Avalonia기초/00-목차.md)** — C#/.NET 기반 크로스플랫폼 UI 프레임워크 Avalonia를 XAML 기초부터 레이아웃, 데이터 바인딩, MVVM 패턴, 스타일·템플릿, Windows/macOS/Linux 배포까지 다룹니다.
 - **[Dear ImGui로 배우는 C++ GUI 프로그래밍](ImGui/ImGui기초/00-목차.md)** — C++ 즉시 모드(immediate mode) GUI 라이브러리 Dear ImGui를 핵심 개념부터 기본 위젯, 레이아웃, 테이블, 도킹, 커스텀 렌더링, 상태 관리 패턴, 실전 프로젝트까지 다룹니다.
 - **[Slint로 배우는 C++ GUI 프로그래밍](Slint/Slint기초/00-목차.md)** — Rust 코어에 C++ 바인딩을 제공하는 선언적(declarative) GUI 툴킷 Slint를 `.slint` 언어 기초부터 프로퍼티 바인딩, C++ 연동, 표준 위젯, 상태/애니메이션, 리스트/모델, 임베디드 타겟팅, 실전 프로젝트까지 다룹니다.
+- **[Slint로 배우는 Rust GUI 프로그래밍](Slint/SlintRust기초/00-목차.md)** — 위 Slint 책의 자매서로, Slint 코어와 가장 직접적으로 맞닿은 Rust API를 기준으로 `.slint` 언어 기초부터 Rust 연동(Weak 캡처 패턴 포함), 표준 위젯, 상태/애니메이션, 리스트/모델, 전역 싱글톤, 다중 창, 임베디드 타겟팅, 실전 프로젝트까지 다룹니다.
 - **[Qt로 배우는 C++ 데스크톱 GUI 프로그래밍](Qt/Qt기초/00-목차.md)** — 크로스플랫폼 C++ 프레임워크 Qt를 QWidgets 기반 데스크톱 개발 중심으로 시그널/슬롯, 기본 위젯과 레이아웃, 모델/뷰, 커스텀 페인팅, 이벤트 처리, 스타일시트, 파일·설정·데이터베이스 연동, 멀티스레딩, 네트워크, QML/Qt Quick 연동 기초, 배포, 실전 프로젝트까지 다룹니다.
 
 ## 개발 도구와 환경

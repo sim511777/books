@@ -1,0 +1,66 @@
+<svg viewBox="0 0 760 480" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="760" height="480" fill="#ffffff"/>
+
+  <text x="380" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#000000">One .slint Source, Two Rendering Backends</text>
+
+  <!-- Single .slint source -->
+  <rect x="270" y="46" width="220" height="56" rx="8" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  <text x="380" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#000000">app.slint</text>
+  <text x="380" y="88" text-anchor="middle" font-size="11" fill="#000000">single UI source file</text>
+
+  <!-- split arrows -->
+  <line x1="380" y1="102" x2="380" y2="128" stroke="#000000" stroke-width="2"/>
+  <line x1="380" y1="128" x2="150" y2="128" stroke="#000000" stroke-width="2"/>
+  <line x1="380" y1="128" x2="610" y2="128" stroke="#000000" stroke-width="2"/>
+  <line x1="150" y1="128" x2="150" y2="156" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="610" y1="128" x2="610" y2="156" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Left path: desktop build -->
+  <rect x="50" y="156" width="200" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="150" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">cargo build</text>
+  <text x="150" y="192" text-anchor="middle" font-size="10" fill="#000000">desktop host target</text>
+
+  <line x1="150" y1="202" x2="150" y2="228" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="228" width="240" height="66" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="150" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">GPU accelerated renderer</text>
+  <text x="150" y="266" text-anchor="middle" font-size="11" fill="#000000">FemtoVG or Skia backend</text>
+  <text x="150" y="282" text-anchor="middle" font-size="10" font-style="italic" fill="#000000">uses graphics card</text>
+
+  <line x1="150" y1="294" x2="150" y2="320" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="320" width="240" height="70" rx="6" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  <text x="150" y="344" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Desktop window</text>
+  <text x="150" y="362" text-anchor="middle" font-size="11" fill="#000000">Windows / macOS / Linux</text>
+  <text x="150" y="378" text-anchor="middle" font-size="10" fill="#000000">plenty of RAM and CPU</text>
+
+  <!-- Right path: embedded build -->
+  <rect x="510" y="156" width="200" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="610" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">cargo build --target</text>
+  <text x="610" y="192" text-anchor="middle" font-size="10" fill="#000000">cross compile triple</text>
+
+  <line x1="610" y1="202" x2="610" y2="228" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="490" y="228" width="240" height="66" rx="6" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+  <text x="610" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#000000">Software renderer</text>
+  <text x="610" y="266" text-anchor="middle" font-size="11" fill="#000000">CPU draws every pixel</text>
+  <text x="610" y="282" text-anchor="middle" font-size="10" font-style="italic" fill="#000000">no_std capable</text>
+
+  <line x1="610" y1="294" x2="610" y2="320" stroke="#000000" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="490" y="320" width="240" height="70" rx="6" fill="#ffffff" stroke="#000000" stroke-width="3"/>
+  <text x="610" y="344" text-anchor="middle" font-size="13" font-weight="bold" fill="#000000">Embedded display</text>
+  <text x="610" y="362" text-anchor="middle" font-size="11" fill="#000000">MCU or embedded Linux</text>
+  <text x="610" y="378" text-anchor="middle" font-size="10" fill="#000000">limited RAM and CPU</text>
+
+  <!-- shared UI logic note -->
+  <rect x="230" y="410" width="300" height="46" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="380" y="430" text-anchor="middle" font-size="11" fill="#000000">same component tree, properties</text>
+  <text x="380" y="446" text-anchor="middle" font-size="11" fill="#000000">and callbacks on both sides</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>
