@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" font-family="Arial, Helvetica, sans-serif">
+<title>Gradient descent walking down a loss curve</title>
+<desc>A U-shaped loss curve. Starting from a high point on the left, gradient descent takes steps toward the minimum. Steps get shorter as the slope flattens.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/></marker></defs>
+<rect x="0" y="0" width="640" height="400" fill="#ffffff"/>
+<text x="320" y="26" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">Gradient descent: walking down the loss curve</text>
+<line x1="70" y1="330" x2="610" y2="330" stroke="#374151" stroke-width="1.5"/>
+<line x1="70" y1="330" x2="70" y2="46" stroke="#374151" stroke-width="1.5"/>
+<text x="340" y="372" text-anchor="middle" font-size="14" fill="#374151">w (model parameter)</text>
+<text x="22" y="190" text-anchor="middle" font-size="14" fill="#374151" transform="rotate(-90 22 190)">Loss (MSE)</text>
+<line x1="334.0" y1="330.0" x2="334.0" y2="213.0" stroke="#15803d" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="334.0" y="350" text-anchor="middle" font-size="13" fill="#15803d">best w (minimum)</text>
+<path d="M70.0,42.0 L73.3,49.2 L76.6,56.2 L79.9,63.2 L83.2,70.1 L86.5,76.9 L89.8,83.6 L93.1,90.2 L96.4,96.7 L99.7,103.2 L103.0,109.5 L106.3,115.8 L109.6,121.9 L112.9,128.0 L116.2,134.0 L119.5,139.9 L122.8,145.7 L126.1,151.4 L129.4,157.0 L132.7,162.6 L136.0,168.0 L139.3,173.4 L142.6,178.6 L145.9,183.8 L149.2,188.9 L152.5,193.9 L155.8,198.8 L159.1,203.6 L162.4,208.3 L165.7,213.0 L169.0,217.5 L172.3,222.0 L175.6,226.3 L178.9,230.6 L182.2,234.8 L185.5,238.9 L188.8,242.9 L192.1,246.8 L195.4,250.6 L198.7,254.4 L202.0,258.0 L205.3,261.6 L208.6,265.0 L211.9,268.4 L215.2,271.7 L218.5,274.9 L221.8,278.0 L225.1,281.0 L228.4,283.9 L231.7,286.8 L235.0,289.5 L238.3,292.2 L241.6,294.7 L244.9,297.2 L248.2,299.6 L251.5,301.9 L254.8,304.1 L258.1,306.2 L261.4,308.2 L264.7,310.2 L268.0,312.0 L271.3,313.8 L274.6,315.4 L277.9,317.0 L281.2,318.5 L284.5,319.9 L287.8,321.2 L291.1,322.4 L294.4,323.5 L297.7,324.6 L301.0,325.5 L304.3,326.4 L307.6,327.1 L310.9,327.8 L314.2,328.4 L317.5,328.9 L320.8,329.3 L324.1,329.6 L327.4,329.8 L330.7,330.0 L334.0,330.0 L337.3,330.0 L340.6,329.8 L343.9,329.6 L347.2,329.3 L350.5,328.9 L353.8,328.4 L357.1,327.8 L360.4,327.1 L363.7,326.4 L367.0,325.5 L370.3,324.6 L373.6,323.5 L376.9,322.4 L380.2,321.2 L383.5,319.9 L386.8,318.5 L390.1,317.0 L393.4,315.4 L396.7,313.8 L400.0,312.0 L403.3,310.2 L406.6,308.2 L409.9,306.2 L413.2,304.1 L416.5,301.9 L419.8,299.6 L423.1,297.2 L426.4,294.7 L429.7,292.2 L433.0,289.5 L436.3,286.8 L439.6,283.9 L442.9,281.0 L446.2,278.0 L449.5,274.9 L452.8,271.7 L456.1,268.4 L459.4,265.0 L462.7,261.6 L466.0,258.0 L469.3,254.4 L472.6,250.6 L475.9,246.8 L479.2,242.9 L482.5,238.9 L485.8,234.8 L489.1,230.6 L492.4,226.3 L495.7,222.0 L499.0,217.5 L502.3,213.0 L505.6,208.3 L508.9,203.6 L512.2,198.8 L515.5,193.9 L518.8,188.9 L522.1,183.8 L525.4,178.6 L528.7,173.4 L532.0,168.0 L535.3,162.6 L538.6,157.0 L541.9,151.4 L545.2,145.7 L548.5,139.9 L551.8,134.0 L555.1,128.0 L558.4,121.9 L561.7,115.8 L565.0,109.5 L568.3,103.2 L571.6,96.7 L574.9,90.2 L578.2,83.6 L581.5,76.9 L584.8,70.1 L588.1,63.2 L591.4,56.2 L594.7,49.2 L598.0,42.0" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<text x="538.6" y="147.0" font-size="14" font-weight="bold" fill="#1d4ed8">Loss L(w)</text>
+<path d="M70.0,46.5 L215.2,323.7" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="76.6" y="295.8" font-size="12" fill="#4b5563">slope at start:</text>
+<text x="76.6" y="310.8" font-size="12" fill="#4b5563">steep, so big step</text>
+<line x1="103.0" y1="109.5" x2="172.3" y2="222.0" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="172.3" y1="222.0" x2="220.8" y2="277.1" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="220.8" y1="277.1" x2="254.8" y2="304.1" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="254.8" y1="304.1" x2="278.5" y2="317.3" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="278.5" y1="317.3" x2="295.2" y2="323.8" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="295.2" y1="323.8" x2="306.8" y2="326.9" stroke="#c2410c" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="103.0" cy="109.5" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="172.3" cy="222.0" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="220.8" cy="277.1" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="254.8" cy="304.1" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="278.5" cy="317.3" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="295.2" cy="323.8" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="306.8" cy="326.9" r="6" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<text x="115.0" y="103.5" font-size="13" font-weight="bold" fill="#9a3412">start (w0)</text>
+<text x="182.3" y="213.0" font-size="13" fill="#9a3412">w1</text>
+<text x="230.8" y="268.1" font-size="13" fill="#9a3412">w2</text>
+<text x="264.8" y="295.1" font-size="13" fill="#9a3412">w3</text>
+<text x="289.8" y="191.9" text-anchor="middle" font-size="12" fill="#4b5563">near the minimum:</text>
+<text x="289.8" y="206.9" text-anchor="middle" font-size="12" fill="#4b5563">slope ~ 0, tiny steps</text>
+<line x1="306.8" y1="216.9" x2="306.8" y2="312.9" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="215" y="62" width="250" height="52" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+<text x="340" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="#9a3412">w_new = w - lr x slope</text>
+<text x="340" y="104" text-anchor="middle" font-size="12" fill="#7c2d12">(lr = learning rate, slope = gradient)</text>
+</svg>

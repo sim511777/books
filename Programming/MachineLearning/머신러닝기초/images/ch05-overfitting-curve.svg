@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" width="780" height="440" role="img" aria-labelledby="t d">
+  <title id="t">Training and validation error versus model complexity</title>
+  <desc id="d">Training error keeps decreasing as model complexity grows. Validation error is U-shaped: high in the underfitting zone, lowest in the good-fit zone, and rising again in the overfitting zone.</desc>
+  <rect x="0" y="0" width="780" height="440" fill="#ffffff"/>
+
+  <!-- zones -->
+  <rect x="80.0" y="60" width="168.0" height="320" fill="#fdf1e3"/>
+  <rect x="248.0" y="60" width="224.0" height="320" fill="#e6f3e8"/>
+  <rect x="472.0" y="60" width="168.0" height="320" fill="#fbe6e6"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="164.0" y="84" font-size="15" font-weight="bold" fill="#8a4b08">Underfitting</text>
+    <text x="164.0" y="102" font-size="12" fill="#6b4a25">high bias</text>
+    <text x="360.0" y="84" font-size="15" font-weight="bold" fill="#1f6b33">Good fit</text>
+    <text x="360.0" y="102" font-size="12" fill="#2d5a3a">balanced</text>
+    <text x="556.0" y="84" font-size="15" font-weight="bold" fill="#9b2226">Overfitting</text>
+    <text x="556.0" y="102" font-size="12" fill="#6e2a2c">high variance</text>
+  </g>
+
+  <!-- optimum marker -->
+  <line x1="363.4" y1="112" x2="363.4" y2="380" stroke="#555555" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="363.4" y="127" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#333333" text-anchor="middle">lowest validation error</text>
+
+  <!-- axes -->
+  <line x1="80" y1="60" x2="80" y2="380" stroke="#333333" stroke-width="1.5"/>
+  <line x1="80" y1="380" x2="640" y2="380" stroke="#333333" stroke-width="1.5"/>
+  <path d="M 650 380 L 640 375 L 640 385 Z" fill="#333333"/>
+  <path d="M 80 50 L 75 60 L 85 60 Z" fill="#333333"/>
+
+  <!-- curves -->
+  <path d="M 80.0,147.8 L 89.3,161.7 L 98.7,174.8 L 108.0,187.0 L 117.3,198.4 L 126.7,209.0 L 136.0,219.0 L 145.3,228.3 L 154.7,237.1 L 164.0,245.3 L 173.3,252.9 L 182.7,260.1 L 192.0,266.7 L 201.3,273.0 L 210.7,278.9 L 220.0,284.3 L 229.3,289.5 L 238.7,294.3 L 248.0,298.7 L 257.3,302.9 L 266.7,306.9 L 276.0,310.5 L 285.3,314.0 L 294.7,317.2 L 304.0,320.2 L 313.3,323.0 L 322.7,325.6 L 332.0,328.1 L 341.3,330.4 L 350.7,332.6 L 360.0,334.6 L 369.3,336.5 L 378.7,338.2 L 388.0,339.9 L 397.3,341.4 L 406.7,342.9 L 416.0,344.2 L 425.3,345.5 L 434.7,346.7 L 444.0,347.8 L 453.3,348.8 L 462.7,349.8 L 472.0,350.7 L 481.3,351.5 L 490.7,352.3 L 500.0,353.0 L 509.3,353.7 L 518.7,354.4 L 528.0,355.0 L 537.3,355.6 L 546.7,356.1 L 556.0,356.6 L 565.3,357.1 L 574.7,357.5 L 584.0,357.9 L 593.3,358.3 L 602.7,358.6 L 612.0,359.0 L 621.3,359.3 L 630.7,359.6 L 640.0,359.8" fill="none" stroke="#1f5fa8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 80.0,142.4 L 89.3,156.3 L 98.7,169.4 L 108.0,181.5 L 117.3,192.9 L 126.7,203.5 L 136.0,213.5 L 145.3,222.7 L 154.7,231.3 L 164.0,239.4 L 173.3,246.8 L 182.7,253.7 L 192.0,260.2 L 201.3,266.1 L 210.7,271.6 L 220.0,276.6 L 229.3,281.2 L 238.7,285.5 L 248.0,289.3 L 257.3,292.8 L 266.7,296.0 L 276.0,298.8 L 285.3,301.2 L 294.7,303.4 L 304.0,305.3 L 313.3,306.9 L 322.7,308.2 L 332.0,309.2 L 341.3,309.9 L 350.7,310.4 L 360.0,310.6 L 369.3,310.6 L 378.7,310.3 L 388.0,309.8 L 397.3,309.0 L 406.7,308.0 L 416.0,306.7 L 425.3,305.2 L 434.7,303.5 L 444.0,301.6 L 453.3,299.4 L 462.7,297.0 L 472.0,294.3 L 481.3,291.5 L 490.7,288.3 L 500.0,285.0 L 509.3,281.4 L 518.7,277.6 L 528.0,273.6 L 537.3,269.3 L 546.7,264.8 L 556.0,260.0 L 565.3,255.0 L 574.7,249.7 L 584.0,244.2 L 593.3,238.5 L 602.7,232.5 L 612.0,226.2 L 621.3,219.7 L 630.7,213.0 L 640.0,205.9" fill="none" stroke="#c4501b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="363.4" cy="310.6" r="5" fill="#c4501b" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- direct labels -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold">
+    <text x="652" y="363.8" fill="#1f5fa8">Training</text>
+    <text x="652" y="379.8" fill="#1f5fa8">error</text>
+    <text x="652" y="203.9" fill="#c4501b">Validation</text>
+    <text x="652" y="219.9" fill="#c4501b">error</text>
+  </g>
+
+  <!-- axis titles -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#333333" text-anchor="middle">
+    <text x="80" y="398" text-anchor="start">low</text>
+    <text x="640" y="398" text-anchor="end">high</text>
+    <text x="360.0" y="424" font-size="14">Model complexity (e.g., polynomial degree)</text>
+    <text transform="translate(30 220.0) rotate(-90)" font-size="14">Error (e.g., MSE)</text>
+  </g>
+</svg>

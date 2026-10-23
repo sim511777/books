@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Decision tree for the Iris data (max_depth=2)</title>
+  <desc id="d">A root node splits on petal length. The true branch ends in a setosa leaf. The false branch goes to a second node that splits on petal width and ends in versicolor and virginica leaves.</desc>
+
+  <rect x="0" y="0" width="800" height="500" fill="#ffffff"/>
+
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2933; }
+    .title { font-size: 16px; font-weight: bold; }
+    .q { font-size: 15px; font-weight: bold; }
+    .info { font-size: 12px; fill: #4b5563; }
+    .cls { font-size: 15px; font-weight: bold; }
+    .edge { stroke: #52606d; stroke-width: 2; fill: none; }
+    .elabel { font-size: 13px; font-style: italic; fill: #374151; }
+    .node { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+    .setosa { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+    .versicolor { fill: #ffedd5; stroke: #ea580c; stroke-width: 2; }
+    .virginica { fill: #ede9fe; stroke: #7c3aed; stroke-width: 2; }
+    .legend { font-size: 12px; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="20" y="28">Decision tree for Iris (max_depth=2)</text>
+
+  <!-- edges -->
+  <path class="edge" d="M 380 120 L 170 210" marker-end="url(#arrow)"/>
+  <path class="edge" d="M 380 120 L 520 210" marker-end="url(#arrow)"/>
+  <path class="edge" d="M 520 280 L 380 370" marker-end="url(#arrow)"/>
+  <path class="edge" d="M 520 280 L 660 370" marker-end="url(#arrow)"/>
+
+  <!-- edge labels -->
+  <text class="elabel" x="250" y="155" text-anchor="end">True (&lt;= 2.45)</text>
+  <text class="elabel" x="470" y="155" text-anchor="start">False (&gt; 2.45)</text>
+  <text class="elabel" x="440" y="325" text-anchor="end">True (&lt;= 1.55)</text>
+  <text class="elabel" x="600" y="325" text-anchor="start">False (&gt; 1.55)</text>
+
+  <!-- root node -->
+  <rect class="node" x="250" y="50" width="260" height="70" rx="10"/>
+  <text class="q" x="380" y="74" text-anchor="middle">petal length (cm) &lt;= 2.45 ?</text>
+  <text class="info" x="380" y="94" text-anchor="middle">gini = 0.667, samples = 105</text>
+  <text class="info" x="380" y="110" text-anchor="middle">value = [35, 35, 35]</text>
+
+  <!-- left leaf: setosa -->
+  <rect class="setosa" x="60" y="210" width="220" height="70" rx="10"/>
+  <text class="cls" x="170" y="234" text-anchor="middle">leaf: setosa</text>
+  <text class="info" x="170" y="254" text-anchor="middle">gini = 0.000, samples = 35</text>
+  <text class="info" x="170" y="270" text-anchor="middle">value = [35, 0, 0]</text>
+
+  <!-- internal node -->
+  <rect class="node" x="400" y="210" width="240" height="70" rx="10"/>
+  <text class="q" x="520" y="234" text-anchor="middle">petal width (cm) &lt;= 1.55 ?</text>
+  <text class="info" x="520" y="254" text-anchor="middle">gini = 0.500, samples = 70</text>
+  <text class="info" x="520" y="270" text-anchor="middle">value = [0, 35, 35]</text>
+
+  <!-- leaf: versicolor -->
+  <rect class="versicolor" x="260" y="370" width="240" height="70" rx="10"/>
+  <text class="cls" x="380" y="394" text-anchor="middle">leaf: versicolor</text>
+  <text class="info" x="380" y="414" text-anchor="middle">gini = 0.057, samples = 34</text>
+  <text class="info" x="380" y="430" text-anchor="middle">value = [0, 33, 1]</text>
+
+  <!-- leaf: virginica -->
+  <rect class="virginica" x="540" y="370" width="240" height="70" rx="10"/>
+  <text class="cls" x="660" y="394" text-anchor="middle">leaf: virginica</text>
+  <text class="info" x="660" y="414" text-anchor="middle">gini = 0.105, samples = 36</text>
+  <text class="info" x="660" y="430" text-anchor="middle">value = [0, 2, 34]</text>
+
+  <!-- legend -->
+  <rect x="20" y="470" width="16" height="16" rx="3" class="node"/>
+  <text class="legend" x="42" y="483">question node (root / internal)</text>
+  <rect x="250" y="470" width="16" height="16" rx="3" class="setosa"/>
+  <text class="legend" x="272" y="483">setosa</text>
+  <rect x="345" y="470" width="16" height="16" rx="3" class="versicolor"/>
+  <text class="legend" x="367" y="483">versicolor</text>
+  <rect x="460" y="470" width="16" height="16" rx="3" class="virginica"/>
+  <text class="legend" x="482" y="483">virginica</text>
+  <text class="legend" x="780" y="483" text-anchor="end" style="fill:#4b5563">value = samples per class</text>
+</svg>
